@@ -1,0 +1,48 @@
+.contAdd {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 33.333333%;
+}
+
+.dishHeadCont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.dishHead {
+    font: 27px "Josefin Sans", Arial, sans-serif;
+    color: white;
+}
+
+.dishCont {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    border: 1px solid white;
+}
+
+.addicon {
+    width: 60%;
+    height: 60%;  
+}
+
+.addicon:hover{
+    width: 70%;
+    height: 70%;
+    cursor: pointer;
+}
+
+@media(max-width:790px){
+    .contAdd{
+        width: 70%;
+        margin-bottom: 60px;
+    }
+}

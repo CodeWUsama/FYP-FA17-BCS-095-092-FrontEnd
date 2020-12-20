@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+.navBarCont {
+    width: 100%;
+    height: 80px;
+    background-color: #121618;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    justify-content: space-between;
+    top:100px;
+    z-index: 500;
+}
+
+.rootCont{
+    width: 100%;
+}
+
+.menuCont {
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    position: fixed;
+    background-color: #121618;
+    width: 40%;
+    margin-top: 180px;
+    height: 100vh;
+    transform:translateX(-100%);
+    transition:transform 500ms ease-out;
+    border-top:1px solid white;
+    z-index: 500;
+}
+
+.open{
+    transform:translateX(0);
+}
+
+.mobileNavList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-Style-Type: none;
+    height: 250px;
+    width: 100%;
+}
+
+.hamLogo{
+    cursor: pointer;
+}
+
+.navListCont {
+    width: 50%;
+    margin-right: 5%;
+}
+
+.loginLinkCont {
+    margin-right: 3%;
+    display: none;
+}
+
+.hamburgerCont {
+    margin-left: 3%;
+    display: none;
+}
+
+.navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+}
+
+.logoCont {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    margin-left: 5%;
+}
+
+.logoTextFirst {
+    color: white;
+}
+
+.logoTextLast {
+    color: #FAC564;
+}
+
+@media(max-width:650px) {
+    .navListCont {
+        display: none;
+    }
+    .loginLinkCont{
+        display: flex;
+    }
+    .hamburgerCont{
+        display: flex;
+    }
+}

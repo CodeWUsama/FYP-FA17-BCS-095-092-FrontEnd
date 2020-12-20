@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+.navbarCont {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-color: white;
+    z-index: 1000; 
+    top:0;
+}
+
+.hamburgerCont {
+    display: none;
+}
+
+.mobileNavList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-Style-Type: none;
+    height: 250px;
+    overflow:auto;
+}
+
+.accountCont {
+    display: none;
+}  
+
+.menuCont {
+    padding: 20px 10px 20px 10px;
+    display: flex;
+    position: fixed;
+    background-color: #14BDEE;
+    width: 50%;
+    height: 100vh;
+    transform:translateX(-100%);
+    transition:transform 500ms ease-out;
+    z-index: 800;
+    top:0;
+}
+
+.open{
+    transform:translateX(0);
+}
+
+.logoCont {
+    width: 30%;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.linksCont {
+    width: 70%;
+    /* border: 1px solid black; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logoText {
+    font-size: 36px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    align-items: center;
+    width: 100%;
+}
+
+.hamLogo {
+    cursor: pointer;
+}
+
+@media(max-width:870px) {
+    .linksCont {
+        display: none;
+    }
+    .hamburgerCont {
+        display: flex;
+        width: 10%;
+        justify-content: flex-end;
+        height: 100px;
+        align-items: center;
+    }
+    .accountCont {
+        display: flex;
+        justify-content: flex-end;
+        width: 13%;
+        height: 100px;
+        align-items: center;
+    }
+    .logoCont {
+        width: 75%;
+    }
+    .menuCont{
+        margin-top: 100px;
+    }
+}
+
+@media(max-width:550px) {
+    .logoText {
+        font-size: 30px;
+    }
+    .hamLogo {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media(max-width:307px) {
+    .logoText {
+        font-size: 20px;
+    }
+    .accLogo{
+        height: 40px;
+        width:40px;
+    }
+}
+

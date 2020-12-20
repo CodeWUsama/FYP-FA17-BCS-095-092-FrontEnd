@@ -1,0 +1,95 @@
+.leftComp {
+    background-color: #FFa500;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 0px 40px 0px;
+}
+
+.rightComp {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 4px solid #FFa500;
+    border-bottom: 4px solid #FFa500;
+}
+
+.rootDiv {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+}
+
+.head {
+    width: 90%;
+    font-size: 78px;
+    font-family: "Josefin Sans";
+    color: white;
+}
+
+.btt {
+    margin-top: 50px;
+    padding: 15px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.685);
+    font-size: 30px;
+    border: none;
+    border-radius: 5%;
+}
+
+.btt:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.desc {
+    width: 90%;
+    font-size: 30px;
+    text-align: justify;
+    font-family: sans-serif;
+}
+
+@media(max-width:1205px) {
+    .head {
+        font-size: 58px;
+    }
+    .btt {
+        padding: 10px;
+        font-size: 25px;
+    }
+    .desc {
+        font-size: 23px;
+    }
+}
+
+@media(max-width:715px) {
+    .rootDiv {
+        flex-direction: column;
+    }
+    .leftComp {
+        width: 100%;
+    }
+    .rightComp {
+        width: 100%;
+        padding: 15px 0px 15px 0px;
+    }
+}
+
+@media(max-width:400px) {
+    .head {
+        font-size: 38px;
+    }
+    .desc {
+        font-size: 18px;
+    }
+    .btt {
+        margin-top: 25px;
+        padding: 7px;
+        font-size: 20px;
+    }
+}

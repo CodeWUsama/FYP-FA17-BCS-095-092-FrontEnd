@@ -1,0 +1,79 @@
+.rootCont {
+    display: flex;
+    flex-direction: column;
+}
+
+.dishHeadCont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.dishHead {
+    font: 27px "Josefin Sans", Arial, sans-serif;
+    color: white;
+}
+
+.dishCont {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.dishTextCont {
+    background-color: white;
+    padding-top: 15px;
+    border-radius: 2%;
+    padding-bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dishText {
+    color: black;
+    font: 15px 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.buttonCont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.orderButton {
+    height: 50px;
+    background-color: orangered;
+    width: 50%;
+    cursor: pointer;
+    color: white;
+    font: 20px 'Poppins', sans-serif;
+    border: 1px solid red;
+    border-radius: 5%;
+}
+
+.layer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.dishDetailCont {
+    width: 100%;
+    color: white;
+    z-index: 500;
+}
+
+@media(max-width:790px) {
+    .rootCont {
+        width: 70%;
+    }
+}

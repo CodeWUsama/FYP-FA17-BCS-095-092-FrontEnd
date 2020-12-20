@@ -1,0 +1,25 @@
+.rootCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.errCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: rgb(255, 176, 176);
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0.5rem;
+    border-color: red;
+    font-family: sans-serif;
+    color: red;
+}
+
+.errCont p{
+    margin: 0;
+    padding:0;
+}

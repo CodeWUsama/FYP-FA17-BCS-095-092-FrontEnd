@@ -1,0 +1,93 @@
+.rootCont {
+    background-image: url("./food.png");
+    height: fit-content;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.headCont {
+    width: 100%;
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headText {
+    font: 40px "Josefin Sans", Arial, sans-serif;
+    font-weight: 400;
+}
+
+.servicesText {
+    font: 15px 'Poppins', sans-serif;
+    color: #5c3d03;
+    font-weight: 400;
+    line-height: 1.8;
+    width: 50%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.servicesCont {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+} 
+
+.serviceCont {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.serviceIcon {
+    height: 70px;
+    width: 70px;
+}
+
+.iconCont {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bordeR: 1px solid #bf7e06;
+}
+
+.iconRootCont {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.serviceHeading {
+    font: 23px "Josefin Sans", Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.serviceDesc {
+    font: 16px 'Poppins', sans-serif;
+    color: #5c3d03;
+    margin: 30px 10px 0px 10px;
+    text-align: center;
+    line-height: 25px;
+}
+
+@media(max-width:715px){
+    .servicesCont{
+        flex-direction: column;
+        align-items: center;
+    }
+    .serviceCont{
+        margin-bottom: 30px;
+        width: 70%;
+    }
+}

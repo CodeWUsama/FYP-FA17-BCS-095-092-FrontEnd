@@ -1,0 +1,31 @@
+.NavLink {
+    text-decoration: none;
+    font: 20px "Roboto", sans-serif;
+    color: #384158; 
+}
+
+.NavLinkPhone {
+    text-decoration: none;
+    font: 20px "Roboto", sans-serif;
+    color: #384158;
+}
+
+.NavLinkPhone:hover {
+    text-decoration: none;
+    color: white;
+    transition: all 400ms ease;
+}
+
+
+.NavLink:hover {
+    text-decoration: none;
+    color: #14BDEE;
+    transition: all 400ms ease;
+}
+
+.active {
+    color: #14BDEE;
+    padding:8px 12px 8px 12px;
+    border-radius: 7%;
+    border: 1px solid #14BDEE;
+}

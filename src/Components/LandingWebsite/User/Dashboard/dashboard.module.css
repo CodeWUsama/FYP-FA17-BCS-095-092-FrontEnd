@@ -1,0 +1,54 @@
+.welcome {
+    font-size: 50px;
+    font-family: "Poppins";
+    font-weight: 900;
+    text-align: center;
+    margin-top: 50px;
+    text-transform: capitalize;
+    margin-top: 100px;
+}
+
+.sectionTemp {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.tempsCont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.btCont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.head {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.btt {
+    margin-top: 30px;
+    padding: 15px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.685);
+    font-size: 20px;
+    border: none;
+    border-radius: 2%;
+}
+
+.btt:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+@media(max-width:600px) {
+    .btCont {
+        flex-direction: column;
+    }
+}

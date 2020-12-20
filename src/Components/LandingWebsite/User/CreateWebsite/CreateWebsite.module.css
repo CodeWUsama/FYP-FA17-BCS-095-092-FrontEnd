@@ -1,0 +1,24 @@
+.welcome {
+    font-size: 50px;
+    font-family: "Poppins";
+    font-weight: 900;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.sectionTemp {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.head {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.tempsCont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

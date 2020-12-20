@@ -1,0 +1,35 @@
+.headCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editorHead {
+    font: 40px 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding:0;
+}
+
+.close {
+    font: 15px 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding:0;
+    color: black;
+    margin-right: 10px;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.upload{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

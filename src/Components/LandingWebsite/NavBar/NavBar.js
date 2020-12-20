@@ -1,0 +1,103 @@
+import React, { Component } from 'react';
+import classes from './NavBar.module.css';
+import NavItem from "./NavLinks/NavItem";
+import hamIcon from './hamburgericon.png';
+import accIcon from './accountlogo.png';
+import { Route } from 'react-router';
+import Home from '../Homepage/Home';
+import Dashboard from './../User/Dashboard/dashboard';
+import Signup from '../User/Signup/Signup';
+import Login from '../User/Login/Login';
+import NavF1 from './../../FoodTemplates/FoodTemplate1/NavBar/NavBar';
+import NavItemPhone from './NavLinks/NavItemPhone';
+import VerifyUser from '../User/VerifyUser/VerifyUser';
+import ForgotPass from './../User/ForgotPassword/ForgotPass';
+import EditProfile from '../User/EditProfile/EditProfile';
+import RestaurantNavBar from "./../../PublishedWebsites/Food1template/NavBar/NavBar";
+import NavB1 from "./../../BloggingTemplates/BloggingTemplate1/NavBar/NavBar";
+
+export default class NavBar extends Component {
+
+    state = {
+        drawer: false,
+        status: false
+    };
+
+    componentDidMount() {
+        if (localStorage.getItem('username')) {
+            this.setState({ status: true });
+        }
+    }
+
+    toggleMenuHandler = () => {
+        if (this.state.drawer === false) {
+            this.setState({ drawer: true });
+        }
+        else {
+            this.setState({ drawer: false });
+        }
+    }
+
+    render() {
+        let assignedClasses = [];
+        assignedClasses.push(classes.menuCont);
+
+        if (this.state.drawer === true) {
+            assignedClasses.push(classes.open);
+        };
+
+        return (
+            <div>
+                <div className={classes.navbarCont}>
+
+                    <div className={classes.hamburgerCont}>
+                        <img onClick={this.toggleMenuHandler} className={classes.hamLogo} src={hamIcon} alt="Hamburger-Icon" />
+                    </div>
+
+                    <div className={classes.logoCont}>
+                        <h2 style={{ marginLeft: 30, color: '#384158' }} className={classes.logoText}>Digital</h2>
+                        <h2 style={{ color: '#14BDEE' }} className={classes.logoText} >Studio</h2>
+                    </div>
+
+                    <div className={classes.linksCont}>
+                        <ul className={classes.navList}>
+                            <NavItem navText="Home" navHref="/" />
+                            <NavItem navText="Packages" navHref="/packages" />
+                            <NavItem navText="Contact Us" navHref="/about" />
+                            <NavItem navText="Create Website" navHref={this.state.status ? "/account" : "/login"} />
+                        </ul>
+                    </div>
+
+                    <div className={classes.accountCont}>
+                        <img className={classes.accLogo} src={accIcon} alt="Account-Icon" />
+                    </div>
+
+                </div>
+
+                <div className={assignedClasses.join(' ')}>
+                    <ul className={classes.mobileNavList}>
+                        <NavItemPhone navText="Home" navHref="/" />
+                        <NavItemPhone navText="Packages" navHref="/packages" />
+                        <NavItemPhone navText="Contact Us" navHref="/about" />
+                        <NavItemPhone navText="Create Website" navHref={this.state.status ? "/account" : "/login"} />
+                    </ul>
+                </div>
+
+                <Route exact path="/" component={Home} />
+                <Route exact path="/packages" component={Home} />
+                <Route exact path="/contact" component={Home} />
+                <Route exact path="/account" component={Dashboard} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/Signup" component={Signup} />
+                <Route exact path="/verify" component={VerifyUser} />
+                <Route exact path="/forgot" component={ForgotPass} />
+                <Route exact path="/editProfile" component={EditProfile} />
+                <Route exact path='/F1/' component={NavF1} />
+                <Route exact path='/RestaurantWebsite/' component={RestaurantNavBar} />
+                <Route exact path="/B1/" component={NavB1}/>
+            </div>
+        );
+    }
+
+}
+

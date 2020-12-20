@@ -1,0 +1,111 @@
+.rootCont{
+    height: fit-content;
+    width: 100%;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
+.leftCont{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rightCont{
+    width: 50%;
+}
+.formHead{
+    color: white;
+    font-family: "Josefin Sans", Arial, sans-serif;
+    font-size: 38px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.formInput{
+    border: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+    height: 58px !important;
+    background: transparent !important;
+    color: white;
+    font: 15px "Poppins", Arial, sans-serif;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.formInput:focus{
+    outline: none;
+}
+
+::placeholder{
+    color:lightgrey;
+    font: 15px "Poppins", Arial, sans-serif;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.submitButton{
+    height: 40px;
+    width: 100px;
+    background-color: #FAC564;
+    border:0px;
+    cursor: pointer;
+    font: 15px "Poppins", Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.submitButton:hover{
+    color: #FAC564;
+    background-color: black;
+    border:1px solid #FAC564;
+}
+
+.profileIcon{
+    height: 150px;
+    width: 200px;
+}
+
+.picCont{
+    padding-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adminName{
+    color: white;
+    font-family: "Josefin Sans", Arial, sans-serif;
+    font-size: 28px;
+    margin-top: 40px;
+}
+.adminMsg{
+    color: white;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    font-weight:300;
+    margin-top: 40px;
+    width: 70%;
+    text-align: justify;
+}
+
+@media(max-width:790px){
+    .rootCont{
+        flex-direction: column;
+        align-items: center;
+    }
+    .leftCont{
+        width: 80%;
+    }
+    .rightCont{
+        width: 80%;
+    }
+    .contactForm{
+        width: 90%;
+    }
+}

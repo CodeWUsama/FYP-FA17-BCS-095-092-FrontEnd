@@ -1,0 +1,37 @@
+.info {
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info h3{
+    text-align: center;
+}
+
+.inpu {
+    width: 450px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 5%;
+}
+
+.inputField{
+    width: 100%;
+    margin-top: 10px !important;
+}
+
+
+@media screen and (max-width: 600px) {
+    .inpu {
+        width: 90%;
+    }
+}
+

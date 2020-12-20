@@ -1,0 +1,82 @@
+.rootDiv {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: 50px;
+    flex-direction: column;
+    margin-bottom: 70px;
+}
+
+.headCont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.head {
+    font-size: 68px;
+    font-family: sans-serif;
+    font-weight: 300;
+    color: black;
+}
+
+.desc {
+    margin-top: 20px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.stepsCont{
+    margin-top: 20px;
+    padding: 30px;
+    margin-left: 30px;
+}
+
+.stepsCont li{
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 200%;
+}
+
+.aTag{
+    margin-top: 30px;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.aTag:hover{
+    color:blue;
+}
+
+@media(max-width:760px){
+    .head{
+        font-size: 55px;
+        text-align: center;
+    }
+    .desc{
+        font-size: 16px;
+        text-align: center;
+
+    }
+}
+
+@media(max-width:400px){
+    .tempImg{
+        width: 250px;
+        height: 180px;
+    }
+    .tempHead{
+        font-size: 20px;
+    }
+    .tempSubHead{
+        font-size: 14px;
+    }
+    .head{
+        font-size: 35px;
+        text-align: center;
+    }
+}
