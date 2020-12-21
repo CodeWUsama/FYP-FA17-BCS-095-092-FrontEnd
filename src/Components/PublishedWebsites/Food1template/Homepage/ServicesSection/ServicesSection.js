@@ -13,8 +13,15 @@ export default class ServicesSection extends Component {
                     <p className={classes.headText}>OUR SERVICES</p>
                     <p
                         className={classes.servicesText}
-                        style={{ fontSize: this.props.servicesDescription.fontSize, fontFamily: this.props.servicesDescription.fontFamily, color: this.props.servicesDescription.fontColor }}
-                        onClick={this.props.clickHandler}
+                        style={{
+                            fontSize: this.props.servicesDescription.fontSize,
+                            fontFamily: this.props.servicesDescription.fontFamily,
+                            color: this.props.servicesDescription.fontColor,
+                            fontWeight: this.props.servicesDescription.bold ? "bold" : "normal",
+                            textDecoration: this.props.servicesDescription.underline ? "underline" : "none",
+                            fontStyle: this.props.servicesDescription.italic ? "italic" : "normal",
+                            textAlign: this.props.servicesDescription.align
+                        }}
                     >
                         {this.props.servicesDescription.text}
                     </p>
@@ -28,15 +35,29 @@ export default class ServicesSection extends Component {
                         </div>
                         <p
                             className={classes.serviceHeading}
-                            style={{ fontSize: this.props.s1H.fontSize, fontFamily: this.props.s1H.fontFamily, color: this.props.s1H.fontColor }}
-                            onClick={this.props.s1HClickHandler}
+                            style={{
+                                fontSize: this.props.s1H.fontSize,
+                                fontFamily: this.props.s1H.fontFamily,
+                                color: this.props.s1H.fontColor,
+                                fontWeight: this.props.s1H.bold ? "bold" : "normal",
+                                textDecoration: this.props.s1H.underline ? "underline" : "none",
+                                fontStyle: this.props.s1H.italic ? "italic" : "normal",
+                                textAlign: this.props.s1H.align
+                            }}
                         >
                             {this.props.s1H.text}
                         </p>
                         <p
                             className={classes.serviceDesc}
-                            style={{ fontSize: this.props.s1D.fontSize, fontFamily: this.props.s1D.fontFamily, color: this.props.s1D.fontColor }}
-                            onClick={this.props.s1DClickHandler}
+                            style={{
+                                fontSize: this.props.s1D.fontSize,
+                                fontFamily: this.props.s1D.fontFamily,
+                                color: this.props.s1D.fontColor,
+                                fontWeight: this.props.s1D.bold ? "bold" : "normal",
+                                textDecoration: this.props.s1D.underline ? "underline" : "none",
+                                fontStyle: this.props.s1D.italic ? "italic" : "normal",
+                                textAlign: this.props.s1D.align
+                            }}
                         >
                             {this.props.s1D.text}
                         </p>
@@ -49,15 +70,29 @@ export default class ServicesSection extends Component {
                         </div>
                         <p
                             className={classes.serviceHeading}
-                            style={{ fontSize: this.props.s2H.fontSize, fontFamily: this.props.s2H.fontFamily, color: this.props.s2H.fontColor }}
-                            onClick={this.props.s2HClickHandler}
+                            style={{
+                                fontSize: this.props.s2H.fontSize,
+                                fontFamily: this.props.s2H.fontFamily,
+                                color: this.props.s2H.fontColor,
+                                fontWeight: this.props.s2H.bold ? "bold" : "normal",
+                                textDecoration: this.props.s2H.underline ? "underline" : "none",
+                                fontStyle: this.props.s2H.italic ? "italic" : "normal",
+                                textAlign: this.props.s2H.align
+                            }}
                         >
                             {this.props.s2H.text}
                         </p>
                         <p
                             className={classes.serviceDesc}
-                            style={{ fontSize: this.props.s2D.fontSize, fontFamily: this.props.s2D.fontFamily, color: this.props.s2D.fontColor }}
-                            onClick={this.props.s2DClickHandler}
+                            style={{
+                                fontSize: this.props.s2D.fontSize,
+                                fontFamily: this.props.s2D.fontFamily,
+                                color: this.props.s2D.fontColor,
+                                fontWeight: this.props.s2D.bold ? "bold" : "normal",
+                                textDecoration: this.props.s2D.underline ? "underline" : "none",
+                                fontStyle: this.props.s2D.italic ? "italic" : "normal",
+                                textAlign: this.props.s2D.align
+                            }}
                         >
                             {this.props.s2D.text}
                         </p>
@@ -70,15 +105,29 @@ export default class ServicesSection extends Component {
                         </div>
                         <p
                             className={classes.serviceHeading}
-                            style={{ fontSize: this.props.s3H.fontSize, fontFamily: this.props.s3H.fontFamily, color: this.props.s3H.fontColor }}
-                            onClick={this.props.s3HClickHandler}
+                            style={{
+                                fontSize: this.props.s3H.fontSize,
+                                fontFamily: this.props.s3H.fontFamily,
+                                color: this.props.s3H.fontColor,
+                                fontWeight: this.props.s3H.bold ? "bold" : "normal",
+                                textDecoration: this.props.s3H.underline ? "underline" : "none",
+                                fontStyle: this.props.s3H.italic ? "italic" : "normal",
+                                textAlign: this.props.s3H.align
+                            }}
                         >
                             {this.props.s3H.text}
                         </p>
                         <p
                             className={classes.serviceDesc}
-                            style={{ fontSize: this.props.s3D.fontSize, fontFamily: this.props.s3D.fontFamily, color: this.props.s3D.fontColor }}
-                            onClick={this.props.s3DClickHandler}
+                            style={{
+                                fontSize: this.props.s3D.fontSize,
+                                fontFamily: this.props.s3D.fontFamily,
+                                color: this.props.s3D.fontColor,
+                                fontWeight: this.props.s3D.bold ? "bold" : "normal",
+                                textDecoration: this.props.s3D.underline ? "underline" : "none",
+                                fontStyle: this.props.s3D.italic ? "italic" : "normal",
+                                textAlign: this.props.s3D.align
+                            }}
                         >
                             {this.props.s3D.text}
                         </p>

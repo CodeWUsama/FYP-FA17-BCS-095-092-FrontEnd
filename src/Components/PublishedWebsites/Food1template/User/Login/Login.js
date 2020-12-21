@@ -64,8 +64,6 @@ export default class Login extends Component {
                     <p className={classes.text}>Dont have an account?</p>
                     <a className={classes.aTag} href="/RestaurantWebsite/#/signup">Signup Now!</a>
                 </div>
-
-                <Footer />
             </div>
         );
     }

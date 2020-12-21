@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Travel.module.css';
-import Gallery from './gallery /Gallery';
+import Gallery from '../Gallery/Gallery';
+import camImg from "./../images/camera.jpg";
 
 export default class Travelrow1 extends Component {
     state = {
@@ -11,7 +12,7 @@ export default class Travelrow1 extends Component {
 
     async componentDidMount() {
         this._isMounted = true;
-        await fetch("http://localhost:8080/b1td/getBlogimages", {
+        await fetch("http://localhost:8080/b1td/getBlogimages?id="+localStorage.getItem("id"), {
             method: "GET",
             headers: {
                 "Content-Type": 'application/json'
@@ -37,26 +38,36 @@ export default class Travelrow1 extends Component {
     render() {
         function gotoresearch(e) {
             e.preventDefault();
-            window.location = '/research';
+            window.location = '/B1/#/research';
         }
-        let displayresearch = this.props.research.map((blog, index) => {
-            return (
-                <div className={classes.row12} key={index} onClick={gotoresearch}>
-                    <img className={classes.imgr} src={'data:image/jpg;base64,' + this.state.imgs[index]} />
-                    <h6 className={classes.text1} onClick={this.props.travelnameEditor}>{blog.name}</h6>
-                    <h5 style={{ fontSize: blog.fontSize, fontFamily: blog.fontFamily, color: blog.fontColor }} onClick={this.props.research1Editor}> {blog.text} </h5>
-                    <p style={{ color: "grey" }}>{blog.date}</p>
-                    <p onClick={this.props.traveldisEditor}>{blog.description}</p>
-                </div>
+        var count = 0;
+        let images = this.state.imgs.reverse();
+        let displayresearch = this.props.research.reverse().map((blog, index) => {
+            var leng = (this.props.research.length - 1)
 
-            )
+            if (count < 3) {
+                count = count + 1;
+                console.log(count);
+                return (
+                    <div className={classes.row12} key={index} onClick={gotoresearch}>
+                        <img className={classes.imgr} src={'data:image/jpg;base64,' + images[index]} />
+                        <h6 className={classes.text1} >{blog.name}</h6>
+                        <h5 > {blog.text} </h5>
+                        <p style={{ color: "grey" }}>{blog.date}</p>
+                        <p >{blog.description}</p>
+                    </div>
+                )
+            }
+
+
         })
+
         return (
             <div className={classes.rootDiv}>
                 <div className={classes.col}>
                     <div className={classes.travelimg}>
                         <h2 className={classes.traveltext} style={{ fontSize: this.props.travelname.fontSize, fontFamily: this.props.travelname.fontFamily, color: this.props.travelname.fontColor }} onClick={this.props.travelnameEditor}>{this.props.travelname.text} </h2>
-                        <img className={classes.imgresive} src="/img/camera.jpg" />
+                        <img className={classes.imgresive} src={camImg} />
                     </div>
                     <div className={classes.row2}>
                         <div className={classes.row21}>
@@ -69,16 +80,13 @@ export default class Travelrow1 extends Component {
                             <p style={{ paddingLeft: 25 }}> {this.state.curTime}</p>
                         </div>
                     </div>
-                    <Gallery />
+                    <h1 className={classes.travel} style={{ fontSize: 18 }} onClick={gotoresearch}> RECENT </h1>
                     <div className={classes.row3}>
-                        {displayresearch}
-                        <div className={classes.row13}>
-                            <img className={classes.imgres} src="/img/image-2.jpeg" />
-                            <h4 style={{ padding: 1 }}>Subscribe to my blog</h4>
-                            <p style={{ margin: 20 }}>Far far away behind the word mountains far from away</p>
-                        </div>
-                    </div>
 
+                        {displayresearch}
+
+                    </div>
+                    <Gallery />
                 </div>
             </div>
         )

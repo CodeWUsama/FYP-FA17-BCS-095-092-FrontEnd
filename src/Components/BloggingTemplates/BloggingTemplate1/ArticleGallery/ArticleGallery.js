@@ -10,7 +10,7 @@ export default class Homerow5 extends Component {
 
     async componentDidMount() {
         this._isMounted = true;
-        await fetch("http://localhost:8080/b1td/getBlogimages", {
+        await fetch("http://localhost:8080/b1td/getBlogimages?id="+localStorage.getItem("id"), {
 
             method: "GET",
             headers: {

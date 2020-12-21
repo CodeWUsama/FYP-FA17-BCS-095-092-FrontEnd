@@ -1,0 +1,156 @@
+.travelimg {
+    width: 90%;
+    margin-top: 5%;
+    align-items: center;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.traveltext {
+    width: 30%;
+}
+
+.imgresive {
+    width: 30%;
+}
+
+.text21 {
+    margin-top: 55%;
+    padding: 5%;
+}
+
+.row2 {
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 6%;
+    padding: 5%;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+
+.row21 {
+    background-image: url('./image-7.png');
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 450px;
+}
+
+.row22 {
+    background-image: url('./image-2.jpeg');
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 450px;
+}
+
+.row3 {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.first {
+    margin-left: 9%;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgrow {
+    height: 200px;
+}
+
+.img1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.row12 {
+    padding: 2%;
+    width: 30%;
+}
+
+.travel {
+    margin-left: 10%;
+}
+
+.imge {
+    height: 100px;
+}
+
+.imgr {
+    height: 200px;
+}
+
+.row13 {
+    background-color: rgb(243, 228, 209);
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.saveBt{
+    position: fixed;
+    right: 35%;
+    left: 65%;
+    z-index: 1200;
+    width: 140px;
+    background-color: #F42F2C;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border: 0px;
+    padding: 10px;
+    transition: all 0.6s ease 0s;
+}
+
+.saveBt:hover {
+    color: white;
+    background-color: red;
+    transition: all 0.6s ease 0s;
+    cursor: pointer;
+}
+
+.imgres {
+    height: 200px;
+}
+
+.text1 {
+    color: orange;
+}
+
+.rootCont {
+    display: flex;
+    flex-direction: row;
+}
+
+.spacer {
+    width: 35%;
+    height: 100vh;
+    background-color: white;
+}
+
+@media (min-width:450px) and (max-width:650px) {
+    .traveltext {
+        width: 20%;
+    }
+    .imgresive {
+        width: 20%;
+    }
+    .row13 {
+        overflow: hidden;
+    }
+}
+
+@media (min-width:1150px) and (max-width:1350px) {
+    .row3 {
+        width: 90%;
+    }
+    .row13 {
+        overflow: hidden;
+    }
+}

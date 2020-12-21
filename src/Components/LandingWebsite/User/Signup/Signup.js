@@ -79,7 +79,7 @@ export default class Signup extends Component {
     render() {
         return (
             <div className={classes.cont}>
-                <Error status={false} text="User Already Exists!" />
+                <Error status={this.state.errorStatus} text="User Already Exists!" />
                 <div className={classes.rootCont}>
                     <header className={classes.header}>
                         <div className={classes.login}>

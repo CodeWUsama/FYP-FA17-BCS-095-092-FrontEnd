@@ -11,6 +11,7 @@ import Order from "./../ResusableComponents/OrderDish/Order";
 import Dashboard from '../User/Dashboard/Dashboard';
 import EditProfile from "./../User/EditProfile/EditProfile";
 import Menu from "./../Menu/Menu";
+import ContactUs from '../ContactUs/ContactUs';
 
 export default class NavBar extends Component {
 
@@ -48,7 +49,6 @@ export default class NavBar extends Component {
                             <ul className={classes.navList}>
                                 <NavItem navText="Home" navHref="/" />
                                 <NavItem navText="Menu" navHref="/menu" />
-                                <NavItem navText="Latest Dishes" navHref="/latest" />
                                 <NavItem navText="Contact" navHref="/contact" />
                                 <NavItem navText="Account" navHref={localStorage.getItem("userToken") ? "/dashboard" : "/account"} />
                             </ul>
@@ -65,7 +65,6 @@ export default class NavBar extends Component {
                         <ul className={classes.mobileNavList}>
                             <NavItemPhone navText="Home" navHref="/RestaurantWebsite/" />
                             <NavItemPhone navText="Menu" navHref="/RestaurantWebsite/menu" />
-                            <NavItemPhone navText="Latest Dishes" navHref="/RestaurantWebsite/latest" />
                             <NavItemPhone navText="Contact" navHref="/RestaurantWebsite/contact" />
                             <NavItemPhone navText="Account" navHref={localStorage.getItem("userToken") ? "/dashboard" : "/account"} />
                         </ul>
@@ -77,6 +76,7 @@ export default class NavBar extends Component {
                     <Route exact path="/dashboard" component={Dashboard} />
                     <Route exact path="/editProfile" component={EditProfile} />
                     <Route exact path="/menu" component={Menu} />
+                    <Route exact path="/contact" component={ContactUs}/>
                 </div>
             </HashRouter>
         );

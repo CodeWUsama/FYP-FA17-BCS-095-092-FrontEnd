@@ -63,10 +63,11 @@ export default class Signup extends Component {
                 templateId:localStorage.getItem("id")
             })
         }).then(res => {
+            console.log(res);
             if (res.status === 200) {
                 window.location.href="/RestaurantWebsite/#/account"
             }
-            else {
+            else if(res.status===500) {
                 console.log("error");
                 this.setState({ errorStatus: true });
             }
@@ -100,8 +101,6 @@ export default class Signup extends Component {
                     <p className={classes.text}>Already have an account?</p>
                     <a className={classes.aTag} href="/RestaurantWebsite/#account">Login Now!</a>
                 </div>
-
-                <Footer />
             </div>
         );
     }

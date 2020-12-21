@@ -19,7 +19,7 @@ export default class SideEditor extends Component {
         }
 
         return (
-            <div className={classes.rootCont}>
+            <div style={{top:"100px"}} className={classes.rootCont}>
                 {innerContent}
             </div>
         );

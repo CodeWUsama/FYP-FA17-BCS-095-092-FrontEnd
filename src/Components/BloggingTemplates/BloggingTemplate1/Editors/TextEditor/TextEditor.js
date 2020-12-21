@@ -4,7 +4,7 @@ import ColorDropdown from './colordropdown';
 import FontFamDropdown from './fontFam'
 import SideEditor from '../SideEditor/SideEditor';
 import TextField from "@material-ui/core/TextField";
-import Backdrop from '../backdrop/Backdrop'
+import Backdrop from '../Backdrop/Backdrop';
 
 export default class TextEditor extends Component {
 
@@ -139,9 +139,6 @@ export default class TextEditor extends Component {
                                         <img alt="Underline Text" src="https://img.icons8.com/android/24/000000/underline.png" />
                                     </div>
                                 </div>
-                            </div>
-                            <div className={classes.buttonCont}>
-                                <button onClick={() => this.props.changeHandler(this.state.text, this.state.size, this.state.fontFam, this.state.color)} className={classes.introButton}>Change</button>
                             </div>
                         </div>
                     </div>

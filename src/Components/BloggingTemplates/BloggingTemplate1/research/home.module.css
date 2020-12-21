@@ -1,0 +1,193 @@
+.logo{
+  margin-left:40%;
+  margin-top:2%;
+}
+.homerow4{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.1%;
+    left: 8%;
+    font-family: "Unna", serif;
+    font-size: 30px;
+}
+  
+  .col31text:hover{
+    
+    background-color: white;
+  }
+  .col31text{
+    padding :20px;
+    width:35%;
+    height:3%;
+    margin-left:2%;
+    filter: blur(0.5px);
+    -webkit-filter: blur(0.5px);
+    align-content: center;
+    border-radius: 5px;
+    background-color: goldenrod;
+  }
+  .col32text:hover{
+
+    background-color: white;
+  }
+  .col32text{
+    padding :20px;
+    width:35%;
+    height:3%;
+    margin-left:2%;
+    filter: blur(0.5px);
+    -webkit-filter: blur(0.5px);
+    align-content: center;
+    border-radius: 5px;
+    background-color: goldenrod;
+  }
+  
+  .col33text:hover{
+   
+    background-color: white;
+  }
+  .col33text{
+    padding :20px;
+    width:35%;
+    height:3%;
+    margin-right:2%;
+    margin-left: 2%;
+    filter: blur(0.5px);
+    -webkit-filter: blur(0.5px);
+    align-content: center;
+    border-radius: 5px;
+    background-color: goldenrod;
+  }
+  
+  
+  .rootCont{
+    display: flex;
+    flex-direction: row;
+    width:35%;
+  }
+  .add{
+    margin-left: 23%;
+  }
+  .spacer{
+    top:2%;
+    width:35%;
+    height: 90vh;
+    background-color: green;
+  }
+  
+  
+  @media(max-width:370px){
+    .spacer{
+        width: 100%;
+    }
+  
+  
+  }
+   
+    @media screen and (max-width:680px){
+      .spacer{
+        margin-top:1%;
+        width:35%;
+      }
+     
+      .in{
+        width:70vh;
+        height:5vh;
+      }
+      .bg{
+        position: absolute;
+        right:30%;
+      }
+      
+      .logo{
+          top:58%;
+          padding:5;
+      }
+      .intro{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: 40%;
+      }
+      .col2{
+        display: flex;
+        flex-direction: column; 
+        position: absolute;
+        top:100%;
+        right: 0.5%;
+      }
+      .homerow3{
+        display: flex;
+        flex-direction: row;
+      }
+      
+    }
+    @media screen and (max-width:680px){
+      .logo{
+        margin-left: 25%;
+        padding: 3%;
+      }
+    } 
+  
+    @media screen and (max-width:790px){
+      .topnav {
+        width: 100% ;
+      }
+      .logo{
+        margin-left: 25%;
+          padding:5;
+      }
+      .intro{
+        display: flex;
+        flex-direction: column;
+        margin-left:auto;
+        right: 13%;
+      }
+      .col2{
+        display: flex;
+        flex-direction: column; 
+        right: 0.5%;
+      }
+  
+    }
+    @media screen and (min-width:791px) and (max-width:800px){
+     
+      .logo{
+          margin-left: 20%;
+          padding:5;
+      }
+     
+      .col2{
+        display: flex;
+        flex-direction: column; 
+        right: 0.5%;
+      }
+     .homerow4{
+       margin-top: 0.1%;
+     }
+  
+    }
+    @media screen and (max-width:999px){
+      .topnav{
+        width:100%;
+      }
+      .logo{
+          top:41%;
+          padding:5;
+      }
+      .intro{
+       
+        margin-left:auto;
+        right: 5%;
+      }
+      .col31text{
+        font-size: 10;
+      }
+      .col2{
+        overflow-wrap: normal;
+        width:100vh;
+        right: 35%;
+        padding :5;
+      }
+  
+    }

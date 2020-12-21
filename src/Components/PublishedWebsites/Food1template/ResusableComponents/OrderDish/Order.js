@@ -53,7 +53,7 @@ export default class Order extends Component {
             return res.json();
         }).then(resData => {
             if (code === 200) {
-                
+                window.location.href="/RestaurantWebsite/#/dashboard"
             }
             else {
                 this.setState({ errorStatus: true });
@@ -117,7 +117,6 @@ export default class Order extends Component {
                         </form>
                     </div>
                 </div>
-                <Footer></Footer>
             </div>
         );
     }

@@ -182,7 +182,6 @@ export default class EditProfile extends Component {
                         </div>
                     </form>
                 </div>
-                <Footer />
             </div>
 
         )

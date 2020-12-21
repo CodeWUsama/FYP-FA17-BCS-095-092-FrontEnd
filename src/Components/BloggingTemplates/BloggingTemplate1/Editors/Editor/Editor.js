@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Backdrop from './Backdrop';
+import Backdrop from '../Backdrop/Backdrop';
 import classes from './../Backdrop/Backdrop.module.css';
 
 export default class Editor extends Component {

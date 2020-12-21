@@ -28,10 +28,11 @@ export default class TopDishes extends Component {
                 return result.json();
             }).then(resultData => {
                 if (this._isMounted) {
+                    console.log(this.props.flex.flexTopDishes);
                     this.setState({
-                        imgs: resultData.imgs,
-                        columns:this.props.flex
+                        imgs: resultData.imgs
                     });
+                    this.setState({ columns: this.props.flex.flexTopDishes });
                 }
             })
             .catch(err => {
@@ -58,7 +59,6 @@ export default class TopDishes extends Component {
     }
 
     render() {
-
         let displayDishes = this.props.dishes.map((dish, index) => {
             if (dish.featured === "true") {
                 return <Dish flexBasis={this.state.columns} key={dish.name} backgroundImg={"url('data:image/jpeg;base64," + this.state.imgs[index]} dishName={dish.name} desc={dish.desc} />
@@ -73,11 +73,11 @@ export default class TopDishes extends Component {
                 <div className={classes.rootCont}>
                     <div className={classes.mainHeadCont}>
                         <div className={classes.topCont}>
-                            <p style={{visibility:"hidden"}} className={classes.mainHead} >!</p>
+                            <p style={{ visibility: "hidden" }} className={classes.mainHead} >!</p>
                             <p className={classes.mainHead}>Top Dishes</p>
                             <FormControl>
-                                <InputLabel style={{color:"white"}} htmlFor="select">Columns</InputLabel>
-                                <NativeSelect style={{color:"red"}} defaultValue={this.state.columns} id="select" onChange={this.triggerChange}>
+                                <InputLabel style={{ color: "white" }} htmlFor="select">Columns</InputLabel>
+                                <NativeSelect style={{ color: "red" }} defaultValue={this.state.columns} id="select" onChange={this.triggerChange}>
                                     <option value="100%">1</option>
                                     <option value="50%">2</option>
                                     <option value="33%">3</option>
@@ -89,8 +89,6 @@ export default class TopDishes extends Component {
                     <div className={classes.dishesCont}>
                         <AddDish flexBasis={this.state.columns} clickHandler={this.toggleAddProduct} />
                         {displayDishes}
-                        {/* <Dish backgroundImg={karahiImg} dishName="Chicken Karahi" desc="A special Chicken Karahi with medium spices server you with fresh salad and cold drink." />
-                        <Dish backgroundImg={baryaniImg} dishName="Chicken Biryani" desc="A large plate of baryani including a chicken piece of your choice served with fresh raita and salad." /> */}
                     </div>
                 </div>
             </div>

@@ -24,7 +24,7 @@ export default class NavBar extends Component {
     };
 
     componentDidMount() {
-        if (localStorage.getItem('username')) {
+        if (localStorage.getItem('token')) {
             this.setState({ status: true });
         }
     }

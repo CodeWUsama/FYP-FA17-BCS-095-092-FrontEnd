@@ -42,6 +42,8 @@ export default class Dashboard extends Component {
 
     handleLogout = () => {
         localStorage.removeItem("userToken");
+        localStorage.removeItem("p");
+        localStorage.removeItem("d");
         window.location.href="/RestaurantWebsite/#/account"
     }
 

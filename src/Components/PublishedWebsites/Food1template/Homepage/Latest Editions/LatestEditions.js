@@ -5,7 +5,7 @@ import Dish from '../../ResusableComponents/Dish/Dish';
 export default class LatestEditions extends Component {
 
     state = {
-        imgs: [],
+        imgs: [], 
     }
 
     _isMounted = false;

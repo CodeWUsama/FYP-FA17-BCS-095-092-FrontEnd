@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import classes from "./NavBar.module.css";
 import { Route, HashRouter, NavLink } from 'react-router-dom';
-import Footer from '../../../LandingWebsite/Footer/Footer';
 import Travel from '../Home/Travel';
+import Research from "../research/Research";
+import Photography from "./../photography/Photography";
+import ContactUs from "./../ContactUs/Contactme";
 
 export default class Navbar extends Component {
 
@@ -23,10 +25,10 @@ export default class Navbar extends Component {
                     <a href="/B1/#/gallery">{this.state.option3}</a>
                     <a href="/B1/#/contact">{this.state.option5}</a>
                 </div>
-                <Route path="/contact" component={Footer} />
-                <Route path="/" component={Travel} />
-                <Route path="/research" component={Footer} />
-                <Route path="/gallery" component={Footer} />
+                <Route exact path="/" component={Travel} />
+                <Route exact path="/research" component={Research} />
+                <Route exact path="/gallery" component={Photography} />
+                <Route exact path="/contact" component={ContactUs}/>
             </HashRouter>
         );
     }

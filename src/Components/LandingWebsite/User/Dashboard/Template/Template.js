@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import NavF1 from '../../../../FoodTemplates/FoodTemplate1/NavBar/NavBar';
-import F1Img from './f1.jpg'
+import F1Img from './f1.jpg';
+import notA from './notA.JPG';
+import B1Img from './b1.jpg';
 import classes from './Template.module.css';
 export default class Template extends Component {
 
@@ -70,7 +72,7 @@ export default class Template extends Component {
                 "Content-Type": 'application/json'
             },
             body: JSON.stringify({
-                templateID:id
+                templateID: id
             })
         })
             .then(res => {
@@ -88,7 +90,10 @@ export default class Template extends Component {
             imgSrs = F1Img;
         }
         if (this.state.category === "B1") {
-            imgSrs = F1Img;
+            imgSrs = B1Img;
+        }
+        if (this.state.category === "NA") {
+            imgSrs = notA;
         }
 
         let options;
@@ -99,10 +104,9 @@ export default class Template extends Component {
             </div>
         }
         else if (this.state.user) {
-            console.log("id is:" + this.props.id);
             options = <div className={classes.optionCont}>
-                <p onClick={()=>{window.location.href="/RestaurantWebsite/"}} className={classes.option}>Preview</p>
-                <p onClick={() => { window.location.href = "/F1/"; localStorage.setItem('id', this.props.id) }} className={classes.option}>Edit</p>
+                <p onClick={() => { (this.state.category === "F1" ? window.location.href = "/RestaurantWebsite/" : window.location.href = "/B1/"); localStorage.setItem('id', this.props.id) }} className={classes.option}>Preview</p>
+                <p onClick={() => { (this.state.category === "F1" ? window.location.href = "/F1/" : window.location.href = "/B1/"); localStorage.setItem('id', this.props.id) }} className={classes.option}>Edit</p>
                 <img name="Delete" onClick={this.delTemp} className={classes.delIcon} src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png" />
             </div>
         }

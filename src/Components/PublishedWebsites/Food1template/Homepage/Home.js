@@ -23,7 +23,18 @@ export default class Home extends Component {
         s2Desc: {},
         s3Heading: {},
         s3Desc: {},
-        dishes: []
+        dishes: [],
+        adminName: {},
+        adminMessage: {},
+        footer: {
+            aboutUs: {},
+            phone: {},
+            email: {},
+            phone: {},
+            whatsapp: {},
+            address: {}
+        },
+        flex: {}
     }
 
     async componentDidMount() {
@@ -49,7 +60,11 @@ export default class Home extends Component {
                         s2Desc: resultData.data.s2Desc,
                         s3Heading: resultData.data.s3Heading,
                         s3Desc: resultData.data.s3Desc,
-                        dishes: resultData.data.dishes
+                        dishes: resultData.data.dishes,
+                        adminName: resultData.data.adminName,
+                        adminMessage: resultData.data.adminMessage,
+                        footer: resultData.data.footer,
+                        flex: resultData.data.flex
                     });
                 }
             })
@@ -67,7 +82,7 @@ export default class Home extends Component {
             <div className={classes.rootCont}>
                 <div className={classes.content} style={{ width: "100%" }}>
                     <Intro
-                        storeName={this.state.storeName}                        
+                        storeName={this.state.storeName}
                         introText={this.state.introText}
                     />
                     <ServicesSection
@@ -81,12 +96,18 @@ export default class Home extends Component {
                     />
                     <TopDishes
                         dishes={this.state.dishes}
+                        flex={this.state.flex.flexTopDishes}
                     />
                     <LatestEditions
                         dishes={this.state.dishes}
                     />
-                    <ContactUs />
-                    <Footer />
+                    <ContactUs
+                        adminName={this.state.adminName}
+                        adminMessage={this.state.adminMessage}
+                    />
+                    <Footer
+                        footer={this.state.footer}
+                    />
                 </div>
             </div>
         );

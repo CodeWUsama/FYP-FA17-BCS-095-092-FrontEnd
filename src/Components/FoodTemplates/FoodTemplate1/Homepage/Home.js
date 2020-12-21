@@ -121,7 +121,6 @@ export default class Home extends Component {
             .then(result => {
                 return result.json();
             }).then(resultData => {
-                console.log(resultData);
             })
             .catch(err => {
                 console.log(err);
@@ -290,7 +289,8 @@ export default class Home extends Component {
                 bold: bold,
                 italic: italic,
                 underline: underline,
-                align: align
+                align: align,
+                image:this.state.storeName.image
             }
         });
     }
@@ -415,7 +415,7 @@ export default class Home extends Component {
         });
     }
 
-    changeIntroText = (newName, newSize, newFamily, newColor) => {
+    changeIntroText = (newName, newSize, newFamily, newColor, bold, italic, underline, align) => {
         if (newSize === '') {
             newSize = 0;
         }
@@ -424,12 +424,16 @@ export default class Home extends Component {
                 text: newName,
                 fontSize: parseInt(newSize),
                 fontFamily: newFamily,
-                fontColor: newColor
+                fontColor: newColor,
+                bold: bold,
+                italic: italic,
+                underline: underline,
+                align: align
             }
         });
     }
 
-    changeServicesDescription = (newName, newSize, newFamily, newColor) => {
+    changeServicesDescription = (newName, newSize, newFamily, newColor, bold, italic, underline, align) => {
         if (newSize === '') {
             newSize = 0;
         }
@@ -438,12 +442,16 @@ export default class Home extends Component {
                 text: newName,
                 fontSize: parseInt(newSize),
                 fontFamily: newFamily,
-                fontColor: newColor
+                fontColor: newColor,
+                bold: bold,
+                italic: italic,
+                underline: underline,
+                align: align
             }
         });
     }
 
-    changeS1H = (newName, newSize, newFamily, newColor) => {
+    changeS1H = (newName, newSize, newFamily, newColor, bold, italic, underline, align) => {
         if (newSize === '') {
             newSize = 0;
         }
@@ -452,13 +460,17 @@ export default class Home extends Component {
                 text: newName,
                 fontSize: parseInt(newSize),
                 fontFamily: newFamily,
-                fontColor: newColor
+                fontColor: newColor,
+                bold: bold,
+                italic: italic,
+                underline: underline,
+                align: align
             }
         });
     }
 
 
-    changeS1D = (newName, newSize, newFamily, newColor) => {
+    changeS1D = (newName, newSize, newFamily, newColor, bold, italic, underline, align) => {
         if (newSize === '') {
             newSize = 0;
         }
@@ -467,12 +479,16 @@ export default class Home extends Component {
                 text: newName,
                 fontSize: parseInt(newSize),
                 fontFamily: newFamily,
-                fontColor: newColor
+                fontColor: newColor,
+                bold: bold,
+                italic: italic,
+                underline: underline,
+                align: align
             }
         });
     }
 
-    changeS2H = (newName, newSize, newFamily, newColor) => {
+    changeS2H = (newName, newSize, newFamily, newColor, bold, italic, underline, align) => {
         if (newSize === '') {
             newSize = 0;
         }
@@ -481,12 +497,16 @@ export default class Home extends Component {
                 text: newName,
                 fontSize: parseInt(newSize),
                 fontFamily: newFamily,
-                fontColor: newColor
+                fontColor: newColor,
+                bold: bold,
+                italic: italic,
+                underline: underline,
+                align: align
             }
         });
     }
 
-    changeS2D = (newName, newSize, newFamily, newColor) => {
+    changeS2D = (newName, newSize, newFamily, newColor, bold, italic, underline, align) => {
         if (newSize === '') {
             newSize = 0;
         }
@@ -495,12 +515,16 @@ export default class Home extends Component {
                 text: newName,
                 fontSize: parseInt(newSize),
                 fontFamily: newFamily,
-                fontColor: newColor
+                fontColor: newColor,
+                bold: bold,
+                italic: italic,
+                underline: underline,
+                align: align
             }
         });
     }
 
-    changeS3H = (newName, newSize, newFamily, newColor) => {
+    changeS3H = (newName, newSize, newFamily, newColor, bold, italic, underline, align) => {
         if (newSize === '') {
             newSize = 0;
         }
@@ -509,12 +533,16 @@ export default class Home extends Component {
                 text: newName,
                 fontSize: parseInt(newSize),
                 fontFamily: newFamily,
-                fontColor: newColor
+                fontColor: newColor,
+                bold: bold,
+                italic: italic,
+                underline: underline,
+                align: align
             }
         });
     }
 
-    changeS3D = (newName, newSize, newFamily, newColor) => {
+    changeS3D = (newName, newSize, newFamily, newColor, bold, italic, underline, align) => {
         if (newSize === '') {
             newSize = 0;
         }
@@ -523,7 +551,11 @@ export default class Home extends Component {
                 text: newName,
                 fontSize: parseInt(newSize),
                 fontFamily: newFamily,
-                fontColor: newColor
+                fontColor: newColor,
+                bold: bold,
+                italic: italic,
+                underline: underline,
+                align: align
             }
         });
     }
@@ -586,35 +618,35 @@ export default class Home extends Component {
         }
 
         if (this.state.introTextEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ introTextEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo) => this.changeIntroText(newNam, newSiz, newFamil, newColo)} data={this.state.introText} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ introTextEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeIntroText(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.introText} />
         }
 
         if (this.state.servicesDescEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ servicesDescEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo) => this.changeServicesDescription(newNam, newSiz, newFamil, newColo)} data={this.state.servicesDescription} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ servicesDescEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeServicesDescription(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.servicesDescription} />
         }
 
         if (this.state.s1HEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ s1HEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo) => this.changeS1H(newNam, newSiz, newFamil, newColo)} data={this.state.s1Heading} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ s1HEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeS1H(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.s1Heading} />
         }
 
         if (this.state.s1DEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ s1DEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo) => this.changeS1D(newNam, newSiz, newFamil, newColo)} data={this.state.s1Desc} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ s1DEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeS1D(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.s1Desc} />
         }
 
         if (this.state.s2HEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ s2HEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo) => this.changeS2H(newNam, newSiz, newFamil, newColo)} data={this.state.s2Heading} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ s2HEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeS2H(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.s2Heading} />
         }
 
         if (this.state.s2DEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ s2DEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo) => this.changeS2D(newNam, newSiz, newFamil, newColo)} data={this.state.s2Desc} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ s2DEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeS2D(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.s2Desc} />
         }
 
         if (this.state.s3HEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ s3HEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo) => this.changeS3H(newNam, newSiz, newFamil, newColo)} data={this.state.s3Heading} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ s3HEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeS3H(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.s3Heading} />
         }
 
         if (this.state.s3DEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ s3DEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo) => this.changeS3D(newNam, newSiz, newFamil, newColo)} data={this.state.s3Desc} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ s3DEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeS3D(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.s3Desc} />
         }
 
         if (this.state.adminNameEditor === true) {
@@ -686,7 +718,7 @@ export default class Home extends Component {
                     />
                     <TopDishes
                         dishes={this.state.dishes}
-                        flex={this.state.flex.flexTopDishes}
+                        flex={this.state.flex}
                         flexHandler={this.flexHandler}
                     />
                     <LatestEditions

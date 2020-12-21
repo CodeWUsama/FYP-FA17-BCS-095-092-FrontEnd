@@ -8,7 +8,7 @@ import Phone from './phone.png';
 import Whatsapp from './whatsapp.png';
 import Location from './pin.png';
 
-export default class Footer extends Component {
+export default class Footer extends Component { 
 
     render() {
         return (

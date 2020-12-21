@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './ContactUs.module.css';
 import profileIcon from './profile.png';
 
-export default class ContactUs extends Component {
+export default class ContactUs extends Component { 
 
     handleSubmit = () => {
         fetch("http://localhost:8080/f1td/postComplaint", {

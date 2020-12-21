@@ -29,7 +29,6 @@ export default class Login extends Component {
             code = res.status;
             return res.json();
         }).then(resData => {
-
             if (code === 200) {
                 localStorage.setItem('token', resData.token);
                 localStorage.setItem('username', username);

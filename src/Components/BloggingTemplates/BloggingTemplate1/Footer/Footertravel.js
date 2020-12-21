@@ -6,7 +6,6 @@ import Insta from './instagram.png';
 import Mail from './email.png';
 import Phone from './phone.png';
 import Whatsapp from './whatsapp.png';
-import Location from './pin.png';
 
 export default class Footertravel extends Component {
     render() {

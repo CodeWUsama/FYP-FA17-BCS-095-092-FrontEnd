@@ -67,6 +67,8 @@ export default class dashboard extends Component {
     handleLogout = () => {
         localStorage.removeItem('username');
         localStorage.removeItem('token');
+        localStorage.removeItem('userToken');
+        localStorage.removeItem('id');
         window.location.href = "/"
     }
 
@@ -77,6 +79,9 @@ export default class dashboard extends Component {
             renderSTemps = this.state.savedTemps.map(temp => {
                 if (temp.category === "F1") {
                     return <Template id={temp._id} key={temp._id} name="Fast Food" category="F1" admin={false} user={true} view={false} />;
+                }
+                if (temp.category === "B1") {
+                    return <Template id={temp._id} key={temp._id} name="Blogging" category="B1" admin={false} user={true} view={false} />;
                 }
             })
         }

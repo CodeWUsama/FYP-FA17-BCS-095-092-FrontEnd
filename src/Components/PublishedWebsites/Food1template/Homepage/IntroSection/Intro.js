@@ -11,7 +11,7 @@ export default class Intro extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        fetch("http://localhost:8080/f1td/getIntroImage", {
+        fetch("http://localhost:8080/f1td/getIntroImage?id=" + localStorage.getItem("id"), {
             method: "GET",
             headers: {
                 Authorization: "Bearer " + localStorage.getItem('token'),
