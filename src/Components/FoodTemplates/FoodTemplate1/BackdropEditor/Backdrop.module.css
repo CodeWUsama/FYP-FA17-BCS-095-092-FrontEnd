@@ -18,7 +18,8 @@
     z-index: 1300;
     top:20%;
     bottom: 20%;
-    left:10%
+    left:10%;
+    overflow-y: scroll;
 }
 
 @media(max-width:890px){

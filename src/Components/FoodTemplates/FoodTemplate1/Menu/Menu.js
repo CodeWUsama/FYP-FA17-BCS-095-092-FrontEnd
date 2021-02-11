@@ -140,7 +140,7 @@ export default class menu extends Component {
                     <div className={classes.mainHeadCont}>
                         <div className={classes.topCont}>
                             <p style={{ visibility: "hidden" }} className={classes.mainHead} >!</p>
-                            <p className={classes.mainHead}>Menu</p>
+                            <p className={classes.mainHead}>Menu</p> 
                             <FormControl>
                                 <InputLabel style={{ color: "white" }} htmlFor="select">Columns</InputLabel>
                                 <NativeSelect style={{ color: "red" }} defaultValue={this.state.columns} id="select" onChange={this.triggerChange}>

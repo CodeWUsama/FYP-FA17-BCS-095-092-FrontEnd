@@ -21,7 +21,7 @@ export default class fontFam extends Component {
             //     <option style={{ fontFamily: "Poppins" }} value="Poppins">Poppins</option>
             // </select>
             <FormControl>
-                <InputLabel htmlFor="select">Age</InputLabel>
+                <InputLabel htmlFor="select">Font Family</InputLabel>
                 <NativeSelect id="select" onChange={this.triggerChange}>
                     <option style={{ fontFamily: this.props.fontFam }} value={this.props.fontFam}>{this.props.fontFam}</option>
                     <option style={{ fontFamily: "Monospace" }} value="Monospace">Monospace</option>

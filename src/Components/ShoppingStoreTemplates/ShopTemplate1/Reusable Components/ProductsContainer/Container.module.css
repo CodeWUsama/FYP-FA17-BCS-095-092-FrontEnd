@@ -1,0 +1,16 @@
+.rootCont{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+@media(max-width:600px){
+    .rootCont{
+        flex-direction: column;
+    }
+}

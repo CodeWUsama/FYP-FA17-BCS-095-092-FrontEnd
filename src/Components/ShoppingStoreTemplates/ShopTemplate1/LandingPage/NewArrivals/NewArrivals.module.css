@@ -1,0 +1,46 @@
+.rootCont{
+    height: max-content;
+    margin-bottom: 30px;
+} 
+
+.head{
+    font-size: 35px;
+    font-family: 'Anton', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.headCont{
+    padding-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.para{
+    font-size: 16px;
+    width: 70%;
+    text-align: center;
+}
+
+.btnCont{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 20px;
+    transition: all 0.6s ease 0s;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}

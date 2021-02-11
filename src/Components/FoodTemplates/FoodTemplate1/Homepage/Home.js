@@ -616,7 +616,7 @@ export default class Home extends Component {
         if (this.state.storeNameEditor === true) {
             textEditor = <TextEditor closeHandler={() => { this.setState({ storeNameEditor: false }) }} changeHandler={(newName, newSize, newFamily, newColor, bold, italic, underline, align) => this.changeStoreName(newName, newSize, newFamily, newColor, bold, italic, underline, align)} data={this.state.storeName} />
         }
-
+        
         if (this.state.introTextEditor === true) {
             textEditor = <TextEditor closeHandler={() => { this.setState({ introTextEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeIntroText(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.introText} />
         }

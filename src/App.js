@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter,Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import NavBar from './Components/LandingWebsite/NavBar/NavBar';
 import CreateWeb from './Components/LandingWebsite/User/CreateWebsite/CreateWebsite';
 import UploadImg from './Components/LandingWebsite/uploadimg';
+import Register from './Components/Temp/register';
 
 class App extends Component {
 

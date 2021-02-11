@@ -1,0 +1,70 @@
+.mainCont{
+    padding-top: 200px;
+}
+.rootCont {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 600px;
+} 
+
+.login h1 {
+    margin-bottom: 20px;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.inputField{
+    width: 90%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 630px;
+    border: 2px solid black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.navCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+.aTag:hover{
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
+}
+
+.fPass{
+    color: blue;
+}
+
+.fPass:hover{
+    color:red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.optionCont{
+    width: 90%;
+}
+
+.invoice{
+    width: 90%;
+    line-height: 10px;
+}

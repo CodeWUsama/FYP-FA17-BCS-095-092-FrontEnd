@@ -23,8 +23,8 @@ export default class CreateWeb extends Component {
                     <p className={classes.head}>Shopping and store</p>
                     <hr />
                     <div className={classes.tempsCont}>
-                        <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
-                        <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
+                        <Template name="Fashion Style" category="S1" admin={false} user={false} view={true} />
+                        <Template name="Fashion Style" category="NA" admin={false} user={false} view={true} />
                     </div>
                 </div>
 
