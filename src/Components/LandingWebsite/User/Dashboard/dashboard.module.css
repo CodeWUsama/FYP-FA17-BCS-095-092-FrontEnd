@@ -47,6 +47,11 @@
     cursor: pointer;
 }
 
+.plan{
+    font-size: 20px;
+    font-family: "Poppins";
+}
+
 @media(max-width:600px) {
     .btCont {
         flex-direction: column;

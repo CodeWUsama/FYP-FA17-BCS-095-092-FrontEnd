@@ -8,6 +8,7 @@ export default class dashboard extends Component {
         username: localStorage.getItem("username"),
         savedTemps: [],
         publishedTemps: [],
+        package:""
     }
 
     componentDidMount() {
@@ -21,7 +22,8 @@ export default class dashboard extends Component {
         }).then(resData => {
             this.setState({
                 savedTemps: resData.user.templates,
-                publishedTemps: resData.user.publishedTemps
+                publishedTemps: resData.user.publishedTemps,
+                package: resData.user.package.level
             });
         }).catch(err => {
             console.log(err);
@@ -83,6 +85,9 @@ export default class dashboard extends Component {
                 if (temp.category === "B1") {
                     return <Template id={temp._id} key={temp._id} name="Blogging" category="B1" admin={false} user={true} view={false} />;
                 }
+                if (temp.category === "S1") {
+                    return <Template id={temp._id} key={temp._id} name="Shopping" category="S1" admin={false} user={true} view={false} />;
+                }
             })
         }
 
@@ -99,10 +104,13 @@ export default class dashboard extends Component {
             <div>
                 <div>
                     <p className={classes.welcome}>Welcome {this.state.username} On Studio! </p>
+                    <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+                        <p className={classes.plan}>Current Package: {this.state.package}</p>
+                    </div>
                     <div className={classes.btCont}>
                         <button onClick={() => { window.location.href = '/create' }} className={classes.btt}>Create New Website</button>
                         <button onClick={() => { window.location.href = "/editProfile" }} className={classes.btt}>Edit Profile</button>
-                        <button className={classes.btt}>Billing</button>
+                        <button className={classes.btt} onClick={() => { window.location.href = "/billing" }}>Billing</button>
                         <button className={classes.btt} onClick={this.handleLogout}>Logout</button>
                     </div>
 
@@ -114,7 +122,7 @@ export default class dashboard extends Component {
                         </div>
                     </div>
                     <div className={classes.sectionTemp}>
-                        <p className={classes.head}>Publish Websites</p>
+                        <p className={classes.head}>Published Websites</p>
                         <hr />
                         <div className={classes.tempsCont}>
                             {renderPTemps}

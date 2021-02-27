@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './TextEditor.module.css';
 import ColorDropdown from './colordropdown';
 import FontFamDropdown from './fontFam'
-import SideEditor from '../../FoodTemplates/FoodTemplate1/SideEditor/SideEditor';
+import SideEditor from '../../BloggingTemplates/BlogTemplate1/ReusableComponents/SideEditor/SideEditor';
 import Backdrop from '../../FoodTemplates/FoodTemplate1/BackdropEditor/Backdrop';
 import TextField from "@material-ui/core/TextField";
 

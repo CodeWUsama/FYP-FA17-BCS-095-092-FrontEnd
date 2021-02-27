@@ -1,0 +1,8 @@
+.rootCont{
+    padding-top: 180px;
+}
+
+.statusCont{
+    display: flex;
+    flex-direction: column;
+}

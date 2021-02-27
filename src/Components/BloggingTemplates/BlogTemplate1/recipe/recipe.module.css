@@ -1,0 +1,39 @@
+.textheading{
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.innerlayer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+}
+.recipe{
+    width: 30%;
+}
+@media(max-width:900px){
+    .inner{
+        width: 90%;
+    }
+    .recipe{
+        width:40%;
+    }
+}
+@media(max-width:800px){
+    .inner{
+        flex-direction: column;
+        width: 50%;
+    }
+    .recipe{
+        width:100%;
+    }
+}

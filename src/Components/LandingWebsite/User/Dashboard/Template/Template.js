@@ -5,6 +5,14 @@ import F1Img from './f1.jpg';
 import notA from './notA.JPG';
 import B1Img from './b1.jpg';
 import classes from './Template.module.css';
+import S1Img from "./s1.JPG";
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import PreviewIcon from '@material-ui/icons/Visibility';
+import IconButton from '@material-ui/core/IconButton';
+import PublishIcon from '@material-ui/icons/Publish';
+import Tooltip from '@material-ui/core/Tooltip';
+
 export default class Template extends Component {
 
     state = {
@@ -94,7 +102,8 @@ export default class Template extends Component {
                 "Content-Type": 'application/json'
             },
             body: JSON.stringify({
-                templateID: id
+                templateID: id,
+                category: this.state.category
             })
         })
             .then(res => {
@@ -102,6 +111,36 @@ export default class Template extends Component {
                     window.location.reload();
                 }
             })
+    }
+
+    handlePreview = () => {
+        localStorage.setItem('id', this.props.id);
+        if (this.state.category === "F1") {
+            window.location.href = "/RestaurantWebsite/";
+        }
+        else if (this.state.category === "B1") {
+            window.location.href = "/B1/";
+        }
+        else if (this.state.category === "S1") {
+            window.location.href = "/S1/";
+        }
+    }
+
+    handleEdit = () => {
+        localStorage.setItem('id', this.props.id);
+        if (this.state.category === "F1") {
+            window.location.href = "/F1/";
+        }
+        else if (this.state.category === "B1") {
+            window.location.href = "/B1/";
+        }
+        else if (this.state.category === "S1") {
+            window.location.href = "/S1/";
+        }
+    }
+
+    handlePublish = () => {
+        
     }
 
 
@@ -115,7 +154,7 @@ export default class Template extends Component {
             imgSrs = B1Img;
         }
         if (this.state.category === "S1") {
-            imgSrs = F1Img;
+            imgSrs = S1Img;
         }
         if (this.state.category === "NA") {
             imgSrs = notA;
@@ -130,9 +169,34 @@ export default class Template extends Component {
         }
         else if (this.state.user) {
             options = <div className={classes.optionCont}>
-                <p onClick={() => { (this.state.category === "F1" ? window.location.href = "/RestaurantWebsite/" : window.location.href = "/B1/"); localStorage.setItem('id', this.props.id) }} className={classes.option}>Preview</p>
-                <p onClick={() => { (this.state.category === "F1" ? window.location.href = "/F1/" : window.location.href = "/B1/"); localStorage.setItem('id', this.props.id) }} className={classes.option}>Edit</p>
-                <img name="Delete" onClick={this.delTemp} className={classes.delIcon} src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png" />
+                {/* <p onClick={this.handlePreview} className={classes.option}>Preview</p> */}
+                {/* <p onClick={this.handleEdit} className={classes.option}>Edit</p> */}
+
+                <Tooltip title="Preview">
+                    <IconButton onClick={this.handlePreview} aria-label="preview">
+                        <PreviewIcon />
+                    </IconButton>
+                </Tooltip>
+
+                <Tooltip title="Edit">
+                    <IconButton onClick={this.handleEdit} aria-label="edit">
+                        <EditIcon />
+                    </IconButton>
+                </Tooltip>
+
+                <Tooltip title="Publish">
+                    <IconButton onClick={this.handleEdit} aria-label="publish">
+                        <PublishIcon />
+                    </IconButton>
+                </Tooltip>
+
+                <Tooltip title="Delete">
+                    <IconButton onClick={this.delTemp} aria-label="delete">
+                        <DeleteIcon />
+                    </IconButton>
+                </Tooltip>
+
+                {/* <img name="Delete" onClick={this.delTemp} className={classes.delIcon} src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png" /> */}
             </div>
         }
         else if (this.state.view) {

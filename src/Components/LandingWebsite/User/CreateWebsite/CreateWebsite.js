@@ -15,7 +15,6 @@ export default class CreateWeb extends Component {
                     <hr />
                     <div className={classes.tempsCont}>
                         <Template name="Desi Restaurant" category="F1" admin={false} user={false} view={true} />
-                        <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
                     </div>
                 </div>
 
@@ -24,7 +23,6 @@ export default class CreateWeb extends Component {
                     <hr />
                     <div className={classes.tempsCont}>
                         <Template name="Fashion Style" category="S1" admin={false} user={false} view={true} />
-                        <Template name="Fashion Style" category="NA" admin={false} user={false} view={true} />
                     </div>
                 </div>
 
@@ -33,7 +31,6 @@ export default class CreateWeb extends Component {
                     <hr />
                     <div className={classes.tempsCont}>
                         <Template name="Blogging on Tips" category="B1" admin={false} user={false} view={true} />
-                        <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
                     </div>
                 </div>
 
@@ -42,7 +39,6 @@ export default class CreateWeb extends Component {
                     <hr />
                     <div className={classes.tempsCont}>
                         <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
-                        <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
                     </div>
                 </div>
 
@@ -50,7 +46,6 @@ export default class CreateWeb extends Component {
                     <p className={classes.head}>Doctor Portfolio</p>
                     <hr />
                     <div className={classes.tempsCont}>
-                        <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
                         <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
                     </div>
                 </div>

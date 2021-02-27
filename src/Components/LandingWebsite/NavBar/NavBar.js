@@ -14,8 +14,11 @@ import VerifyUser from '../User/VerifyUser/VerifyUser';
 import ForgotPass from './../User/ForgotPassword/ForgotPass';
 import EditProfile from '../User/EditProfile/EditProfile';
 import RestaurantNavBar from "./../../PublishedWebsites/Food1template/NavBar/NavBar";
-import NavB1 from "./../../BloggingTemplates/BloggingTemplate1/NavBar/NavBar";
+import NavB1 from "../../BloggingTemplates/BlogTemplate1/Main/main";
 import NavS1 from "./../../ShoppingStoreTemplates/ShopTemplate1/Navbar/NavBar";
+import Billing from '../User/Billing/billing';
+import Checkout from '../User/Checkout/Checkout';
+import NavS1P from "./../../PublishedWebsites/ShopTemplate1/Navbar/NavBar";
 
 export default class NavBar extends Component {
 
@@ -92,11 +95,14 @@ export default class NavBar extends Component {
                 <Route exact path="/Signup" component={Signup} />
                 <Route exact path="/verify" component={VerifyUser} />
                 <Route exact path="/forgot" component={ForgotPass} />
+                <Route exact path="/billing" component={Billing} />
+                <Route exact path="/checkout" component={Checkout} />
                 <Route exact path="/editProfile" component={EditProfile} />
                 <Route exact path='/F1/' component={NavF1} />
                 <Route exact path='/RestaurantWebsite/' component={RestaurantNavBar} />
                 <Route exact path="/B1/" component={NavB1} />
-                <Route exact path="/S1/" component={NavS1}/>
+                <Route exact path="/S1/" component={NavS1} />
+                <Route exact path="/ShoppingWebsite/" component={NavS1P}/>
             </div>
         );
     }

@@ -1,0 +1,28 @@
+.rootCont{
+    display: flex;
+}
+.backdrop{
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    left:0;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.editorCont{
+    width: 80%;
+    height: 70%;
+    background-color: white;
+    position:fixed;
+    z-index: 1300;
+    top:20%;
+    bottom: 20%;
+    left:10%
+}
+
+@media(max-width:890px){
+    .editorCont{
+        height: 70%;
+    }
+}

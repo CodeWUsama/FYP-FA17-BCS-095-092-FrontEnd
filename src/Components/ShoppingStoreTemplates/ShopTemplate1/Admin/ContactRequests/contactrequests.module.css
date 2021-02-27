@@ -1,0 +1,9 @@
+.rootCont{
+    padding-top: 180px;
+}
+
+.actionsCont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

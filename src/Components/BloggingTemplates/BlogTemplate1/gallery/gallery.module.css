@@ -1,0 +1,22 @@
+.textheading{
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerlayer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+}
+.imagelayer{
+    width: 20.5%;
+    padding: 1%;
+}
