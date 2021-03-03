@@ -19,6 +19,8 @@ import NavS1 from "./../../ShoppingStoreTemplates/ShopTemplate1/Navbar/NavBar";
 import Billing from '../User/Billing/billing';
 import Checkout from '../User/Checkout/Checkout';
 import NavS1P from "./../../PublishedWebsites/ShopTemplate1/Navbar/NavBar";
+import Packages from "./../Packages/packages";
+import NavT1 from "./../../TeacherTemplates/TeacherTemplate1/main";
 
 export default class NavBar extends Component {
 
@@ -88,7 +90,7 @@ export default class NavBar extends Component {
                 </div>
 
                 <Route exact path="/" component={Home} />
-                <Route exact path="/packages" component={Home} />
+                <Route exact path="/packages" component={Packages} />
                 <Route exact path="/contact" component={Home} />
                 <Route exact path="/account" component={Dashboard} />
                 <Route exact path="/login" component={Login} />
@@ -102,6 +104,7 @@ export default class NavBar extends Component {
                 <Route exact path='/RestaurantWebsite/' component={RestaurantNavBar} />
                 <Route exact path="/B1/" component={NavB1} />
                 <Route exact path="/S1/" component={NavS1} />
+                <Route exact path="/T1/" component={NavT1} />
                 <Route exact path="/ShoppingWebsite/" component={NavS1P}/>
             </div>
         );

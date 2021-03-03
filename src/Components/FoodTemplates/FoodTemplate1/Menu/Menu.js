@@ -15,7 +15,7 @@ export default class menu extends Component {
         showAdd: false,
         dishes: [],
         imgs: [],
-        columns: "33%",
+        columns: "",
         flex: {},
         footer: {
             aboutUs: {},
@@ -140,14 +140,17 @@ export default class menu extends Component {
                     <div className={classes.mainHeadCont}>
                         <div className={classes.topCont}>
                             <p style={{ visibility: "hidden" }} className={classes.mainHead} >!</p>
-                            <p className={classes.mainHead}>Menu</p> 
+                            <p className={classes.mainHead}>Menu</p>
                             <FormControl>
                                 <InputLabel style={{ color: "white" }} htmlFor="select">Columns</InputLabel>
-                                <NativeSelect style={{ color: "red" }} defaultValue={this.state.columns} id="select" onChange={this.triggerChange}>
-                                    <option value="100%">1</option>
-                                    <option value="50%">2</option>
-                                    <option value="33%">3</option>
-                                </NativeSelect>
+                                {this.state.columns != "" ?
+                                    <NativeSelect style={{ color: "red" }} defaultValue={this.state.columns} id="select" onChange={this.triggerChange}>
+                                        <option value="100%">1</option>
+                                        <option value="50%">2</option>
+                                        <option value="27%">3</option>
+                                    </NativeSelect> :
+                                    null
+                                }
                             </FormControl>
                         </div>
                         <p className={classes.mainText}>In this section we are going to present you with our delicious dishes in the menu.</p>
@@ -157,6 +160,7 @@ export default class menu extends Component {
                         {displayDishes}
                     </div>
                 </div>
+                <div style={{width:"100%", height:30}}></div>
                 <Footer
                     footer={this.state.footer}
                     aboutUsHandler={() => { alert("Please Try Changing from Home instead") }}

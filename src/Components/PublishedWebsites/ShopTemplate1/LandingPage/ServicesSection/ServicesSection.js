@@ -20,7 +20,7 @@ export default class ServicesSection extends Component {
                             fontStyle: this.props.servicesDescription.italic ? "italic" : "normal",
                             textAlign: this.props.servicesDescription.align
                         }}
-                        onClick={this.props.clickHandler}
+                        
                     >
                         {this.props.servicesDescription.text}
                     </p>
@@ -33,7 +33,7 @@ export default class ServicesSection extends Component {
                             </div>
                         </div>
                         <p
-                            onClick={this.props.s1HClickHandler}
+                            
                             className={classes.serviceHeading}
                             style={{
                                 fontSize: this.props.s1H.fontSize,
@@ -48,7 +48,7 @@ export default class ServicesSection extends Component {
                             {this.props.s1H.text}
                         </p>
                         <p
-                            onClick={this.props.s1DClickHandler}
+                            
                             className={classes.serviceDesc}
                             style={{
                                 fontSize: this.props.s1D.fontSize,
@@ -71,7 +71,7 @@ export default class ServicesSection extends Component {
                             </div>
                         </div>
                         <p
-                            onClick={this.props.s2HClickHandler}
+                            
                             className={classes.serviceHeading}
                             style={{
                                 fontSize: this.props.s2H.fontSize,
@@ -86,7 +86,7 @@ export default class ServicesSection extends Component {
                             {this.props.s2H.text}
                         </p>
                         <p
-                            onClick={this.props.s2DClickHandler}
+                            
                             className={classes.serviceDesc}
                             style={{
                                 fontSize: this.props.s2D.fontSize,
@@ -108,7 +108,7 @@ export default class ServicesSection extends Component {
                             </div>
                         </div>
                         <p
-                            onClick={this.props.s3HClickHandler}
+                            
                             className={classes.serviceHeading}
                             style={{
                                 fontSize: this.props.s3H.fontSize,
@@ -123,7 +123,7 @@ export default class ServicesSection extends Component {
                             {this.props.s3H.text}
                         </p>
                         <p
-                            onClick={this.props.s3DClickHandler}
+                            
                             className={classes.serviceDesc}
                             style={{
                                 fontSize: this.props.s3D.fontSize,

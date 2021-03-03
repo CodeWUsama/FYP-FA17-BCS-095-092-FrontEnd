@@ -1,0 +1,35 @@
+.rootCont{
+    padding-top: 180px;
+}
+.btCont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    align-items: center;
+}
+.btt {
+    margin-top: 30px;
+    padding: 15px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.685);
+    font-size: 20px;
+    border: none;
+    border-radius: 2%;
+}
+
+.btt:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.showOrders{
+    padding: 20px;
+}
+
+@media(max-width:800px) {
+    .btCont {
+        flex-direction: column;
+    }
+}

@@ -8,14 +8,10 @@ import ContactUs from './../ContactUs/ContactUs';
 import Login from "./../User/Login/Login";
 import Signup from "./../User/Signup/Signup";
 import Dashbaord from "./../User/Dashboard/Dashboard";
-import AdminDashboard from "./../Admin/Dashboard/Dashboard";
 import EditProfile from "./../User/EditProfile/EditProfile";
 import Cart from "./../Cart/cart";
 import Order from '../User/OrderProduct/Order';
-import PaymentRequests from "./../Admin/PaymentRequests/PaymentRequests";
-import ContactRequests from '../Admin/ContactRequests/contactrequests';
-import ManageOrders from '../Admin/ManageOrders/manageorders';
-import PaymentDetails from '../Admin/PaymentDetails/PaymentDetails';
+
 
 export default class NavBar extends Component {
 
@@ -63,13 +59,11 @@ export default class NavBar extends Component {
                                 <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/">Home</NavLink>
                                 <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/products">Products</NavLink>
                                 <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/contact">Contact</NavLink>
-                                <NavLink activeClassName={classes.active} exact className={classes.navLink} to={localStorage.getItem("userToken") ? localStorage.getItem("a") ? "/admin" : "/dashboard" : "/account"}>Account</NavLink>
+                                <NavLink activeClassName={classes.active} exact className={classes.navLink} to={localStorage.getItem("userToken") ? "/dashboard" : "/account"}>Account</NavLink>
                                 {localStorage.getItem("userToken")
                                     ?
-                                    localStorage.getItem("a") != "true" ?
-                                        <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/cart">Cart</NavLink>
-                                        :
-                                        null
+
+                                    <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/cart">Cart</NavLink>
                                     :
                                     null
                                 }
@@ -95,15 +89,14 @@ export default class NavBar extends Component {
                                 <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/contact">Contact</NavLink>
                             </div>
                             <div className={classes.liNav}>
-                                <NavLink activeClassName={classes.active} exact className={classes.navLink} to={localStorage.getItem("userToken") ? localStorage.getItem("a") ? "/admin" : "/dashboard" : "/account"}>Account</NavLink>
+                                <NavLink activeClassName={classes.active} exact className={classes.navLink} to={localStorage.getItem("userToken") ? "/dashboard" : "/account"}>Account</NavLink>
                             </div>
                             {localStorage.getItem("userToken") ?
-                                localStorage.getItem("a") != "true" ?
-                                    <div className={classes.liNav}>
-                                        <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/cart"> Cart</NavLink>
-                                    </div>
-                                    :
-                                    null
+
+                                <div className={classes.liNav}>
+                                    <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/cart"> Cart</NavLink>
+                                </div>
+
                                 : null
                             }
                         </div>
@@ -119,11 +112,6 @@ export default class NavBar extends Component {
                 <Route exact path="/editProfile" component={EditProfile} />
                 <Route exact path="/cart" component={Cart} />
                 <Route exact path="/checkout" component={Order} />
-                <Route exact path="/admin" component={AdminDashboard} />
-                <Route exact path="/admin/paymentrequests" component={PaymentRequests} />
-                <Route exact path="/admin/contactrequests" component={ContactRequests} />
-                <Route exact path="/admin/manageorders" component={ManageOrders} />
-                <Route exact path="/admin/paymentdetails" component={PaymentDetails} />
             </HashRouter>
         );
     }

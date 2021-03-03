@@ -141,7 +141,8 @@ const CheckoutForm = (props) => {
                     products:props.products,
                     stripeToken: result.token.id,
                     email: billingDetails.email,
-                    total:props.total
+                    total: props.total,
+                    address:props.address
                 })
             })
                 .then(res => {
@@ -249,7 +250,7 @@ const App = (props) => {
     return (
         <div className="AppWrapper">
             <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
-                <CheckoutForm total={props.total} products={props.products} />
+                <CheckoutForm total={props.total} products={props.products} address={props.address} />
             </Elements>
         </div>
     );

@@ -1,0 +1,11 @@
+.cal{
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 10%; */
+    display: flex;
+}
+.top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

@@ -3,6 +3,7 @@ import classes from './EditProfile.module.css';
 import TextField from '@material-ui/core/TextField';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Error from "./../../Reusable Components/Error/error";
+import Footer from '../../Footer copy/Footer';
 
 export default class EditProfile extends Component {
     state = {
@@ -181,6 +182,7 @@ export default class EditProfile extends Component {
                         </div>
                     </form>
                 </div>
+                <Footer/>
             </div>
 
         )

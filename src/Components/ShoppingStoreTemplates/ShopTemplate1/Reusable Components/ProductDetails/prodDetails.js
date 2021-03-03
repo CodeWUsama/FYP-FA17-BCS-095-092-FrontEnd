@@ -24,7 +24,7 @@ const ProductDetail = (props) => {
                 </div>
             </div>
             <div className={classes.btnCont}>
-                <button className={classes.btn}>Add to Cart</button>
+                <button onClick={()=>{alert("Only Available in view Mode")}} className={classes.btn}>Add to Cart</button>
             </div>
         </div>
     );

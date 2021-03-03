@@ -7,6 +7,11 @@ import { Route,HashRouter } from 'react-router-dom';
 import Home from './../Homepage/Home';
 import Menu from "./../Menu/Menu"
 import ContactUs from '../ContactUs/ContactUs';
+import AdminDashboard from "./../Admin/Dashboard/Dashboard";
+import ContactRequest from "./../Admin/ContactRequests/contactrequests";
+import PaymentRequest from "./../Admin/PaymentRequests/PaymentRequests";
+import PaymentDetails from "./../Admin/PaymentDetails/PaymentDetails";
+import ManageOrders from "./../Admin/ManageOrders/manageorders"
 
 export default class NavBar extends Component {
 
@@ -45,13 +50,13 @@ export default class NavBar extends Component {
                                 <NavItem navText="Home" navHref="/" />
                                 <NavItem navText="Menu" navHref="/menu" />
                                 <NavItem navText="Contact" navHref="/contact" />
-                                <NavItem navText="Account" navHref="/account" />
+                                <NavItem navText="Admin" navHref="/Admin" />
                             </ul>
                         </div>
 
                         <div className={classes.loginLinkCont}>
                             <ul className={classes.navList}>
-                                <NavItem navText="Account" navHref="/account" />
+                                <NavItem navText="Admin" navHref="/Admin" />
                             </ul>
                         </div>
                     </div>
@@ -61,12 +66,17 @@ export default class NavBar extends Component {
                             <NavItemPhone navText="Home" navHref="/" />
                             <NavItemPhone navText="Menu" navHref="/menu" />
                             <NavItemPhone navText="Contact" navHref="/contact" />
-                            <NavItemPhone navText="Account" navHref="/account" />
+                            <NavItemPhone navText="Admin" navHref="/Admin" />
                         </ul>
                     </div>
                     <Route exact path="/" component={() => <Home id={localStorage.getItem("id")} />} />
                     <Route exact path="/menu" component={Menu} />
                     <Route exact path="/contact" component={ContactUs} />
+                    <Route exact path="/admin" component={AdminDashboard} />
+                    <Route exact path="/admin/contactrequests" component={ContactRequest} />
+                    <Route exact path="/admin/paymentrequests" component={PaymentRequest} />
+                    <Route exact path="/admin/paymentdetails" component={PaymentDetails} />
+                    <Route exact path="/admin/manageorders" component={ManageOrders} />
                 </div>
             </HashRouter>
         );

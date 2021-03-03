@@ -6,6 +6,7 @@ const ManageOrders = () => {
 
     const [orders, setOrders] = useState([]);
     const [names, setNames] = useState([]);
+    const [newStatus, setNewStatus] = useState("");
 
     useEffect(() => {
         async function fetchData() {
@@ -41,10 +42,11 @@ const ManageOrders = () => {
                 <td>{names[i]}</td>
                 <td>{order.total}</td>
                 <td>{order.method}</td>
+                <td>{order.address}</td>
                 <td>
                     <div className={classes.statusCont}>
                         {order.status}
-                        <TextField id="newStatus" label="Change Status" style={{ margin: "20px 0px" }} />
+                        <TextField onChange={(e)=>setNewStatus(e.target.value)} id="newStatus" label="Change Status" style={{ margin: "20px 0px" }} />
                         <button onClick={() => handleChange(order)} type="button" className="btn btn-success">Change</button>
                     </div>
                 </td>
@@ -62,7 +64,7 @@ const ManageOrders = () => {
             body: JSON.stringify({
                 id: localStorage.getItem("id"),
                 orderId: order._id,
-                newStatus:document.getElementById("newStatus").value
+                newStatus:newStatus
             })
         })
             .then(result => {
@@ -86,6 +88,7 @@ const ManageOrders = () => {
                             <th>Product</th>
                             <th>Price</th>
                             <th>Method</th>
+                            <th>Address</th>
                             <th>Status</th>
                         </tr>
                     </thead>

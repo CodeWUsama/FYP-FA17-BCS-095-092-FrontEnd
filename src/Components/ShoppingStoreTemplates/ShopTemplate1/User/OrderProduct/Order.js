@@ -14,7 +14,8 @@ export default class Order extends Component {
         total: 0,
         confirm: false,
         products: localStorage.getItem("products"),
-        method: "COD"
+        method: "COD",
+        address:""
     }
 
     componentDidMount() {
@@ -34,13 +35,13 @@ export default class Order extends Component {
     handleChange = (event) => {
         this.setState({ method: event.target.value });
     }
-
+ 
     render() {
         return (
             <div className={classes.mainCont}>
                 {this.state.confirm ?
                     <div>
-                        <Checkout products={this.state.products} total={this.state.total} />
+                        <Checkout products={this.state.products} total={this.state.total} address={this.state.address} />
                     </div>
                     :
                     <div className={classes.rootCont}>
@@ -48,7 +49,7 @@ export default class Order extends Component {
                             <h1>Order Form</h1>
                             <form className={classes.form} method="POST" onSubmit={this.handleSubmit}>
 
-                                <TextField onFocus={() => { this.setState({ errorStatus: false }) }} id="address" multiline rowsMax={5} rows={3} type="text" className={classes.inputField} label="Complete Address" required={true}></TextField>
+                            <TextField onFocus={() => { this.setState({ errorStatus: false }) }} id="address" onChange={(e) => this.setState({ address: e.target.value })} multiline rowsMax={5} rows={3} type="text" className={classes.inputField} label="Complete Address" required={true}></TextField>
 
                                 <div className={classes.invoice}>
                                     <label style={{ marginBottom: "20px" }}>Invoice:</label>

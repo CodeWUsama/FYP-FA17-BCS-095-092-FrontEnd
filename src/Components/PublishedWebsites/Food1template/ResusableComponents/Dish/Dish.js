@@ -17,7 +17,7 @@ export default class Dish extends Component {
             window.location.href = "/RestaurantWebsite/#orderDish/?id=" + this.props.dishId;
         }
         else {
-            window.location.href="/RestaurantWebsite/#account"
+            window.location.href = "/RestaurantWebsite/#account"
         }
     }
 
@@ -38,13 +38,15 @@ export default class Dish extends Component {
             </div>
             : null;
         return (
-            <div className={classes.rootCont} style={{flexBasis:this.props.flexBasis}}>
-                <div className={classes.dishHeadCont}>
-                    <p className={classes.dishHead}>{this.props.dishName}</p>
-                </div>
-                <div onMouseEnter={this.toggleDetails} onMouseLeave={this.toggleDetails} style={{ backgroundImage: this.props.backgroundImg }} className={classes.dishCont}>
-                    {layer}
-                    {content}
+            <div className={classes.rootCont} style={{ flexBasis: this.props.flexBasis }}>
+                <div style={{width:300}}>
+                    <div className={classes.dishHeadCont}>
+                        <p className={classes.dishHead}>{this.props.dishName}</p>
+                    </div>
+                    <div onMouseEnter={this.toggleDetails} onMouseLeave={this.toggleDetails} style={{ backgroundImage: this.props.backgroundImg }} className={classes.dishCont}>
+                        {layer}
+                        {content}
+                    </div>
                 </div>
             </div>
         );

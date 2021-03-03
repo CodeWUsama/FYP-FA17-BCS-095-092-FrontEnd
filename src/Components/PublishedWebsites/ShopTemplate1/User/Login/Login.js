@@ -3,6 +3,7 @@ import classes from './Login.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Error from "./../../Reusable Components/Error/error";
 import TextField from "@material-ui/core/TextField";
+import Footer from '../../Footer copy/Footer';
 
 export default class Login extends Component {
     
@@ -32,11 +33,10 @@ export default class Login extends Component {
             if (code === 200) {
                 localStorage.setItem('userToken', resData.userToken);
                 if (resData.admin) {
-                    window.location.href = "/s1/#/admin";
-                    localStorage.setItem("a", "true");
+                    this.setState({ errorStatus: true });
                 }
                 else {
-                    window.location.href = "/s1/#/dashboard";
+                    window.location.href = "/ShoppingWebsite/#/dashboard";
                 }
                 
             }
@@ -67,8 +67,9 @@ export default class Login extends Component {
 
                 <div className={classes.navCont}>
                     <p className={classes.text}>Dont have an account?</p>
-                    <a className={classes.aTag} href="/S1/#/signup">Signup Now!</a>
+                    <a className={classes.aTag} href="/ShoppingWebsite/#/signup">Signup Now!</a>
                 </div>
+                <Footer/>
             </div>
         );
     }

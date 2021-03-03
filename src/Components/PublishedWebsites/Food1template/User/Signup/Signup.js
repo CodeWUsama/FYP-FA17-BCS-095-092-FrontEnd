@@ -101,6 +101,7 @@ export default class Signup extends Component {
                     <p className={classes.text}>Already have an account?</p>
                     <a className={classes.aTag} href="/RestaurantWebsite/#account">Login Now!</a>
                 </div>
+                <Footer></Footer>
             </div>
         );
     }

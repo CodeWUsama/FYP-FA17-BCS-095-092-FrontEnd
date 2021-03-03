@@ -73,7 +73,7 @@ const ProductTemplate = (props) => {
                 :
                 <div className={classes.btnCont}>
                     <button onClick={() => setBackdrop(true)} className={classes.btn}>View</button>
-                    {localStorage.getItem("userToken") && localStorage.getItem("a") != "true" ?
+                    {localStorage.getItem("userToken") ?
                         <button className={classes.btn} onClick={(event) => cartHandler(event)}>Cart</button>
                         :
                         null
@@ -83,7 +83,7 @@ const ProductTemplate = (props) => {
 
             {success ?
                 <div className="alert alert-success" role="alert">
-                    Added to Cart. <a href="/S1/#/cart">View Cart</a>
+                    Added to Cart. <a href="/ShoppingWebsite/#/cart">View Cart</a>
                 </div>
                 :
                 null

@@ -21,20 +21,24 @@ export default class Dish extends Component {
                 <div className={classes.dishTextCont}>
                     <p className={classes.dishText}>{this.props.desc}</p>
                     <div className={classes.buttonCont}>
-                        <button onClick={()=>{alert("Only available in view mode")}} className={classes.orderButton}>Order Now</button>
+                        <button onClick={() => { alert("Only available in view mode") }} className={classes.orderButton}>Order Now</button>
                     </div>
                 </div>
             </div>
             : null;
         return (
-            <div className={classes.rootCont} style={{flexBasis:this.props.flexBasis}}>
-                <div className={classes.dishHeadCont}>
-                    <p className={classes.dishHead}>{this.props.dishName}</p>
+            <div className={classes.rootCont} style={{ flexBasis: this.props.flexBasis }}>
+                
+                <div style={{ width:300}}>
+                    <div className={classes.dishHeadCont}>
+                        <p className={classes.dishHead}>{this.props.dishName}</p>
+                    </div>
+                    <div onMouseEnter={this.toggleDetails} onClick={this.props.clickHandler} onMouseLeave={this.toggleDetails} style={{ backgroundImage: this.props.backgroundImg }} className={classes.dishCont}>
+                        {layer}
+                        {content}
+                    </div>
                 </div>
-                <div onMouseEnter={this.toggleDetails} onClick={this.props.clickHandler} onMouseLeave={this.toggleDetails} style={{ backgroundImage: this.props.backgroundImg }} className={classes.dishCont}>
-                    {layer}
-                    {content}
-                </div>
+
             </div>
         );
     }

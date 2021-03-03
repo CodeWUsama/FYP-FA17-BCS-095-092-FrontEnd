@@ -4,7 +4,6 @@ import Dish from '../../ResusableComponents/Dish/Dish';
 import AddDish from '../../ResusableComponents/AddDish/AddDish';
 import Editor from '../../BackdropEditor/Editor';
 import AddDishEditor from '../../ResusableComponents/AddDish/AddDishEditor/AddDishEditor';
-import { FormControl, InputLabel, NativeSelect } from '@material-ui/core';
 
 export default class TopDishes extends Component {
     state = {
@@ -61,7 +60,7 @@ export default class TopDishes extends Component {
     render() {
         let displayDishes = this.props.dishes.map((dish, index) => {
             if (dish.featured === "true") {
-                return <Dish flexBasis={this.state.columns} key={dish.name} backgroundImg={"url('data:image/jpeg;base64," + this.state.imgs[index]} dishName={dish.name} desc={dish.desc} />
+                return <Dish flexBasis="30%" key={dish.name} backgroundImg={"url('data:image/jpeg;base64," + this.state.imgs[index]} dishName={dish.name} desc={dish.desc} />
             }
         });
 
@@ -73,16 +72,9 @@ export default class TopDishes extends Component {
                 <div className={classes.rootCont}>
                     <div className={classes.mainHeadCont}>
                         <div className={classes.topCont}>
-                            <p style={{ visibility: "hidden" }} className={classes.mainHead} >!</p>
+                
                             <p className={classes.mainHead}>Top Dishes</p>
-                            <FormControl>
-                                <InputLabel style={{ color: "white" }} htmlFor="select">Columns</InputLabel>
-                                <NativeSelect style={{ color: "red" }} defaultValue={this.state.columns} id="select" onChange={this.triggerChange}>
-                                    <option value="100%">1</option>
-                                    <option value="50%">2</option>
-                                    <option value="33%">3</option>
-                                </NativeSelect>
-                            </FormControl>
+                    
                         </div>
                         <p className={classes.mainText}>In this section we are going to present you with our top three most rated dishes.</p>
                     </div>

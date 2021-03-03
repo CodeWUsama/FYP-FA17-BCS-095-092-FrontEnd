@@ -30,7 +30,7 @@ const PaymentDetails = () => {
                 })
                 .catch(err => {
                     console.log(err);
-                })
+                }) 
         }
 
         fetchData();

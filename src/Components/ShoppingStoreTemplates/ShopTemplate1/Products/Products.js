@@ -107,8 +107,7 @@ export default class Products extends Component {
 
             products = array.map((product, i) => {
                 return <ProductTemplate
-                    clickHandler={() => {
-                        console.log("Hi");
+                    clickHandler={(event) => {
                         this.setState({
                             showUpdate: true,
                             index: i
@@ -124,8 +123,8 @@ export default class Products extends Component {
                     <Editor fullsize={true} enableBackdropEditor={this.state.showAddEditor} backdropHandler={() => { this.setState({ showAddEditor: !this.state.showAddEditor }) }} >
                         <AddProductEditor featured={false} addHandler={() => this.addDish()} closeHandler={() => { this.setState({ showAddEditor: false }) }} />
                     </Editor>
-                    <Editor fullsize={true} enableBackdropEditor={this.state.showUpdate} backdropHandler={()=>this.setState({ showUpdate:false })} >
-                        <UpdateDishEditor data={this.state.products[this.state.index]} featured={false} addHandler={() => this.addDish()} closeHandler={()=>this.setState({ showUpdate:false })} />
+                    <Editor fullsize={true} enableBackdropEditor={this.state.showUpdate} backdropHandler={() => this.setState({ showUpdate: false })} >
+                        <UpdateDishEditor data={this.state.products[this.state.index]} featured={false} addHandler={() => this.addDish()} closeHandler={() => this.setState({ showUpdate: false })} />
                     </Editor>
                     <div className={classes.headCont}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', width: "100%" }}>

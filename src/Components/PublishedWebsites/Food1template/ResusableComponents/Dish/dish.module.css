@@ -1,6 +1,7 @@
 .rootCont {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .dishHeadCont {
@@ -18,7 +19,7 @@
 .dishCont {
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    width: 100%; 
     height: 350px;
     display: flex;
     flex-direction: column;

@@ -3,6 +3,7 @@ import classes from './Signup.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TextField from "@material-ui/core/TextField";
 import Error from "./../../Reusable Components/Error/error";
+import Footer from '../../Footer copy/Footer';
 
 export default class Signup extends Component {
 
@@ -64,7 +65,7 @@ export default class Signup extends Component {
         }).then(res => {
             console.log(res);
             if (res.status === 200) {
-                window.location.href="/s1/#/account"
+                window.location.href="/ShoppingWebsite/#/account"
             }
             else if(res.status===500) {
                 console.log("error");
@@ -98,8 +99,9 @@ export default class Signup extends Component {
 
                 <div className={classes.navCont}>
                     <p className={classes.text}>Already have an account?</p>
-                    <a className={classes.aTag} href="/S1/#account">Login Now!</a>
+                    <a className={classes.aTag} href="/ShoppingWebsite/#account">Login Now!</a>
                 </div>
+                <Footer/>
             </div>
         );
     }

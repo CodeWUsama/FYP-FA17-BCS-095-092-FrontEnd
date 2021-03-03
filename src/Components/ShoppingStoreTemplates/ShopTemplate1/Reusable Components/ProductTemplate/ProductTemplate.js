@@ -54,9 +54,14 @@ const ProductTemplate = (props) => {
         })
     }
 
+    let handleView = (event) => {
+        event.stopPropagation();
+        setBackdrop(true);
+    }
+
 
     return (
-        <div onClick={props.clickHandler} style={{ flexBasis: props.flexBasis }} className={classes.rootCont}>
+        <div style={{ flexBasis: props.flexBasis }} className={classes.rootCont}>
             <Editor fullsize={true} enableBackdropEditor={getBackdrop} backdropHandler={() => setBackdrop(!getBackdrop)} >
                 <ProdcutDetail clickHandler={props.clickHandler} img={props.img} title={props.title} price={props.price} desc={props.desc} colors={props.colors} sizes={props.sizes} />
             </Editor>
@@ -68,16 +73,13 @@ const ProductTemplate = (props) => {
 
             {props.cart ?
                 <div className={classes.btnCont}>
-                    <button onClick={(event) => removeHandler(event)} className={classes.btn}>Remove</button>
+                    <button onClick={() => removeHandler()} className={classes.btn}>Remove</button>
                 </div>
                 :
                 <div className={classes.btnCont}>
-                    <button onClick={() => setBackdrop(true)} className={classes.btn}>View</button>
-                    {localStorage.getItem("userToken") && localStorage.getItem("a") != "true" ?
-                        <button className={classes.btn} onClick={(event) => cartHandler(event)}>Cart</button>
-                        :
-                        null
-                    }
+                    <button onClick={(event) => { handleView(event) }} className={classes.btn}>View</button>
+                    {props.clickHandler ? <button className={classes.btn} onClick={() => { props.clickHandler() }}>Edit</button> : null}
+
                 </div>
             }
 

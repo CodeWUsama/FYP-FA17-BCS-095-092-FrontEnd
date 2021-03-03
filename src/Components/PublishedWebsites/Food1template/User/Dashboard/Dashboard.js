@@ -55,7 +55,7 @@ export default class Dashboard extends Component {
                 console.log(order);
                 return (
                     <tr>
-                        <td>{order.dishId}</td>
+                        <td>{order.productId}</td>
                         <td>{order.total}</td>
                         <td>{order.method}</td>
                         <td>{order.status}</td>

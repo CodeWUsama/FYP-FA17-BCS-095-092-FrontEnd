@@ -63,7 +63,7 @@ export default class ContactUs extends Component {
                 <div className={classes.leftCont}>
                     <form onSubmit={this.handleSubmit} className={classes.contactForm}>
                         <p className={classes.formHead}>Contact Us</p>
-                        <input required className={classes.formInput} id="name" placeholder="Name" />
+                        <input required className={classes.formInput} id="name" placeholder="Subject" />
                         <input required className={classes.formInput} id="email" placeholder="Email" />
                         <textarea required className={classes.formInput} id="message" placeholder="Message" />
                         <div style={{ display: "flex", justifyContent: "center" }}>

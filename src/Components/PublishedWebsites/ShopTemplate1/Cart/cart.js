@@ -3,6 +3,7 @@ import { Component } from 'react';
 import classes from "./cart.module.css";
 import ProductsContainer from "./../Reusable Components/ProductsContainer/Container";
 import ProductTemplate from "./../Reusable Components/ProductTemplate/ProductTemplate";
+import Footer from '../Footer copy/Footer';
 
 export default class Cart extends Component {
 
@@ -52,7 +53,7 @@ export default class Cart extends Component {
         localStorage.setItem("products", prodId);
         localStorage.setItem("total", this.calculateTotal());
         localStorage.setItem("d", 30);
-        window.location.href = "/s1/#/checkout";
+        window.location.href = "/ShoppingWebsite/#/checkout";
     }
 
     render() {
@@ -84,7 +85,7 @@ export default class Cart extends Component {
 
                 </div>
 
-            //add footer
+            <Footer/>
 
             </div>
         );

@@ -1,0 +1,78 @@
+.innerlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coverlayer {
+    margin-top: 2%;
+    width: 99%;
+    height: 550px;
+    background-image: url('./frontimage.jpg');
+    background-size: cover;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.researchlayer {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 400px;
+    padding: 8%;
+}
+
+.research {
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+    background-color: rgb(249, 249, 249);
+    padding: 5%;
+}
+
+.researchtext {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+}
+
+.calendar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60%;
+}
+
+.rootCont {
+    display: flex;
+    flex-direction: row;
+}
+
+.spacer {
+    width: 35%;
+    height: 100vh;
+    background-color: white;
+}
+
+.fronttext {
+    padding: 20px;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 770px) {
+    .calendar {
+        margin-top: 150%;
+    }
+    .researchlayer {
+        width: 100%;
+    }
+    .butn {
+        width: 70%;
+    }
+}

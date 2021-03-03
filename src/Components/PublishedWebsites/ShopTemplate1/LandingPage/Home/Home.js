@@ -8,8 +8,8 @@ export default class Home extends Component {
             this.props.storeName ?
                 <div className={classes.rootCont}>
                     <AnimatedText
-                        storeNameEditor={this.props.storeNameEditor} storeName={this.props.storeName}
-                        introTextEditor={this.props.introTextEditor} introText={this.props.introText}
+                        storeName={this.props.storeName}
+                        introText={this.props.introText}
                     />
                 </div>
                 :

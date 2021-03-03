@@ -2,10 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import classes from "./Order.module.css";
 import TextField from "@material-ui/core/TextField"
-import FormLabel from "@material-ui/core/FormLabel";
-import RadioGroup from "@material-ui/core/RadioGroup"
-import Radio from "@material-ui/core/Radio"
-import FormControlLabel from "@material-ui/core/FormControlLabel"
+import Checkout from "./../Checkout/Checkout";
 import Footer from '../../Footer/Footer';
 
 export default class Order extends Component {
@@ -17,6 +14,7 @@ export default class Order extends Component {
         tax: 0,
         total: 0,
         dishId: null,
+        address:"",
         method: "COD"
     }
 
@@ -35,32 +33,33 @@ export default class Order extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        let code;
-        fetch("http://localhost:8080/f1td/orderDish", {
-            method: "POST",
-            headers: {
-                "Content-Type": 'application/json',
-                Authorization: "Bearer " + localStorage.getItem('userToken'),
-            },
-            body: JSON.stringify({
-                templateId: localStorage.getItem("id"),
-                dishId: this.state.dishId,
-                method: this.state.method,
-                total:this.state.total
-            })
-        }).then(res => {
-            code = res.status;
-            return res.json();
-        }).then(resData => {
-            if (code === 200) {
-                window.location.href="/RestaurantWebsite/#/dashboard"
-            }
-            else {
-                this.setState({ errorStatus: true });
-            }
-        }).catch(err => {
-            console.log(err);
-        })
+        this.setState({ confirm: true });
+        // let code;
+        // fetch("http://localhost:8080/f1td/orderDish", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": 'application/json',
+        //         Authorization: "Bearer " + localStorage.getItem('userToken'),
+        //     },
+        //     body: JSON.stringify({
+        //         templateId: localStorage.getItem("id"),
+        //         dishId: this.state.dishId,
+        //         method: this.state.method,
+        //         total: this.state.total
+        //     })
+        // }).then(res => {
+        //     code = res.status;
+        //     return res.json();
+        // }).then(resData => {
+        //     if (code === 200) {
+        //         window.location.href = "/RestaurantWebsite/#/dashboard"
+        //     }
+        //     else {
+        //         this.setState({ errorStatus: true });
+        //     }
+        // }).catch(err => {
+        //     console.log(err);
+        // })
 
     }
 
@@ -72,51 +71,34 @@ export default class Order extends Component {
     render() {
         return (
             <div className={classes.mainCont}>
-                <div className={classes.rootCont}>
-                    <div className={classes.login}>
-                        <h1>Order Form</h1>
-                        <form className={classes.form} method="POST" onSubmit={this.handleSubmit}>
-
-                            <TextField onFocus={() => { this.setState({ errorStatus: false }) }} id="address" multiline rowsMax={5} rows={3} type="text" className={classes.inputField} label="Complete Address" required={true}></TextField>
-
-                            {/* <div className={classes.optionCont}>
-                                <label>Delivery Method:</label>
-                                <div className="form-check">
-                                    <input onChange={()=>{this.handleMethodChange("cod")}} className="form-check-input" type="radio" name="method" id="cod" value="cod" checked />
-                                    <label className="form-check-label" htmlFor="cod">Cash on delivery</label>
-                                </div>
-                                <div className="form-check">
-                                    <input onChange={()=>{this.handleMethodChange("JazzCash")}} className="form-check-input" type="radio" name="method" id="JazzCash" value="jazzcash" />
-                                    <label className="form-check-label" htmlFor="jazzcash">JazzCash</label>
-                                </div>
-                                <div className="form-check">
-                                    <input onChange={()=>{this.handleMethodChange("EasyPaisa")}} className="form-check-input" type="radio" name="method" id="EasyPaisa" value="easypaisa" />
-                                    <label className="form-check-label" htmlFor="easypaisa">EasyPaisa</label>
-                                </div>
-                            </div> */}
-                            <div className={classes.optionCont}>
-                                <FormLabel component="legend">Payment Method</FormLabel>
-                                <RadioGroup aria-label="gender" name="gender1" value={this.state.method} onChange={this.handleChange}>
-                                    <FormControlLabel value="COD" control={<Radio />} label="Cash On Delivery" />
-                                    <FormControlLabel value="JazzCash" control={<Radio />} label="JazzCash" />
-                                    <FormControlLabel value="EasyPaisa" control={<Radio />} label="EasyPaisa" />
-                                </RadioGroup>
-                            </div>
-
-                            <div className={classes.invoice}>
-                                <label style={{ marginBottom: "20px" }}>Invoice:</label>
-                                <p>Dish Price = {this.state.price}</p>
-                                <p>Delivery Fee = {this.state.delivery}</p>
-                                <p>Tax @ 5% = {this.state.tax}</p>
-                                <p>Grand Total = {this.state.total} RS</p>
-                            </div>
-
-                            <div className={classes.btn}>
-                                <button className="btn btn-success btn-block btn-large" type="submit" >Confirm Order</button>
-                            </div>
-                        </form>
+                {this.state.confirm ?
+                    <div>
+                        <Checkout products={this.state.dishId} total={this.state.total} address={this.state.address} />
                     </div>
-                </div>
+                    :
+                    <div className={classes.rootCont}>
+                        <div className={classes.login}>
+                            <h1>Order Form</h1>
+                            <form className={classes.form} method="POST" onSubmit={this.handleSubmit}>
+
+                                <TextField onFocus={() => { this.setState({ errorStatus: false }) }} onChange={(e)=>{this.setState({address :e.target.value })}} id="address" multiline rowsMax={5} rows={3} type="text" className={classes.inputField} label="Complete Address" required={true}></TextField>
+
+                                <div className={classes.invoice}>
+                                    <label style={{ marginBottom: "20px" }}>Invoice:</label>
+                                    <p>Dish Price = {this.state.price}</p>
+                                    <p>Delivery Fee = {this.state.delivery}</p>
+                                    <p>Tax @ 5% = {this.state.tax}</p>
+                                    <p>Grand Total = {this.state.total} RS</p>
+                                </div>
+
+                                <div className={classes.btn}>
+                                    <button className="btn btn-success btn-block btn-large" type="submit" >Confirm Order</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                }
+                <Footer/>
             </div>
         );
     }

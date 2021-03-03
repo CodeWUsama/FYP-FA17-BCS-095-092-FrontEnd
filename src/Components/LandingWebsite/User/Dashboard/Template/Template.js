@@ -91,6 +91,28 @@ export default class Template extends Component {
                     }
                 })
         }
+        else if (this.state.category === "T1") {
+            fetch("http://localhost:8080/user/createwebsite", {
+                method: "POST",
+                headers: {
+                    Authorization: "Bearer " + localStorage.getItem('token'),
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify({
+                    template: "T1",
+                })
+            })
+                .then(res => {
+                    if (res.status === 200) {
+                        return res.json();
+                    }
+                }).then(data => {
+                    if (data) {
+                        localStorage.setItem("id", data.id);    
+                        window.location.href = "/T1/";
+                    }
+                })
+        }
     }
 
     delTemp = () => {
@@ -122,7 +144,7 @@ export default class Template extends Component {
             window.location.href = "/B1/";
         }
         else if (this.state.category === "S1") {
-            window.location.href = "/S1/";
+            window.location.href = "/ShoppingWebsite/";
         }
     }
 

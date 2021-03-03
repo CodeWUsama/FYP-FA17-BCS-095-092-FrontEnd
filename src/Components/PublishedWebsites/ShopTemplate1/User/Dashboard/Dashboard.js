@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import Footer from '../../Footer copy/Footer';
 import classes from "./Dashboard.module.css";
 
 export default class Dashboard extends Component {
@@ -44,7 +45,7 @@ export default class Dashboard extends Component {
         localStorage.removeItem("userToken");
         localStorage.removeItem("p");
         localStorage.removeItem("d");
-        window.location.href="/s1/#/account"
+        window.location.href="/ShoppingWebsite/#/account"
     }
 
     render() {
@@ -67,7 +68,7 @@ export default class Dashboard extends Component {
             <div className={classes.rootCont}>
                 <h1 style={{ textAlign: 'center' }}>Welcome on Store Dashboard</h1>
                 <div className={classes.btCont}>
-                    <button onClick={() => { window.location.href = "/s1/#/editProfile" }} className={classes.btt}>Edit Profile</button>
+                    <button onClick={() => { window.location.href = "/ShoppingWebsite/#/editProfile" }} className={classes.btt}>Edit Profile</button>
                     <button className={classes.btt} onClick={this.handleLogout}>Logout</button>
                 </div>
                 <div style={{ marginTop: "20px" }} className="container">
@@ -87,6 +88,7 @@ export default class Dashboard extends Component {
                         </tbody>
                     </table>
                 </div>
+                <Footer/>
             </div>
         );
     }

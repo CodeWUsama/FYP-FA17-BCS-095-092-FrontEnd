@@ -38,7 +38,7 @@ export default class CreateWeb extends Component {
                     <p className={classes.head}>Teacher and Researcher Portfolio</p>
                     <hr />
                     <div className={classes.tempsCont}>
-                        <Template name="Desi Restaurant" category="NA" admin={false} user={false} view={true} />
+                        <Template name="Teacher Template" category="T1" admin={false} user={false} view={true} />
                     </div>
                 </div>
 

@@ -12,7 +12,7 @@ export default class AboutUs extends Component {
                 </div>
                 <div className={classes.abtRight}>
                     <p
-                        onClick={this.props.sectionNameHandler}
+                        
                         className={classes.head}
                         style={{
                             fontSize: this.props.sectionName.fontSize,
@@ -28,7 +28,7 @@ export default class AboutUs extends Component {
                     </p>
 
                     <div style={{ display: 'flex', justifyContent: "center" }}>
-                        <p onClick={this.props.sectionDescHandler}
+                        <p 
                             className={classes.desc}
                             style={{
                                 fontSize: this.props.sectionDesc.fontSize,

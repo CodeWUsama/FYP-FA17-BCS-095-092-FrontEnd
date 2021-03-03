@@ -63,16 +63,7 @@ export default class NavBar extends Component {
                                 <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/">Home</NavLink>
                                 <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/products">Products</NavLink>
                                 <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/contact">Contact</NavLink>
-                                <NavLink activeClassName={classes.active} exact className={classes.navLink} to={localStorage.getItem("userToken") ? localStorage.getItem("a") ? "/admin" : "/dashboard" : "/account"}>Account</NavLink>
-                                {localStorage.getItem("userToken")
-                                    ?
-                                    localStorage.getItem("a") != "true" ?
-                                        <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/cart">Cart</NavLink>
-                                        :
-                                        null
-                                    :
-                                    null
-                                }
+                                <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/admin">Admin</NavLink>
                             </div>
                         </div>
 
@@ -95,17 +86,8 @@ export default class NavBar extends Component {
                                 <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/contact">Contact</NavLink>
                             </div>
                             <div className={classes.liNav}>
-                                <NavLink activeClassName={classes.active} exact className={classes.navLink} to={localStorage.getItem("userToken") ? localStorage.getItem("a") ? "/admin" : "/dashboard" : "/account"}>Account</NavLink>
+                                <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/admin" >Account</NavLink>
                             </div>
-                            {localStorage.getItem("userToken") ?
-                                localStorage.getItem("a") != "true" ?
-                                    <div className={classes.liNav}>
-                                        <NavLink activeClassName={classes.active} exact className={classes.navLink} to="/cart"> Cart</NavLink>
-                                    </div>
-                                    :
-                                    null
-                                : null
-                            }
                         </div>
                     </div>
 
