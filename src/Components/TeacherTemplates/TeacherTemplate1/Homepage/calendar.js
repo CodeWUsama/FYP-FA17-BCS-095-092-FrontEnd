@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
         minWidth: 150,
+        padding:0
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -41,7 +42,7 @@ const ReactCalendar = (props) => {
                 />
                 <div style={{ color: 'white' }}>.</div>
                 <div style={{ color: 'white' }}>.</div>
-                <div className={classes.options} style={{ display: 'flex', justifyContent: 'center', marginLeft: '10%' }}>
+                <div className={classes.options} style={{ display: 'flex', justifyContent: 'center' }}>
                     <Calling
                         date={value}
                     />

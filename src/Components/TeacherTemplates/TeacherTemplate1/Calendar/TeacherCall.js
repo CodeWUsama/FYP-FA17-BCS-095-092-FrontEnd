@@ -72,7 +72,7 @@ export default class Calling extends Component {
   _isMounted = false;
   componentDidMount() {
     this._isMounted = true;
-    fetch("http://localhost:8080/t1td/getRequest", {
+    fetch("http://localhost:8080/t1td/getRequest?id="+localStorage.getItem("id"), {
 
       method: "GET",
       headers: {
@@ -112,6 +112,7 @@ export default class Calling extends Component {
       name: name,
       email: email,
       messages: email1,
+      tempId:localStorage.getItem("id")
     }).then(resultData => {
       if (resultData.status == 200) {
         window.location.reload();
@@ -141,7 +142,7 @@ export default class Calling extends Component {
             helperText={this.state.validFullname ? "Only Alphabets are allowed!" : ""}
             onKeyUp={this.validateName}
             id="name"
-            type="text" label="First Name" required={true} />
+            type="text" label="Name" required={true} />
           <TextField
             style={{ width: '100%', paddingTop: '20px' }}
             id="email"

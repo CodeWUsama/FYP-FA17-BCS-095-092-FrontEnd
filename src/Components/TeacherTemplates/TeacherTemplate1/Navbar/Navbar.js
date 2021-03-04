@@ -16,14 +16,13 @@ class NavbarPage extends Component {
     render() {
         return (
             <Router>
-                <MDBContainer>
-
-                    <MDBNavbar color="default-color" light expand="md" style={{ marginTop: "20px", marginLeft: '15%' }}>
+                <div style={{display:"flex", justifyContent:"center"}}>
+                    <MDBNavbar color="default-color" light expand="md" style={{ marginTop: "20px" }}>
                         <MDBNavbarToggler onClick={this.toggleCollapse("navbarCollapse3")} />
                         <MDBCollapse id="navbarCollapse3" isOpen={this.state.collapseID} navbar>
                             <MDBNavbarNav left>
                                 <MDBNavItem >
-                                    <a href="/T1/" style={{ color: 'grey', }}>HOME</a>
+                                    <a href="/T1/   " style={{ color: 'grey', }}>HOME</a>
                                 </MDBNavItem>
                                 <p style={{ color: 'white' }}>.....</p>
                                 <MDBNavItem>
@@ -53,7 +52,7 @@ class NavbarPage extends Component {
                             </MDBNavbarNav>
                         </MDBCollapse>
                     </MDBNavbar>
-                </MDBContainer>
+                </div>
             </Router>
         );
     }

@@ -88,6 +88,9 @@ export default class dashboard extends Component {
                 if (temp.category === "S1") {
                     return <Template id={temp._id} key={temp._id} name="Shopping" category="S1" admin={false} user={true} view={false} />;
                 }
+                if (temp.category === "T1") {
+                    return <Template id={temp._id} key={temp._id} name="Teaching" category="T1" admin={false} user={true} view={false} />;
+                }
             })
         }
 

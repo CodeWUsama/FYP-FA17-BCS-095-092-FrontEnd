@@ -29,6 +29,7 @@ export default class Updateblog extends Component {
         formData.append('text', text);
         formData.append('featured', true);
         formData.append('id', this.props.data._id);
+        formData.append("tempId", localStorage.getItem("id"));
         fetch("http://localhost:8080/t1td/updateTeacherResearch", {
             method: "POST",
             headers: {

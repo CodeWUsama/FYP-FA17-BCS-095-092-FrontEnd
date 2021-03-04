@@ -8,10 +8,9 @@
 .coverlayer {
     margin-top: 2%;
     width: 99%;
-    height: 550px;
+    height: 450px;
     background-image: url('./frontimage.jpg');
     background-size: cover;
-    overflow: scroll;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,6 +46,7 @@
     justify-content: center;
     width: 100%;
     margin-top: 60%;
+    padding: 0 !important;
 }
 
 .rootCont {

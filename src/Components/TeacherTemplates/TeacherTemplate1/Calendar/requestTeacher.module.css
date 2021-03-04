@@ -1,9 +1,10 @@
-.rootCont{
-   width: 100%;
+.rootCont {
+    width: 100%;
     margin-top: 10%;
     display: flex;
     justify-content: center;
 }
-.innerlayer{
+
+.innerlayer {
     width: 90%;
 }

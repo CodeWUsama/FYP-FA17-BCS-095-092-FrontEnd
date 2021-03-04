@@ -28,7 +28,7 @@ export default class Myscreen extends Component {
     componentDidMount() {
         this._isMounted = true;
 
-        fetch("http://localhost:8080/t1td/getTeacherData", {
+        fetch("http://localhost:8080/t1td/getTeacherData?id="+localStorage.getItem("id"), {
             method: "GET",
             headers: {
                 "Content-Type": 'application/json'
@@ -224,7 +224,7 @@ export default class Myscreen extends Component {
         }
 
         if (this.state.footercontactEditor === true) {
-            textEditor = <TextEditor closeHandler={() => { this.setState({ footerEditor: false }) }} changeHandler={(newName, newSize, newFamily, newColor, newbold, newitalic, underline, align) => this.changefootercontact(newName, newSize, newFamily, newColor, newbold, newitalic, underline, align)} data={this.state.footercontact} />
+            textEditor = <TextEditor closeHandler={() => { this.setState({ footercontactEditor: false }) }} changeHandler={(newName, newSize, newFamily, newColor, newbold, newitalic, underline, align) => this.changefootercontact(newName, newSize, newFamily, newColor, newbold, newitalic, underline, align)} data={this.state.footercontact} />
         }
 
         if (this.state.mailEditor === true) {
@@ -261,12 +261,12 @@ export default class Myscreen extends Component {
                             fronttext2={this.state.fronttext2}
                             fronttext2Editor={this.fronttext2Editor}
                         />
-                        <div className={classes.calendar} style={{ display: 'flex', justifyContent: 'center' }} onClick={gotocalendar}>
+                        <div className={classes.calendar} style={{ display: 'flex', justifyContent: 'center', marginTop:600 }} >
                             <Calendar />
                         </div>
                         <div style={{ color: 'white' }}>.</div>
                         <div style={{ color: 'white' }}>.</div>
-                        <div onClick={gotocontact} style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div  style={{ display: 'flex', justifyContent: 'center' }}>
                             <Contact
                                 footercontact={this.state.footercontact}
                                 footercontactEditor={this.footercontactEditor}

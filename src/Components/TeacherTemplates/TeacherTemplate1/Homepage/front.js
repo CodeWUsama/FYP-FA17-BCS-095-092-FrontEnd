@@ -12,7 +12,7 @@ export default class Front extends Component {
     _isMounted = false;
     async componentDidMount() {
         this._isMounted = true;
-        await fetch("http://localhost:8080/t1td/getTeacherimages", {
+        await fetch("http://localhost:8080/t1td/getTeacherimages?id="+localStorage.getItem("id"), {
             method: "GET",
             headers: {
                 "Content-Type": 'application/json'
@@ -30,7 +30,7 @@ export default class Front extends Component {
             .catch(err => {
                 console.log(err);
             })
-        fetch("http://localhost:8080/t1td/getTeacherData", {
+        fetch("http://localhost:8080/t1td/getTeacherData?id="+localStorage.getItem("id"), {
 
             method: "GET",
             headers: {
@@ -58,7 +58,7 @@ export default class Front extends Component {
     render() {
         function gotoresearchs(e) {
             e.preventDefault();
-            window.location = '/research';
+            window.location.href = '/T1/#/research';
         }
         let count = 0;
 
@@ -71,7 +71,7 @@ export default class Front extends Component {
                         <div style={{ color: 'white' }}>.</div>
                         <div className={classes.research}>
                             <div className={classes.researchtext}>
-                                <p>{blog.name}</p>
+                                <h3>{blog.name}</h3>
                                 <p>{blog.text}</p>
                                 <button style={{ width: "42%" }} className={classes.butn} type="button" onClick={gotoresearchs} class="btn btn-outline-danger">Veiw Research</button>
                             </div>

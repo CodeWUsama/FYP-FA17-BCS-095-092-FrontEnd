@@ -6,6 +6,7 @@ import notA from './notA.JPG';
 import B1Img from './b1.jpg';
 import classes from './Template.module.css';
 import S1Img from "./s1.JPG";
+import T1Img from "./t1.png";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PreviewIcon from '@material-ui/icons/Visibility';
@@ -108,7 +109,7 @@ export default class Template extends Component {
                     }
                 }).then(data => {
                     if (data) {
-                        localStorage.setItem("id", data.id);    
+                        localStorage.setItem("id", data.id);
                         window.location.href = "/T1/";
                     }
                 })
@@ -146,6 +147,9 @@ export default class Template extends Component {
         else if (this.state.category === "S1") {
             window.location.href = "/ShoppingWebsite/";
         }
+        else if (this.state.category === "T1") {
+            window.location.href = "/T1/";
+        }
     }
 
     handleEdit = () => {
@@ -159,10 +163,13 @@ export default class Template extends Component {
         else if (this.state.category === "S1") {
             window.location.href = "/S1/";
         }
+        else if (this.state.category === "T1") {
+            window.location.href = "/T1/";
+        }
     }
 
     handlePublish = () => {
-        
+
     }
 
 
@@ -177,6 +184,9 @@ export default class Template extends Component {
         }
         if (this.state.category === "S1") {
             imgSrs = S1Img;
+        }
+        if (this.state.category === "T1") {
+            imgSrs = T1Img;
         }
         if (this.state.category === "NA") {
             imgSrs = notA;

@@ -26,7 +26,7 @@ export default class Addblog extends Component {
         formData.append('name', name);
         formData.append('text', text);
         formData.append('featured', true);
-        formData.append('id', "6024f1be22a311d1bcb1f615");
+        formData.append('tempId', localStorage.getItem("id"));
         fetch("http://localhost:8080/t1td/addTeacherResearch", {
             method: "POST",
             headers: {
