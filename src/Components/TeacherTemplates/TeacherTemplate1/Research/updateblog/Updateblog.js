@@ -70,12 +70,10 @@ export default class Updateblog extends Component {
 
                     <div className={classes.formField}>
                         <TextField
-                            inputProps={{ style: { fontFamily: "sans-serif", textAlign: "justify" } }}
+                            inputProps={{ style: { fontFamily: "sans-serif" } }}
                             label="Name"
                             id="name"
-                            multiline
-                            rows={1}
-                            rowsMax={10}
+                            style={{ width: "80%" }}
                             type="text" value={this.state.name} onChange={this.handleName }
                         />
                     </div>
@@ -84,10 +82,11 @@ export default class Updateblog extends Component {
                     <div className={classes.formField}>
                         <TextField
                             style={{ width: "80%" }}
-                            label="Blog Description"
+                            inputProps={{ style: { fontFamily: "sans-serif", textAlign: "justify" } }}
+                            label="Research Description"
                             multiline
-                            rows={2}
-                            rowsMax={3}
+                            rows={5}
+                            rowsMax={8}
                             id="text"
                             type="text" value={this.state.text} onChange={this.handleText}
                         />
@@ -97,10 +96,10 @@ export default class Updateblog extends Component {
                     <div className={classes.formField}>
                         <div style={{ width: "80%", marginTop: "20px" }} className="custom-file">
                             <input onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
-                            <label className="custom-file-label" htmlFor="customFile">Choose blog Image</label>
+                            <label className="custom-file-label" htmlFor="customFile">Choose Research Image</label>
                         </div>
                     </div>
-                    <button type="submit" onClick={() => this.props.changeHandler(this.state.text, this.state.name)} className={classes.introButton}>update</button>
+                    <button type="submit" onClick={() => this.props.changeHandler(this.state.text, this.state.name)} className={classes.introButton}>Update</button>
                 </div>
             </form >
         );

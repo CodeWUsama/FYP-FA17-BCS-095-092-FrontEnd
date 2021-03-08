@@ -19,6 +19,7 @@ export default class Order extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         let dishId = (window.location.hash.split("/")[2].split("=")[1]);
         let tax = (5 * localStorage.getItem("p")) / 100;
 

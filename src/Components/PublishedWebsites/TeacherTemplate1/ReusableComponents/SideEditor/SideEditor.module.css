@@ -1,0 +1,52 @@
+.rootCont{
+    width:35%;
+    max-height: 525px;
+    background-color: white;
+    color: black;
+    position: fixed;
+    z-index: 400;
+    top:100px;
+    overflow-y: scroll;
+    padding:10px;
+    padding-bottom: 30px;
+}
+
+.headCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edPannel{
+    font:35px 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.close{
+    font:15px 'Poppins', sans-serif;
+    color: black;
+    margin: 0;
+    padding:0;
+}
+
+.close:hover{
+    color:red;
+    cursor: pointer;
+}
+
+.edPannelText{
+    font:25px 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+
+@media(max-width:500px){
+    .rootCont{
+        width: 100%;
+    }
+}

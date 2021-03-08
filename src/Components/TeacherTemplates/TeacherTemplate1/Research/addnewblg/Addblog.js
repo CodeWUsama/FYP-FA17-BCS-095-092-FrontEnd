@@ -46,7 +46,7 @@ export default class Addblog extends Component {
     }
 
     render() {
-        
+
         return (
             <form style={{ width: "100%" }} method="POST" onSubmit={this.handleSubmit}>
                 <div className={classes.rootCont}>
@@ -58,6 +58,7 @@ export default class Addblog extends Component {
 
                     <div className={classes.formField}>
                         <TextField
+                            inputProps={{ style: { fontFamily: "sans-serif" } }}
                             style={{ width: "80%" }}
                             label="Blog Name"
                             id="name"
@@ -65,25 +66,26 @@ export default class Addblog extends Component {
                         />
                     </div>
 
-                   
+
 
                     <div className={classes.formField}>
                         <TextField
                             style={{ width: "80%" }}
-                            label="Blog Description"
+                            inputProps={{ style: { fontFamily: "sans-serif", textAlign: "justify" } }}
+                            label="Research Description"
                             multiline
-                            rows={2}
-                            rowsMax={3}
+                            rows={5}
+                            rowsMax={8}
                             id="text"
                             type="text"
                         />
                     </div>
-                   
+
 
                     <div className={classes.formField}>
                         <div style={{ width: "80%", marginTop: "20px" }} className="custom-file">
                             <input onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
-                            <label className="custom-file-label" htmlFor="customFile">Choose blog Image</label>
+                            <label className="custom-file-label" htmlFor="customFile">Choose Research Image</label>
                         </div>
                     </div>
                     <button type="submit" className={classes.introButton}>Add</button>

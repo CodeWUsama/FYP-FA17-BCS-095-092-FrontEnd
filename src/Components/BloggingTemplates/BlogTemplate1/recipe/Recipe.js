@@ -56,7 +56,7 @@ export default class Recipe extends Component {
 
         function gotorecipe(e) {
             e.preventDefault();
-            window.location = '/recipe';
+            window.location = '/b1/#/recipe';
         }
         let count = 0;
 

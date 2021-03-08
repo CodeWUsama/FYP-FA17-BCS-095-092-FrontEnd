@@ -66,7 +66,7 @@ export default class RequestTecher extends Component {
             body: JSON.stringify({
                 id: id,
                 email: email,
-                tempd:localStorage.getItem("id")
+                tempId:localStorage.getItem("id")
             })
         })
             .then(result => {

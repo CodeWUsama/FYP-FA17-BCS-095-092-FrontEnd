@@ -6,7 +6,13 @@ import StunningTemp from './StunningTemp/StunningTemp';
 import CreateWeb from './CreateWebsite/CreateWebsite';
 import Footer from './../Footer/Footer';
 
-export default class Home extends Component { 
+export default class Home extends Component {
+
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return (
             <div>
@@ -16,7 +22,7 @@ export default class Home extends Component {
                 <StunningTemp></StunningTemp>
                 <CreateWeb></CreateWeb>
                 <Footer />
-             </div>
+            </div>
         );
     }
 }

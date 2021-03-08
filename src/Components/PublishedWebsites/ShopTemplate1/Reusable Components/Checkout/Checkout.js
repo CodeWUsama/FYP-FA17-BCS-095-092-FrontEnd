@@ -30,7 +30,7 @@ const Checkout = (props) => {
 
     useEffect(() => {
 
-        console.log(localStorage.getItem(""));
+        window.scrollTo(0, 0);
 
         let url = (window.location.href);
         setPlan(url.split("=")[1]);
@@ -101,14 +101,14 @@ const Checkout = (props) => {
                 "Content-Type": 'application/json'
             },
             body: JSON.stringify({
-                id:localStorage.getItem("id"),
+                id: localStorage.getItem("id"),
                 name: name,
                 phone: phone,
                 tid: tid,
                 amount: props.total,
                 through: through,
                 products: props.products,
-                address:props.address
+                address: props.address
             })
         })
             .then(res => {
@@ -291,7 +291,7 @@ const Checkout = (props) => {
             {method === "creditCard" ? renderCreditCard() : null}
             {method === "jazzcash" ? renderJazzcash() : null}
             {method === "easypaisa" ? renderEasypaisa() : null}
-            
+
         </div>
     );
 }

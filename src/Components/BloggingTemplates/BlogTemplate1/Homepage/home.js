@@ -27,7 +27,7 @@ export default class Front extends Component {
     componentDidMount() {
         this._isMounted = true;
 
-        fetch("http://localhost:8080/b1td/getTecData?id="+localStorage.getItem("id"), {
+        fetch("http://localhost:8080/b1td/getTecData?id=" + localStorage.getItem("id"), {
             method: "GET",
             headers: {
                 "Content-Type": 'application/json'
@@ -182,6 +182,31 @@ export default class Front extends Component {
         });
     }
 
+    saveChangesHandler = () => {
+        fetch("http://localhost:8080/b1td/updateData", {
+            method: "POST",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token'),
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify({
+                id: localStorage.getItem("id"),
+                hometext: this.state.hometext,
+                footer: this.state.footer,
+                footercontact: this.state.footercontact,
+                linkedin: this.state.linkedin,
+                mail: this.state.mail,
+            })
+        })
+            .then(result => {
+                return result.json();
+            }).then(resultData => {
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     render() {
 
         console.log("Hi");
@@ -212,11 +237,12 @@ export default class Front extends Component {
         if (this.state.showEditor === false) {
             textEditor = null;
         }
+
         return (
             <div className={classes.rootCont}>
                 <div> {textEditor} </div>
                 <div className={this.state.showEditor ? classes.spacer : ''} />
-                <div className={classes.content} style={this.state.showEditor ? { width: "65%", marginTop:50 } : { width: "100%", marginTop:50 }}>
+                <div className={classes.content} style={this.state.showEditor ? { width: "65%", marginTop: 50 } : { width: "100%", marginTop: 50 }}>
                     <div className={classes.rootDiv}>
                         <div className={classes.toplayer}>
                             <Home
@@ -236,6 +262,9 @@ export default class Front extends Component {
                                 linkedinEditor={this.linkedinEditor}
                             />
                         </div>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: "center" }}>
+                        <button style={{ bottom: 30 }} className={classes.saveBt} onClick={this.saveChangesHandler}>Save Changes</button>
                     </div>
                 </div>
             </div>

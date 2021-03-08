@@ -9,6 +9,10 @@ export default class Login extends Component {
     state = {
         errorStatus: false
     }
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
  
     handleSubmit = (event) => {
         event.preventDefault();

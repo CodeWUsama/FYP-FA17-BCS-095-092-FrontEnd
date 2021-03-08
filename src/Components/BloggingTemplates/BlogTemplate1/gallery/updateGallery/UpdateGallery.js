@@ -6,10 +6,10 @@ import $ from "jquery";
 export default class UpdateGallery extends Component {
 
     state = {
-        
+
         name: this.props.data.name,
     }
-   
+
     componentDidMount() {
         $(".custom-file-input").on("change", function () {
             var fileName = $(this).val().split("\\").pop();
@@ -17,9 +17,9 @@ export default class UpdateGallery extends Component {
         });
     }
 
-    
 
-   
+
+
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -29,7 +29,8 @@ export default class UpdateGallery extends Component {
         formData.append('img', img);
         formData.append('name', name);
         formData.append('featured', true);
-        formData.append('id',this.props.data._id);
+        formData.append('id', this.props.data._id);
+        formData.append('tempId', localStorage.getItem("id"));
         fetch("http://localhost:8080/b1td/updateimage", {
             method: "POST",
             headers: {
@@ -47,13 +48,13 @@ export default class UpdateGallery extends Component {
                 console.log(err);
             })
     }
-    handleText = (event ) => {
-        this.setState({ name:event.target.value})
+    handleText = (event) => {
+        this.setState({ name: event.target.value })
         this.props.changeHandler(this.state.name);
     }
 
     render() {
-        
+
         return (
             <form style={{ width: "100%" }} method="POST" onSubmit={this.handleSubmit}>
                 <div className={classes.rootCont}>
@@ -62,22 +63,22 @@ export default class UpdateGallery extends Component {
                         <h1 className={classes.editorHead}>Update Gallery</h1>
                         <p onClick={this.props.closeHandler} className={classes.close}>X</p>
                     </div>
-                     <div className={classes.formField}>
+                    <div className={classes.formField}>
                         <TextField
-                            style={{ width: "80%", marginBottom:30 }}
+                            style={{ width: "80%", marginBottom: 30 }}
                             label="Image Title"
                             id="name"
                             type="text" value={this.state.name} onChange={this.handleText}
                         />
                     </div>
-                    
+
                     <div className={classes.formField}>
                         <div style={{ width: "80%", marginTop: "20px" }} className="custom-file">
                             <input onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
                             <label className="custom-file-label" htmlFor="customFile">Choose Gallery Image</label>
                         </div>
                     </div>
-                    <button type="submit" onClick={() => this.props.changeHandler( this.state.name)} className={classes.introButton}>update</button>
+                    <button type="submit" onClick={() => this.props.changeHandler(this.state.name)} className={classes.introButton}>update</button>
                 </div>
             </form >
         );

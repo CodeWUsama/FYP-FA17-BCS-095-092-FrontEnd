@@ -29,8 +29,7 @@ const Checkout = (props) => {
 
     useEffect(() => {
 
-        console.log(localStorage.getItem(""));
-
+        window.scrollTo(0, 0);
         let url = (window.location.href);
         setPlan(url.split("=")[1]);
 

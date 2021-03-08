@@ -12,8 +12,6 @@
 
 .saveBt{
     position: fixed;
-    right: 35%;
-    left: 65%;
     z-index: 1200;
     width: 140px;
     background-color: #F42F2C;

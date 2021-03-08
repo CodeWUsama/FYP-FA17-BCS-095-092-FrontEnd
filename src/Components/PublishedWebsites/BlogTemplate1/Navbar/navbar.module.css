@@ -1,0 +1,33 @@
+.topnav {
+    height: 10vh;
+    width: 90%;
+    padding-top: 80px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.topnav a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.topnav a:hover {
+    color: rgb(177, 177, 177);
+    cursor: pointer;
+}
+
+.topnav a.active {
+    background-color: grey;
+    color: white;
+}
+
+.vl {
+    border-left: 2px solid darkgrey;
+    height: 30px;
+    margin-top: 1%;
+}

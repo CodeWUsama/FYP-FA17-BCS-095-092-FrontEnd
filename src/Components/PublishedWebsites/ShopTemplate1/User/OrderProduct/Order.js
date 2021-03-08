@@ -20,6 +20,7 @@ export default class Order extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         let tax = (5 * this.state.price) / 100;
 
         this.setState({

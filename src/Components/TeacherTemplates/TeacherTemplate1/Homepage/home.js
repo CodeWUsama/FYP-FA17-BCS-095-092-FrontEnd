@@ -28,7 +28,7 @@ export default class Myscreen extends Component {
     componentDidMount() {
         this._isMounted = true;
 
-        fetch("http://localhost:8080/t1td/getTeacherData?id="+localStorage.getItem("id"), {
+        fetch("http://localhost:8080/t1td/getTeacherData?id=" + localStorage.getItem("id"), {
             method: "GET",
             headers: {
                 "Content-Type": 'application/json'
@@ -55,6 +55,32 @@ export default class Myscreen extends Component {
     componentWillUnmount() {
         this._isMounted = false;
     }
+    saveChangesHandler = () => {
+        fetch("http://localhost:8080/t1td/updateData", {
+            method: "POST",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token'),
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify({
+                id: localStorage.getItem("id"),
+                fronttext: this.state.fronttext,
+                fronttext2: this.state.fronttext2,
+                footer: this.state.footer,
+                footercontact: this.state.footercontact,
+                linkedin: this.state.linkedin,
+                mail: this.state.mail,
+            })
+        })
+            .then(result => {
+                return result.json();
+            }).then(resultData => {
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     editorHandler = () => {
         this.setState({ showEditor: false });
     }
@@ -261,12 +287,12 @@ export default class Myscreen extends Component {
                             fronttext2={this.state.fronttext2}
                             fronttext2Editor={this.fronttext2Editor}
                         />
-                        <div className={classes.calendar} style={{ display: 'flex', justifyContent: 'center', marginTop:600 }} >
+                        <div className={classes.calendar} style={{ display: 'flex', justifyContent: 'center', marginTop: 600 }} >
                             <Calendar />
                         </div>
                         <div style={{ color: 'white' }}>.</div>
                         <div style={{ color: 'white' }}>.</div>
-                        <div  style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
                             <Contact
                                 footercontact={this.state.footercontact}
                                 footercontactEditor={this.footercontactEditor}
@@ -286,6 +312,9 @@ export default class Myscreen extends Component {
                             linkedin={this.state.linkedin}
                             linkedinEditor={this.linkedinEditor}
                         />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: "center" }}>
+                        <button style={{ bottom: 30 }} className={classes.saveBt} onClick={this.saveChangesHandler}>Save Changes</button>
                     </div>
                 </div>
             </div>

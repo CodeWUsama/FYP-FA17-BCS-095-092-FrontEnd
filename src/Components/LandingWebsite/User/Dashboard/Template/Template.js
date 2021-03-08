@@ -44,6 +44,7 @@ export default class Template extends Component {
                     if (data) {
                         console.log(data.id);
                         localStorage.setItem("id", data.id);
+                        localStorage.removeItem("userToken");
                         window.location.href = "/F1/";
                     }
                 })
@@ -88,6 +89,7 @@ export default class Template extends Component {
                 }).then(data => {
                     if (data) {
                         localStorage.setItem("id", data.id);
+                        localStorage.removeItem("userToken");
                         window.location.href = "/S1/";
                     }
                 })
@@ -142,13 +144,13 @@ export default class Template extends Component {
             window.location.href = "/RestaurantWebsite/";
         }
         else if (this.state.category === "B1") {
-            window.location.href = "/B1/";
+            window.location.href = "/B1P/";
         }
         else if (this.state.category === "S1") {
             window.location.href = "/ShoppingWebsite/";
         }
         else if (this.state.category === "T1") {
-            window.location.href = "/T1/";
+            window.location.href = "/TeacherWebsite/";
         }
     }
 
@@ -201,8 +203,6 @@ export default class Template extends Component {
         }
         else if (this.state.user) {
             options = <div className={classes.optionCont}>
-                {/* <p onClick={this.handlePreview} className={classes.option}>Preview</p> */}
-                {/* <p onClick={this.handleEdit} className={classes.option}>Edit</p> */}
 
                 <Tooltip title="Preview">
                     <IconButton onClick={this.handlePreview} aria-label="preview">
@@ -233,8 +233,14 @@ export default class Template extends Component {
         }
         else if (this.state.view) {
             options = <div className={classes.optionCont}>
-                <p className={classes.option}>Preview</p>
-                <a onClick={this.handleSelect} className={classes.option}>Select</a>
+                {this.props.error ?
+                    null
+                    :
+                    <>
+                        <p onClick={this.handleSelect} className={classes.option}>Preview</p>
+                        <a onClick={this.handleSelect} className={classes.option}>Select</a>
+                    </>
+                }
             </div>
         }
 

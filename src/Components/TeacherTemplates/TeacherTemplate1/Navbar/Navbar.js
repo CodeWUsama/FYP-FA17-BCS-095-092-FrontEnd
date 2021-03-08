@@ -26,7 +26,7 @@ class NavbarPage extends Component {
                                 </MDBNavItem>
                                 <p style={{ color: 'white' }}>.....</p>
                                 <MDBNavItem>
-                                    <a href="/T1/#/research" style={{ color: 'grey' }}>RESEARCH</a>
+                                    <a href="/T1/#/research" style={{ color: 'grey' }}>RESEARCHES</a>
                                 </MDBNavItem>
                                 <p style={{ color: 'white' }}>.....</p>
                                 <MDBNavItem>
@@ -46,7 +46,7 @@ class NavbarPage extends Component {
                                 </MDBNavItem>
                                 <p style={{ color: 'white' }}>.....</p>
                                 <MDBNavItem>
-                                    <a href="/T1/#/notifi" style={{ color: 'grey', }}>NOTIFICATIONS</a>
+                                    <a href="/T1/#/notifi" style={{ color: 'grey', }}>MESSEGES</a>
                                 </MDBNavItem>
                                 <p style={{ color: 'white' }}>.....</p>
                             </MDBNavbarNav>

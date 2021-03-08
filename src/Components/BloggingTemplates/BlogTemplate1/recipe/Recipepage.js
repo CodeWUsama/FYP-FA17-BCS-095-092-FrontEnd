@@ -145,7 +145,7 @@ export default class Recipe extends Component {
                 <Addblog addHandler={() => this.AddBlog()} closeHandler={this.addHandler} />
             </Editor>
                 <div className={classes.textheading}>
-                    <p style={{fontSize:'30px', color: 'rgb(176,0,0)'}}>Recent Recipe</p>
+                    <p style={{fontSize:'30px', color: 'rgb(176,0,0)'}}>Blogs</p>
                 </div>
                 <div className={classes.innerlayer}>
                     <div className={classes.inner}>

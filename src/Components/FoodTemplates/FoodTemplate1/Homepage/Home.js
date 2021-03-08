@@ -6,7 +6,7 @@ import LatestEditions from './Latest Editions/LatestEditions';
 import ContactUs from './ContactUs/ContactUs'
 import Footer from '../Footer/Footer';
 import SideEditor from '../SideEditor/SideEditor';
-import TextEditor from "./../../../Editors/TextEditor/TextEditor";
+import TextEditor from "../ResusableComponents/Editors/TextEditor/TextEditor";
 import classes from "./Home.module.css"
 
 export default class Home extends Component {
@@ -81,7 +81,7 @@ export default class Home extends Component {
                         adminName: resultData.data.adminName,
                         adminMessage: resultData.data.adminMessage,
                         footer: resultData.data.footer,
-                        flex:resultData.data.flex
+                        flex: resultData.data.flex
                     });
                 }
             })
@@ -102,9 +102,9 @@ export default class Home extends Component {
                 "Content-Type": 'application/json'
             },
             body: JSON.stringify({
-                id:localStorage.getItem("id"),
+                id: localStorage.getItem("id"),
                 name: this.state.storeName,
-                introText:this.state.introText,
+                introText: this.state.introText,
                 servicesDescription: this.state.servicesDescription,
                 s1Heading: this.state.s1Heading,
                 s1Desc: this.state.s1Desc,
@@ -115,7 +115,7 @@ export default class Home extends Component {
                 adminName: this.state.adminName,
                 adminMessage: this.state.adminMessage,
                 footer: this.state.footer,
-                flex:this.state.flex
+                flex: this.state.flex
             })
         })
             .then(result => {
@@ -290,7 +290,7 @@ export default class Home extends Component {
                 italic: italic,
                 underline: underline,
                 align: align,
-                image:this.state.storeName.image
+                image: this.state.storeName.image
             }
         });
     }
@@ -600,9 +600,9 @@ export default class Home extends Component {
         this.setState({
             flex: {
                 flexTopDishes: newValue,
-                flexMenu:this.state.flex.flexMenu
+                flexMenu: this.state.flex.flexMenu
             }
-        });   
+        });
         console.log(newValue);
     }
 
@@ -616,7 +616,7 @@ export default class Home extends Component {
         if (this.state.storeNameEditor === true) {
             textEditor = <TextEditor closeHandler={() => { this.setState({ storeNameEditor: false }) }} changeHandler={(newName, newSize, newFamily, newColor, bold, italic, underline, align) => this.changeStoreName(newName, newSize, newFamily, newColor, bold, italic, underline, align)} data={this.state.storeName} />
         }
-        
+
         if (this.state.introTextEditor === true) {
             textEditor = <TextEditor closeHandler={() => { this.setState({ introTextEditor: false }) }} changeHandler={(newNam, newSiz, newFamil, newColo, bold, italic, underline, align) => this.changeIntroText(newNam, newSiz, newFamil, newColo, bold, italic, underline, align)} data={this.state.introText} />
         }
@@ -739,7 +739,9 @@ export default class Home extends Component {
                         emailHandler={this.emailEditor}
                         whatsappHandler={this.whatsappEditor}
                     />
-                    <button style={{ bottom: 30 }} className={classes.saveBt} onClick={this.saveChangesHandler}>Save Changes</button>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                        <button style={{ bottom: 30 }} className={classes.saveBt} onClick={this.saveChangesHandler}>Save Changes</button>
+                    </div>
                 </div>
             </div>
         );

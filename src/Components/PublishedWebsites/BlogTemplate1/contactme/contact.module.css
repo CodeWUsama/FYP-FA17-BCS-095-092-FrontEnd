@@ -1,0 +1,56 @@
+.info {
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+.inpu {
+    width: 90%;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.inputflie {
+    width: 70%;
+}
+
+.root {
+    width: 80%;
+    height: 350px;
+    margin-left: 10%;
+    padding: 2px;
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 800px) {
+    .inpu {
+        width: 50%;
+    }
+    .info {
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .inpu {
+        width: 50%;
+    }
+    .info {
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .inpu {
+        width: 70%;
+    }
+    .info {
+        margin-left: 10%;
+    }
+}

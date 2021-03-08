@@ -23,7 +23,6 @@ const Checkout = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-
         let url = (window.location.href);
         setPlan(url.split("=")[1]);
 

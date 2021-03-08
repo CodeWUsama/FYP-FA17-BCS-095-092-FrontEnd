@@ -89,6 +89,7 @@ export default function Pricing() {
     const [open, setOpen] = React.useState(false);
     
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetch("http://localhost:8080/user/getUserData", {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem('token'),

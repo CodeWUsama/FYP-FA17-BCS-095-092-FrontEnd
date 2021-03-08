@@ -76,7 +76,7 @@ export default class Front extends Component {
             .catch(err => {
                 console.log(err);
             })
-        fetch("http://localhost:8080/t1td/getTeacherData?id="+localStorage.getItem("id"), {
+        fetch("http://localhost:8080/t1td/getTeacherData?id=" + localStorage.getItem("id"), {
 
             method: "GET",
             headers: {
@@ -109,7 +109,7 @@ export default class Front extends Component {
 
             body: JSON.stringify({
                 blogid: id,
-                tempId:localStorage.getItem("id")
+                tempId: localStorage.getItem("id")
             })
         })
             .then(result => {
@@ -125,7 +125,8 @@ export default class Front extends Component {
     render() {
 
         let Displayblog = this.state.research.reverse().map((blog, i) => {
-            var image = this.state.image.reverse();
+            
+            let len = this.state.image.length-1;
             return (
                 <div key={i}>
                     <div style={{ color: 'white' }}>.</div>
@@ -133,10 +134,10 @@ export default class Front extends Component {
                         <img className={classes.removeimg} style={{ height: '40px', width: '5%', }} onClick={() => { this.handleSubmit(blog._id) }} src={remove} />
 
                         <div className={classes.researchtext}>
-                            <p onClick={() => { this.UpdateBlog(); this.setState({ i: i }) }}>{blog.name}</p>
+                            <h3 style={{marginBottom:20}} onClick={() => { this.UpdateBlog(); this.setState({ i: i }) }}>{blog.name}</h3>
                             <p onClick={() => { this.UpdateBlog(); this.setState({ i: i }) }}>{blog.text}</p>
                         </div>
-                        <img style={{ width: '30%', height: '300px' }} src={'data:image/jpg;base64,' + image[i]} />
+                        <img style={{ width: '30%', height: '300px' }} src={'data:image/jpg;base64,' + this.state.image[len-i]} />
                     </div>
                 </div>
             )
@@ -145,7 +146,7 @@ export default class Front extends Component {
 
         return (
             <div className={classes.rootCont}>
-                <h3 style={{ marginTop: '5%' }}>ALL RESEARCH</h3>
+                <h3 style={{ marginTop: '30px' }}>ALL RESEARCH</h3>
                 <Editor fullsize={true} enableBackdropEditor={this.state.updateblog} backdropHandler={this.toggleAddProduct} >
                     <Updateblog closeHandler={() => { this.setState({ updateblog: false }) }} changeHandler={(newName, name) => this.changeUpdate(newName, name)} data={this.state.research[this.state.i]} />
                 </Editor>
@@ -155,7 +156,10 @@ export default class Front extends Component {
                 <div className={classes.researchlayer}>
 
                     {Displayblog}
-                    <img onClick={this.AddBlog} style={{ height: '250px', width: '15%', marginLeft: '30%', padding: '2%' }} src={imgadd} />
+                    <div style={{ display: "flex", justifyContent: "center", marginTop: 30 }}>
+                        <img onClick={this.AddBlog} style={{ height: '100px', width: '100px' }} src={imgadd} />
+                    </div>
+
                     <Footer />
                 </div>
 

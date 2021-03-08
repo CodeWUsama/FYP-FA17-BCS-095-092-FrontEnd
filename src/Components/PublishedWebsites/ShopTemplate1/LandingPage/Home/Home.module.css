@@ -1,6 +1,6 @@
 .rootCont {
     height: 90vh;
-    background-image: url("./banner.jpg");
+    /* background-image: url("./banner.jpg"); */
     background-size: 100% 130%;
     display: flex;
     justify-content: center;

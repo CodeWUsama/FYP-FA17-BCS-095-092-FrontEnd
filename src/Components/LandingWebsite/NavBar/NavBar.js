@@ -21,6 +21,8 @@ import Checkout from '../User/Checkout/Checkout';
 import NavS1P from "./../../PublishedWebsites/ShopTemplate1/Navbar/NavBar";
 import Packages from "./../Packages/packages";
 import NavT1 from "./../../TeacherTemplates/TeacherTemplate1/main";
+import NavT1P from "./../../PublishedWebsites/TeacherTemplate1/main";
+import NavB1P from "../../PublishedWebsites/BlogTemplate1/Main/main";
 
 export default class NavBar extends Component {
 
@@ -103,9 +105,11 @@ export default class NavBar extends Component {
                 <Route exact path='/F1/' component={NavF1} />
                 <Route exact path='/RestaurantWebsite/' component={RestaurantNavBar} />
                 <Route exact path="/B1/" component={NavB1} />
+                <Route exact path="/B1P/" component={NavB1P} />
                 <Route exact path="/S1/" component={NavS1} />
                 <Route exact path="/T1/" component={NavT1} />
-                <Route exact path="/ShoppingWebsite/" component={NavS1P}/>
+                <Route exact path="/ShoppingWebsite/" component={NavS1P} />
+                <Route exact path="/TeacherWebsite/" component={NavT1P}/>
             </div>
         );
     }

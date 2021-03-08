@@ -84,8 +84,11 @@ export default function Pricing() {
     const classes = useStyles();
     const [currentPlan, setPlan] = useState("");
     const [open, setOpen] = React.useState(false);
-    
+
     useEffect(() => {
+
+        window.scrollTo(0, 0);
+        
         fetch("http://localhost:8080/user/getUserData", {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem('token'),
@@ -98,7 +101,7 @@ export default function Pricing() {
         }).catch(err => {
             console.log(err);
         })
-    },[]);
+    }, []);
 
 
     let handleSelection = (plan) => {

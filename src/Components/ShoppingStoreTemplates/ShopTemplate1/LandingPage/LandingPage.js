@@ -52,7 +52,7 @@ export default class LandingPage extends Component {
             whatsapp: {},
             address: {}
         },
-        products:[]
+        products: []
     }
 
     async componentDidMount() {
@@ -81,7 +81,7 @@ export default class LandingPage extends Component {
                         sectionName: resultData.data.sectionName,
                         sectionDesc: resultData.data.sectionDesc,
                         footer: resultData.data.footer,
-                        products:resultData.data.products
+                        products: resultData.data.products
                     });
                 }
             })
@@ -715,7 +715,9 @@ export default class LandingPage extends Component {
                         emailHandler={this.emailEditor}
                         whatsappHandler={this.whatsappEditor}
                     />
-                    <button style={{ bottom: 30 }} className={classes.saveBt} onClick={this.saveChangesHandler}>Save Changes</button>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                        <button style={{ bottom: 30 }} className={classes.saveBt} onClick={this.saveChangesHandler}>Save Changes</button>
+                    </div>
                 </div>
             </div>
         );

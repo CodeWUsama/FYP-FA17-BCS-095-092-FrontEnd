@@ -55,7 +55,7 @@ export default class Dashboard extends Component {
             displayData = this.state.orders.map((order,i) => {
                 return (
                     <tr key={i}>
-                        <td>{order.productId}</td>
+                        <td>{order._id}</td>
                         <td>{order.total}</td>
                         <td>{order.method}</td>
                         <td>{order.status}</td>

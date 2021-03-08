@@ -65,7 +65,7 @@ export default class Updateblog extends Component {
                 <div className={classes.rootCont}>
                     <div className={classes.closeCont}>
                         <h1 style={{ color: "white" }}>!</h1>
-                        <h1 className={classes.editorHead}>Update Research</h1>
+                        <h1 className={classes.editorHead}>Update Blog</h1>
                         <p onClick={this.props.closeHandler} className={classes.close}>X</p>
                     </div>
 

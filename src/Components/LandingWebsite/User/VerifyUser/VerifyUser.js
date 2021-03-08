@@ -39,7 +39,6 @@ export default class VerifyUser extends Component {
                             <h1>User Verification</h1>
                             <div className={classes.inCont}>
                                 <TextField className={classes.input} label="Activation Code" id="code" type="number" />
-                                <a className={classes.aTag}>Resend Code</a>
                             </div>
                             <button style={{ width: "120px" }} type="submit" className="btn btn-primary btn-block btn-large" >Verify</button>
                         </form>

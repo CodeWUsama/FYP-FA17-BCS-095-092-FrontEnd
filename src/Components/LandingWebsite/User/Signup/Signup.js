@@ -14,6 +14,10 @@ export default class Signup extends Component {
         validPass: false
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     validateName = (event) => {
         let val = event.target.value;
         if (!(/^([a-zA-Z\s]{1,})$/.test(val))) {

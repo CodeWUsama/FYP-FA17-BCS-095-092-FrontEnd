@@ -13,6 +13,7 @@ export default class Cart extends Component {
     }
 
     async componentDidMount() {
+        window.scrollTo(0, 0);
         this._isMounted = true;
         await fetch("http://localhost:8080/s1td/getCart?id=" + localStorage.getItem("id"), {
             method: "GET",

@@ -1,0 +1,88 @@
+.info{
+    margin-top: 4% ;
+    display: flex;
+    justify-content: center;
+}
+.inpu{
+    width:70%;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    margin-top: 2%;
+}
+.inputflie{
+    width:30%;
+}
+.root{
+    margin-top: 6%;
+    width: 70%;
+    height: 430px;
+    margin-left: 12%;
+    padding: 1%;
+}
+.contactIcon{
+    height: 30px;
+    width: 30px;
+}
+.div4 {
+    width: 30%;
+}
+
+.contactText{
+    color: black ;
+    font: 16px "Poppins", sans-serif;
+    font-weight: 400;
+    margin-left: 25%;
+    overflow: hidden;
+}
+.contactLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .inpu{
+        width:50%;
+    }
+    .info{
+        margin-left: 30%;
+    }
+    .div4{
+        width: 20%;
+        overflow: hidden;
+    }
+    }
+@media screen and (max-width: 600px) {
+.inpu{
+    width:50%;
+}
+.info{
+    margin-left: 30%;
+}
+.div4{
+    overflow: hidden;
+}
+}
+@media screen and (min-width: 300px) {
+    .inpu{
+        width:70%;
+    }
+    .info{
+        margin-left: 10%;
+    }
+    }
+
+@media screen and (max-width: 500px) {
+    .data{
+        width: 100%;
+    }
+    .btn{
+        width: 20%;
+    }
+    }

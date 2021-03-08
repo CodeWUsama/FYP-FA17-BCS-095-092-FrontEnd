@@ -8,10 +8,11 @@ export default class dashboard extends Component {
         username: localStorage.getItem("username"),
         savedTemps: [],
         publishedTemps: [],
-        package:""
+        package: ""
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         fetch("http://localhost:8080/user/getUserData", {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem('token'),

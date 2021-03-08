@@ -156,7 +156,7 @@ export default class ForgotPass extends Component {
                 <form onSubmit={this.handleSubmitPass} className={classes.verifyForm}>
                     <h1>Change Password</h1>
                     <div className={classes.inCont}>
-                        <TextField onFocus={() => { this.setState({ error: false }) }} className={classes.input} label="New Password" id="pass" type="text" />
+                        <TextField onFocus={() => { this.setState({ error: false }) }} className={classes.input} label="New Password" id="pass" type="password" />
                         <TextField onFocus={() => { this.setState({ error: false }) }} error={this.state.cpass} helperText={this.state.cpass?"Password and Confirm Password must match.":""} className={classes.input} style={{marginTop:30}} onKeyUp={this.handleConfirmPass} label="Confirm Password" id="cpass" type="password" />
                     </div>
                     <button disabled id="submitBtn" style={{ width: "120px" }} type="submit" className="btn btn-primary btn-block btn-large" >Change</button>
