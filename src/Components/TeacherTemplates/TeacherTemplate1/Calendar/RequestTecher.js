@@ -66,7 +66,7 @@ export default class RequestTecher extends Component {
             body: JSON.stringify({
                 id: id,
                 email: email,
-                tempId:localStorage.getItem("id")
+                tempId: localStorage.getItem("id")
             })
         })
             .then(result => {
@@ -89,7 +89,7 @@ export default class RequestTecher extends Component {
 
             body: JSON.stringify({
                 id: id,
-                tempId:localStorage.getItem("id")
+                tempId: localStorage.getItem("id")
             })
         })
             .then(result => {
@@ -113,9 +113,9 @@ export default class RequestTecher extends Component {
                     <div key={i}>
                         <div style={{ display: 'flex', justifyContent: 'space-around', backgroundColor: '#BCD4E6' }}>
                             <p style={{ width: '10%' }}> {blog.name}</p>
-                            <p style={{ width: '10%' }}>{blog.email} </p>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <p style={{ width: '10%' }}>{blog.messages}</p>     &nbsp;&nbsp;&nbsp;&nbsp;
-                            <p style={{ width: '10%' }}>{blog.time}</p>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <p style={{ width: '10%' }}>{blog.email} </p>
+                            <p style={{ width: '10%' }}>{blog.messages}</p>
+                            <p style={{ width: '10%' }}>{blog.time}</p>
                             <p style={{ width: '10%' }}>{blog.date}</p>
                         </div>
                         <div style={{ color: 'white' }}>.</div>

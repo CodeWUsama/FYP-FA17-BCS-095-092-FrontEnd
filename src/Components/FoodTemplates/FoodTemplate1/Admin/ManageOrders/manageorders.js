@@ -71,7 +71,7 @@ const ManageOrders = () => {
             .then(result => {
                 return result.json();
             }).then(resultData => {
-                // window.location.reload();
+                window.location.reload();
             })
             .catch(err => {
                 console.log(err);

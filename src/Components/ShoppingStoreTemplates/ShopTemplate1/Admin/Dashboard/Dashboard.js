@@ -24,7 +24,6 @@ export default class Dashboard extends Component {
                     <button className={classes.btt} onClick={()=>window.location.href="/S1/#/admin/manageorders"} >Manage Orders</button>
                     <button className={classes.btt} onClick={() => window.location.href = "/S1/#/admin/contactrequests"} >Contact Requests</button>
                     <button className={classes.btt} onClick={()=>window.location.href="/S1/#/admin/paymentdetails"} >PaymentDetails</button>
-                    <button className={classes.btt} onClick={this.handleLogout}>Logout</button>
                 </div>
             </div>
         );
