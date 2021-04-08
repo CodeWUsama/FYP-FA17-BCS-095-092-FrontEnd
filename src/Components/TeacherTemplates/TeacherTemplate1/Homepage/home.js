@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './home.module.css'
-import SideEditor from '../ReusableComponents/SideEditor/SideEditor';
+import SideEditor from "./../ReusableComponents/SideEditor/SideEditor"
 import TextEditor from '../../../Editors/TextEditor/TextEditor';
 import Front from './front';
 import Calendar from './calendar';

@@ -43,7 +43,7 @@ export default class Home extends Component {
             this.props.storeName ?
                 <div
                     className={classes.rootCont}
-                    style={{ backgroundImage: "url('data:image/jpeg;base64," + this.state.img }}
+                    style={{ backgroundImage: "url('data:image/jpeg;base64," + this.state.img, marginTop: this.props.published ? 0 : 100 }}
                 >
                     <AnimatedText
                         storeName={this.props.storeName}

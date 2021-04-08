@@ -1,12 +1,12 @@
 .rootCont{
     width:35%;
-    max-height: 450px;
+    max-height:800px;
     background-color: white;
     color: black;
     position: fixed;
     z-index: 400;
-    top:180px;
     overflow-y: scroll;
+    top:180px;
     padding:10px;
     padding-bottom: 30px;
 }

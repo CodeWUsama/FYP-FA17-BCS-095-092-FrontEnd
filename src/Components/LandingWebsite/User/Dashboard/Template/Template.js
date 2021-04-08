@@ -13,6 +13,7 @@ import PreviewIcon from '@material-ui/icons/Visibility';
 import IconButton from '@material-ui/core/IconButton';
 import PublishIcon from '@material-ui/icons/Publish';
 import Tooltip from '@material-ui/core/Tooltip';
+import StopIcon from '@material-ui/icons/Stop';
 
 export default class Template extends Component {
 
@@ -171,7 +172,43 @@ export default class Template extends Component {
     }
 
     handlePublish = () => {
+        localStorage.setItem("toPublish", this.props.id);
+        localStorage.setItem("category", this.state.category)
+        window.location.href = "/publish"
+    }
 
+    handleStop = () => {
+        fetch("http://localhost:8080/user/stopWebsite", {
+            method: "POST",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token'),
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify({
+                templateId: this.props.id
+            })
+        })
+            .then(res => {
+                if (res.status === 200) {
+                    window.location.reload();
+                }
+            })
+    }
+
+    handlePublishedPreview = () => {
+        fetch("http://localhost:8080/user/checkTemplate?templateId=" + this.props.id, {
+            method: "GET",
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        }).then(res => {
+            return res.json();
+        }).then(resData => {
+            if (resData.data) {
+                let subdomain = resData.data.subdomain;
+                window.location.href = "http://" + subdomain + ".localhost:3000";
+            }
+        })
     }
 
 
@@ -197,8 +234,16 @@ export default class Template extends Component {
         let options;
         if (this.state.admin) {
             options = <div className={classes.optionCont}>
-                <p className={classes.option}>Admin Panel</p>
-                <p className={classes.option}>Stop</p>
+                <Tooltip title="Preview">
+                    <IconButton onClick={this.handlePublishedPreview} aria-label="preview">
+                        <PreviewIcon />
+                    </IconButton>
+                </Tooltip>
+                <Tooltip title="Stop">
+                    <IconButton onClick={this.handleStop} aria-label="Stop">
+                        <StopIcon />
+                    </IconButton>
+                </Tooltip>
             </div>
         }
         else if (this.state.user) {
@@ -217,7 +262,7 @@ export default class Template extends Component {
                 </Tooltip>
 
                 <Tooltip title="Publish">
-                    <IconButton onClick={this.handleEdit} aria-label="publish">
+                    <IconButton onClick={this.handlePublish} aria-label="publish">
                         <PublishIcon />
                     </IconButton>
                 </Tooltip>
@@ -227,8 +272,6 @@ export default class Template extends Component {
                         <DeleteIcon />
                     </IconButton>
                 </Tooltip>
-
-                {/* <img name="Delete" onClick={this.delTemp} className={classes.delIcon} src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png" /> */}
             </div>
         }
         else if (this.state.view) {

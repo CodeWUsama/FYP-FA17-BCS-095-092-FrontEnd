@@ -7,7 +7,7 @@ export default class dashboard extends Component {
     state = {
         username: localStorage.getItem("username"),
         savedTemps: [],
-        publishedTemps: [],
+        websites: [],
         package: ""
     }
 
@@ -23,7 +23,7 @@ export default class dashboard extends Component {
         }).then(resData => {
             this.setState({
                 savedTemps: resData.user.templates,
-                publishedTemps: resData.user.publishedTemps,
+                websites: resData.user.websites,
                 package: resData.user.package.level
             });
         }).catch(err => {
@@ -96,10 +96,20 @@ export default class dashboard extends Component {
         }
 
         let renderPTemps;
-        if (this.state.publishedTemps) {
-            renderPTemps = this.state.publishedTemps.map(temp => {
-                if (temp === "F1") {
-                    return <Template key={Math.random()} name="Fast Food" category="F1" admin={true} user={false} view={false} />;
+        if (this.state.websites) {
+            renderPTemps = this.state.websites.map(temp => {
+            
+                if (temp.category === "F1") {
+                    return <Template key={temp.templateId} id={temp.templateId} name="Fast Food" category="F1" admin={true} user={false} view={false} />;
+                }
+                if (temp.category === "B1") {
+                    return <Template id={temp.templateId} key={temp.templateId} name="Blogging" category="B1" admin={true} user={true} view={false} />;
+                }
+                if (temp.category === "S1") {
+                    return <Template id={temp.templateId} key={temp.templateId} name="Shopping" category="S1" admin={true} user={true} view={false} />;
+                }
+                if (temp.category === "T1") {
+                    return <Template id={temp.templateId} key={temp.templateId} name="Teaching" category="T1" admin={true} user={true} view={false} />;
                 }
             })
         }

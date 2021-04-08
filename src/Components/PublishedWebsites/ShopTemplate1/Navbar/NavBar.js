@@ -43,7 +43,7 @@ export default class NavBar extends Component {
         return (
             <HashRouter>
                 <div className={classes.storeRootCont} >
-                    <div className={classes.navBarCont}>
+                    <div className={classes.navBarCont} style={{ marginTop: this.props.published ? 0 : 100 }}>
 
                         <div className={classes.hamburgerCont}>
                             <img className={classes.hamLogo} onClick={this.toggleMenuHandler} src={hamIcon} alt="Hamburger-Icon" />
@@ -103,7 +103,7 @@ export default class NavBar extends Component {
                     </div>
 
                 </div>
-                <Route exact path="/" component={LandingPage} />
+                <Route exact path="/" children={<LandingPage published={this.props.published} />} />
                 <Route exact path="/products" component={Products} />
                 <Route exact path="/contact" component={ContactUs} />
                 <Route exact path="/account" component={Login} />
@@ -115,4 +115,4 @@ export default class NavBar extends Component {
             </HashRouter>
         );
     }
-}   
+}

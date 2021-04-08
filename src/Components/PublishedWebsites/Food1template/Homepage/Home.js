@@ -39,6 +39,7 @@ export default class Home extends Component {
 
     async componentDidMount() {
         this._isMounted = true;
+        console.log(this.props.id);
         await fetch("http://localhost:8080/f1td/getHomeData?id=" + this.props.id, {
             method: "GET",
             headers: {

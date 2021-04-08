@@ -96,7 +96,7 @@ export default class LandingPage extends Component {
                 <div className={classes.content} style={{ width: "100%" }}>
                     <Home
                         storeName={this.state.storeName}
-
+                        published={this.props.published}
                         introText={this.state.introText}
                     />
                     <NewArrivals
