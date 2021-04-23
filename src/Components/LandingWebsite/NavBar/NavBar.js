@@ -24,6 +24,7 @@ import NavT1 from "./../../TeacherTemplates/TeacherTemplate1/main";
 import NavT1P from "./../../PublishedWebsites/TeacherTemplate1/main";
 import NavB1P from "../../PublishedWebsites/BlogTemplate1/Main/main";
 import Publish from '../User/Publish/publish';
+import NavD1 from "./../../DoctorTemplate/main";
 
 export default class NavBar extends Component {
 
@@ -111,6 +112,7 @@ export default class NavBar extends Component {
                 <Route exact path="/T1/" component={NavT1} />
                 <Route exact path="/ShoppingWebsite/" component={NavS1P} />
                 <Route exact path="/TeacherWebsite/" component={NavT1P}/>
+                <Route exact path="/D1/" component={NavD1}/>
                 <Route exact path="/publish/" component={Publish}/>
             </div>
         );

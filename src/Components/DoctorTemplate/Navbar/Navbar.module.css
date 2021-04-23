@@ -1,0 +1,28 @@
+.meetings{
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    padding:10px 20px 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.meetings:hover{
+    background-color: white;
+    color: #FF8553;
+}
+
+@media(max-width:1000px){
+    .meetings{
+        border: none;
+        padding:0;
+        padding-top: 8px;
+    }
+    .meetings:hover{
+        border-radius: 0;
+        background-color:#FF8553;
+        color: white;
+    }
+}

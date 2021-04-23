@@ -1,0 +1,98 @@
+.rootCont {
+  width: 100%;
+  height: 85vh;
+  background-color: #fc9464;
+}
+
+.head {
+  color: white;
+  padding-top: 20px;
+  font-size: 45px;
+  text-align: center;
+}
+
+.researchesCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 7%;
+}
+
+.research {
+  height: 500px;
+  overflow: auto;
+  width: 30%;
+  padding: 20px;
+}
+
+.rHead {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  border-bottom: 2px solid white;
+  padding-bottom: 20px;
+}
+
+.meetings {
+  color: white;
+  background-color: transparent;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  width: 200px;
+}
+
+.meetings:hover {
+  background-color: white;
+  color: #ff8553;
+}
+
+.rDesc {
+  color: white;
+  font-size: 18px;
+  text-align: justify;
+}
+
+@media (max-height: 820px) {
+  .rootCont {
+    height: max-content;
+  }
+}
+
+@media (max-width:980px) {
+  .researchesCont{
+    flex-direction: column;
+    align-items: center;
+  }
+  .research{
+    width: 80%;
+  }
+  .rootCont{
+    height: max-content;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 20px; /* Total width including `border-width` of scrollbar thumb */
+  height: 0;
+}
+::-webkit-scrollbar-thumb {
+  height: 1em;
+  border: 0.5em solid rgba(0, 0, 0, 0); /* Transparent border together with `background-clip: padding-box` does the trick */
+  background-clip: padding-box;
+  -webkit-border-radius: 1em;
+  background-color: rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}

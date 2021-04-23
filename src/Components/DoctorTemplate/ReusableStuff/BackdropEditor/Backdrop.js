@@ -9,6 +9,7 @@ export default class Backdrop extends Component {
                 onClick={this.props.handler}
                 style={{zIndex:this.props.fullsize?1200:300}}
             >
+
             </div>
         );
     }

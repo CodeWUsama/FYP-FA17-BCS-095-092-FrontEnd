@@ -1,0 +1,8 @@
+.researchesCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #fc9464;
+    padding: 20px 0px;
+    flex-wrap: wrap;
+  }
