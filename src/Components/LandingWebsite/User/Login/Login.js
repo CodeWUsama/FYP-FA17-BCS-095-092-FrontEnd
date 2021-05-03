@@ -13,12 +13,11 @@ export default class Login extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
- 
+
     handleSubmit = (event) => {
         event.preventDefault();
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-        console.log(username,password);
         let code;
         fetch("http://localhost:8080/user/login", {
             method: "POST",
@@ -35,8 +34,14 @@ export default class Login extends Component {
         }).then(resData => {
             if (code === 200) {
                 localStorage.setItem('token', resData.token);
-                localStorage.setItem('username', username);
-                window.location.href = '/account';
+                if (resData.message = "admin") {
+                    return window.location.href = '/admin';
+
+                }
+                else {
+                    localStorage.setItem('username', username);
+                    window.location.href = '/account';
+                }
             }
             else {
                 this.setState({ errorStatus: true });

@@ -60,7 +60,7 @@ const Home = () => {
     }, []);
 
     async function getData() {
-        let response = await axios.get("http://localhost:8080/d1td/getHomeData");
+        let response = await axios.get("http://localhost:8080/d1td/getHomeData?id="+localStorage.getItem("id"));
         setintroName(response.data.data.introName);
         setintroF2(response.data.data.introF2);
         setintroF3(response.data.data.introF3);

@@ -1,45 +1,32 @@
 import React from 'react';
 import { Component } from 'react';
-import classes from "./contact.module.css";
+import classes from "./appoint.module.css";
 import TextField from "@material-ui/core/TextField";
 import Footer from '../Footer-fixed/Footer';
 import CustomAlert from "../ReusableStuff/Alert/alert";
 
-export default class Contact extends Component {
+export default class Appoint extends Component {
 
     state = {
-        email: "",
-        message: "",
-        subject: "",
         success: false,
         error: false
-    }
-
-    updateEmail = (event) => {
-        this.setState({ email: event.target.value });
-    }
-
-    updateSubject = (event) => {
-        this.setState({ subject: event.target.value });
-    }
-
-    updateMessage = (event) => {
-        this.setState({ message: event.target.value });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
 
-        fetch("http://localhost:8080/d1td/contactRequest", {
+        fetch("http://localhost:8080/d1td/getAppointment", {
             method: "POST",
             headers: {
                 "Content-Type": 'application/json'
             },
             body: JSON.stringify({
                 id: localStorage.getItem("id"),
-                email: this.state.email,
-                subject: this.state.subject,
-                message: this.state.message
+                email: document.getElementById("email").value,
+                matter: document.getElementById("matter").value,
+                details: document.getElementById("details").value,
+                time:document.getElementById("time").value,
+                name:document.getElementById("name").value
             })
         })
             .then(res => {
@@ -62,40 +49,50 @@ export default class Contact extends Component {
         return (
             <div className={classes.rootCont}>
                 <hr />
-                <p className={classes.head}>Chat with me</p>
+                <p className={classes.head}>Make Appointment</p>
                 <form className={classes.form} onSubmit={this.handleSubmit}>
+                    <TextField
+                        label="Name"
+                        id="name"
+                        type="text"
+                        variant="outlined"
+                        style={{ width: "100%" }}
+                        InputLabelProps={{ style: { color: 'white' } }}
+                    />
                     <TextField
                         label="Email"
                         id="email"
                         type="email"
                         variant="outlined"
                         style={{ width: "100%" }}
-                        value={this.state.email}
-                        onChange={this.updateEmail}
                         InputLabelProps={{ style: { color: 'white' } }}
                         inputProps={{ style: { borderColor: "white" } }}
                     />
                     <TextField
-                        label="Subject"
-                        id="subject"
+                        label="Matter of Discussion"
+                        id="matter"
                         type="text"
                         variant="outlined"
                         style={{ width: "100%" }}
-                        value={this.state.subject}
-                        onChange={this.updateSubject}
                         InputLabelProps={{ style: { color: 'white' } }}
                     />
                     <TextField
-                        label="Message"
-                        id="message"
+                        label="Preferred Day and Time"
+                        id="time"
+                        type="text"
+                        variant="outlined"
+                        style={{ width: "100%" }}
+                        InputLabelProps={{ style: { color: 'white' } }}
+                    />
+                    <TextField
+                        label="Details"
+                        id="details"
                         type="text"
                         multiline
-                        rows={10}
+                        rows={7}
                         rowsMax={10}
                         variant="outlined"
                         style={{ width: "100%" }}
-                        value={this.state.message}
-                        onChange={this.updateMessage}
                         InputLabelProps={{ style: { color: 'white' } }}
                     />
 
@@ -105,7 +102,7 @@ export default class Contact extends Component {
                             <CustomAlert
                                 mode="success"
                                 title="Success"
-                                description="Message Sent. Admin will soon get in touch with you on email."
+                                description="Appointment Request Sent. Admin will soon get in touch with you on email regarding confirmation."
                                 onClose={() => { this.setState({ success: false }); }}
                             />
                             : null
@@ -123,9 +120,9 @@ export default class Contact extends Component {
 
                     </div>
 
-                    <button type="submit" className={classes.btn}>Send Message</button>
+                    <button type="submit" className={classes.btn}>Submit to Admin</button>
                 </form>
-                {this.props.footer ? <Footer /> : null}
+                <Footer />
 
             </div>
         );

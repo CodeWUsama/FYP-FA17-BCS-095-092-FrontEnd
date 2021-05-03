@@ -35,3 +35,9 @@
 .delIcon:hover{
     cursor: pointer;
 }
+
+.tempRoot{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}

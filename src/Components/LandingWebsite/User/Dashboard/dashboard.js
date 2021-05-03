@@ -81,16 +81,19 @@ export default class dashboard extends Component {
         if (this.state.savedTemps) {
             renderSTemps = this.state.savedTemps.map(temp => {
                 if (temp.category === "F1") {
-                    return <Template id={temp._id} key={temp._id} name="Fast Food" category="F1" admin={false} user={true} view={false} />;
+                    return <Template isRated={temp.isRated} id={temp._id} key={temp._id} name="Fast Food" category="F1" admin={false} user={true} view={false} />;
                 }
                 if (temp.category === "B1") {
-                    return <Template id={temp._id} key={temp._id} name="Blogging" category="B1" admin={false} user={true} view={false} />;
+                    return <Template isRated={temp.isRated} id={temp._id} key={temp._id} name="Blogging" category="B1" admin={false} user={true} view={false} />;
                 }
                 if (temp.category === "S1") {
-                    return <Template id={temp._id} key={temp._id} name="Shopping" category="S1" admin={false} user={true} view={false} />;
+                    return <Template isRated={temp.isRated} id={temp._id} key={temp._id} name="Shopping" category="S1" admin={false} user={true} view={false} />;
                 }
                 if (temp.category === "T1") {
-                    return <Template id={temp._id} key={temp._id} name="Teaching" category="T1" admin={false} user={true} view={false} />;
+                    return <Template isRated={temp.isRated} id={temp._id} key={temp._id} name="Teaching" category="T1" admin={false} user={true} view={false} />;
+                }
+                if (temp.category === "D1") {
+                    return <Template isRated={temp.isRated} id={temp._id} key={temp._id} name="Doctor Portfolio" category="D1" admin={false} user={true} view={false} />;
                 }
             })
         }
@@ -110,6 +113,9 @@ export default class dashboard extends Component {
                 }
                 if (temp.category === "T1") {
                     return <Template id={temp.templateId} key={temp.templateId} name="Teaching" category="T1" admin={true} user={true} view={false} />;
+                }
+                if (temp.category === "D1") {
+                    return <Template id={temp.templateId} key={temp.templateId} name="Doctor" category="D1" admin={true} user={true} view={false} />;
                 }
             })
         }
