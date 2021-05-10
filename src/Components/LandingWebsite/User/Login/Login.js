@@ -7,7 +7,8 @@ import TextField from "@material-ui/core/TextField";
 
 export default class Login extends Component {
     state = {
-        errorStatus: false
+        errorStatus: false,
+        freeze:false
     }
 
     componentDidMount() {
@@ -34,17 +35,22 @@ export default class Login extends Component {
         }).then(resData => {
             if (code === 200) {
                 localStorage.setItem('token', resData.token);
-                if (resData.message = "admin") {
-                    return window.location.href = '/admin';
-
+                if (resData.admin ===true) {
+                    localStorage.setItem("ad",true);
+                   return window.location.href = '/admin';
                 }
                 else {
                     localStorage.setItem('username', username);
-                    window.location.href = '/account';
+                   return window.location.href = '/account';
                 }
             }
             else {
-                this.setState({ errorStatus: true });
+                if(resData.freeze){
+                    this.setState({ freeze:true, errorStatus:false  });
+                }
+                else{
+                    this.setState({ errorStatus:true, freeze:false  });
+                }
             }
         }).catch(err => {
             console.log(err);
@@ -55,6 +61,7 @@ export default class Login extends Component {
         return (
             <div style={{ marginTop: "100px" }}>
                 <Error status={this.state.errorStatus} text="Wrong Username or Password!" />
+                <Error status={this.state.freeze} text="There is some issue with your account. Please contact support." />
                 <div className={classes.rootCont}>
                     <div className={classes.login}>
                         <h1>Login Form</h1>

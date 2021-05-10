@@ -7,6 +7,7 @@ import NavT1P from "./Components/PublishedWebsites/TeacherTemplate1/main";
 import NavB1P from "./Components/PublishedWebsites/BlogTemplate1/Main/main";
 import NavS1P from "./Components/PublishedWebsites/ShopTemplate1/Navbar/NavBar";
 import RestaurantNavBar from "./Components/PublishedWebsites/Food1template/NavBar/NavBar";
+import Unauth from "./Components/LandingWebsite/Unauth/unauth";
 
 class App extends Component {
 
@@ -28,15 +29,20 @@ class App extends Component {
       }).then(res => {
         return res.json();
       }).then(resData => {
+        console.log(resData);
         if (resData.available) {
           //show available message
         }
-        else {
+        else if (resData.data.status) {
           this.setState({
             templateId: resData.data.templateId,
             category: resData.data.category
           });
           localStorage.setItem("id", resData.data.templateId);
+        }
+        else {
+          console.log("banned");
+          //show banned message
         }
         this.setState({ mode: "subdomain" });
       })
