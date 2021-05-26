@@ -42,7 +42,7 @@ class NavbarPage extends Component {
                                 </MDBNavItem>
                                 <p style={{ color: 'white' }}>.....</p>
                                 <MDBNavItem>
-                                    <a href="/T1/#/meeting" style={{ color: 'grey', }}>MEETINGS</a>
+                                    <a href="/T1/#/meeting" style={{ color: 'grey', }}>CALENDAR</a>
                                 </MDBNavItem>
                                 <p style={{ color: 'white' }}>.....</p>
                                 <MDBNavItem>

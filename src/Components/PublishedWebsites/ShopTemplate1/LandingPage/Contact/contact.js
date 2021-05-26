@@ -71,6 +71,7 @@ export default class Contact extends Component {
                         style={{ width: "100%" }}
                         value={this.state.email}
                         onChange={this.updateEmail}
+                        required
                     />
                     <TextField
                         label="Subject"
@@ -78,7 +79,7 @@ export default class Contact extends Component {
                         type="text"
                         variant="outlined"
                         style={{ width: "100%" }}
-                        value={this.state.subject}
+                        value={this.state.subject}required
                         onChange={this.updateSubject}
                     />
                     <TextField
@@ -89,7 +90,7 @@ export default class Contact extends Component {
                         rows={5}
                         rowsMax={5}
                         variant="outlined"
-                        style={{ width: "100%" }}
+                        style={{ width: "100%" }}required
                         value={this.state.message}
                         onChange={this.updateMessage}
                     />

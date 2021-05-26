@@ -9,7 +9,7 @@ export default class Cart extends Component {
 
     state = {
         products: [],
-        images:[]
+        images: []
     }
 
     async componentDidMount() {
@@ -28,7 +28,7 @@ export default class Cart extends Component {
                 if (this._isMounted) {
                     this.setState({
                         products: resultData.products,
-                        images:resultData.images
+                        images: resultData.images
                     });
                 }
             })
@@ -47,7 +47,7 @@ export default class Cart extends Component {
     }
 
     handleCheckout = () => {
-        let prodId=[];
+        let prodId = [];
         this.state.products.map(product => {
             prodId.push(product._id);
         })
@@ -62,7 +62,7 @@ export default class Cart extends Component {
         let displayProducts;
 
         if (this.state.products.length > 0) {
-            displayProducts = this.state.products.map((product,i) => {
+            displayProducts = this.state.products.map((product, i) => {
                 return <ProductTemplate cart id={product._id} key={product._id} img={this.state.images[i]} title={product.title} price={product.price} flexBasis="27%" />
             })
         }
@@ -71,24 +71,29 @@ export default class Cart extends Component {
 
 
         return (
-            <div className={classes.rootCont}>
+            <>
+                <div className={classes.rootCont}>
 
-                <ProductsContainer>
+                    <ProductsContainer>
 
-                    {displayProducts}
+                        {displayProducts}
 
-                </ProductsContainer>
+                    </ProductsContainer>
+                    {total == 0 ?
+                        <h1 style={{textAlign:"center"}}>No items in cart</h1>
+                        :
+                        <div className={classes.btnCont}>
 
-                <div className={classes.btnCont}>
+                            <p className={classes.price}>Total:{total} Rs</p>
+                            <button onClick={this.handleCheckout} className={classes.btn}>Checkout</button>
 
-                    <p className={classes.price}>Total:{total}$</p>
-                    <button onClick={this.handleCheckout} className={classes.btn}>Checkout</button>
+                        </div>
+                    }
 
                 </div>
 
-            <Footer/>
-
-            </div>
+                <Footer />
+            </>
         );
     }
 }

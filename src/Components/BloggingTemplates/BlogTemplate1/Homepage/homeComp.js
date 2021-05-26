@@ -89,7 +89,7 @@ export default class Home extends Component {
                                     fontWeight: this.props.hometext.bold ? "bold" : "normal", fontStyle: this.props.hometext.italic ? "italic" : "normal", textDecoration: this.props.hometext.underline ? "underline" : "none", textAlign: this.props.hometext.align,
                                 }}
                                 onClick={this.props.hometextEditor}> {this.props.hometext.text} </p>
-                            <button type="button" onClick={gotorecipe} className="btn btn-outline-danger">Veiw All Recipe</button>
+                            <button type="button" onClick={gotorecipe} className="btn btn-outline-danger">Veiw All Blogs</button>
                         </div>
 
                     </div>

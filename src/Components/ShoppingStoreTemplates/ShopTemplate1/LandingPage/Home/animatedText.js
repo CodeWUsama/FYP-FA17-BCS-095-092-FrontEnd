@@ -32,7 +32,7 @@ export default function AnimatedText(props) {
             >
                 {props.introText.text}
             </p>
-            <button className={classes.viewButton}>View Products</button>
+            <button onClick={()=>{window.location.href="/s1/#/products"}} className={classes.viewButton}>View Products</button>
         </div>
     </animated.div>
 }

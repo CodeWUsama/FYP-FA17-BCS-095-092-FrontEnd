@@ -1,5 +1,7 @@
 .rootCont{
     padding-top: 200px;
+    min-height: 90vh;
+    max-height: max-content;
 }
 
 .btnCont{

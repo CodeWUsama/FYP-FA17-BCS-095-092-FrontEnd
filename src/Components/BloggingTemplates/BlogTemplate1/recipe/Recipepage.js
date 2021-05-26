@@ -122,14 +122,14 @@ export default class Recipe extends Component {
             var image = this.state.image;
             let len = this.state.recipe.length-1;
             return (
-              <div className={classes.recipe} key={i}>
-                <img style={{height:'350px', width:330}}  src={'data:image/jpg;base64,' + image[len-i]} />
+              <div className={classes.recipe} style={{marginRight:20}} key={i}>
+                <img onClick={()=> {this.UpdateBlog() ; this.setState({ i:i }) } } style={{height:'350px', width:330}}  src={'data:image/jpg;base64,' + image[len-i]} />
                 <div className={classes.recipetext} >
                     <p style={{ fontSize:'25px', color: 'rgb(176,0,0)'}} onClick={()=> {this.UpdateBlog() ; this.setState({ i:i }) } } >{blog.name}</p>
                     <p style={{color:'rgb(96,0,0)'}}  onClick={()=> {this.UpdateBlog() ; this.setState({ i:i }) } } > {blog.text}</p>
                 </div>
                 <hr/>
-                <img style={{height:'25px', width:'8%',}} onClick={()=> { this.handleSubmit(blog._id )  } }src={remove}/>   
+                <img style={{height:'25px', width:'8%', cursor:'pointer'}} onClick={()=> { this.handleSubmit(blog._id )  } }src={remove}/>   
                   
                   <p style={{color:'white'}}>.</p>
               </div>

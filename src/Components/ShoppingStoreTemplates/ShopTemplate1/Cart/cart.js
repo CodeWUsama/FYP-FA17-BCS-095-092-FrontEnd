@@ -79,7 +79,7 @@ export default class Cart extends Component {
 
                 <div className={classes.btnCont}>
 
-                    <p className={classes.price}>Total:{total}$</p>
+                    <p className={classes.price}>Total:{total} Rs</p>
                     <button onClick={this.handleCheckout} className={classes.btn}>Checkout</button>
 
                 </div>

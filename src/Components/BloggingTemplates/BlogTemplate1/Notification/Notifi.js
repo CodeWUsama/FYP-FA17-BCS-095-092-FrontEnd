@@ -42,12 +42,15 @@ export default class Notifi extends Component {
     componentWillUnmount() {
         this._isMounted = false;
     }
+    
     handle = (id, email) => {
+        console.log(id);
         let reply = document.getElementById('reply').value;
         axios.patch('http://localhost:8080/b1td/reply', {
             reply: reply,
+            blogid:id,
             email: email,
-            id:localStorage.getItem("id")
+            id: localStorage.getItem("id")
         }).then(result => {
             if (result.status == 200) {
                 window.location.reload();
@@ -63,9 +66,9 @@ export default class Notifi extends Component {
                 "Content-Type": 'application/json'
             },
 
-            body: JSON.stringify({  
+            body: JSON.stringify({
                 blogid: id,
-                templateId:localStorage.getItem("id")
+                templateId: localStorage.getItem("id")
             })
         })
             .then(result => {
@@ -85,7 +88,7 @@ export default class Notifi extends Component {
             return (
                 <div key={i} style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: '8%' }}>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '10%' }}>
-                        <img style={{ height: '50px', width: '3%', }} onClick={() => { this.handleSubmit(blog._id) }} src={remove} />
+                        <img style={{ height: '50px', width: '3%', cursor: 'pointer' }} onClick={() => { this.handleSubmit(blog._id) }} src={remove} />
                     </div>
                     <div style={{ width: '90%', display: 'flex', justifyContent: 'space-around', backgroundColor: '#BCD4E6' }}>
                         <p style={{ width: '10%' }}> {blog.name}</p>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -16,11 +16,13 @@ import PaymentRequests from "./../Admin/PaymentRequests/PaymentRequests";
 import ContactRequests from '../Admin/ContactRequests/contactrequests';
 import ManageOrders from '../Admin/ManageOrders/manageorders';
 import PaymentDetails from '../Admin/PaymentDetails/PaymentDetails';
+import axios from 'axios';
 
 export default class NavBar extends Component {
 
     state = {
         drawer: false,
+        name: ""
     };
 
     toggleMenuHandler = () => {
@@ -32,6 +34,9 @@ export default class NavBar extends Component {
             if (e.target.innerWidth >= 930) {
                 this.setState({ drawer: false });
             }
+        })
+        axios.get("http://localhost:8080/s1td/getHomeData?id=" + localStorage.getItem("id")).then(result => {
+            this.setState({ name: result.data.data.name.text });
         })
     }
 
@@ -54,8 +59,8 @@ export default class NavBar extends Component {
                         </div>
 
                         <div className={classes.logoCont}>
-                            <p className={classes.logoTextFirst}>My</p>
-                            <p className={classes.logoTextLast}>Fashion</p>
+                            <p className={classes.logoTextFirst}>{this.state.name.split(" ")[0]}</p>
+                            <p className={classes.logoTextLast}>{this.state.name.split(" ")[1]}</p>
                         </div>
 
                         <div className={classes.navListCont}>
@@ -109,4 +114,4 @@ export default class NavBar extends Component {
             </HashRouter>
         );
     }
-}   
+}

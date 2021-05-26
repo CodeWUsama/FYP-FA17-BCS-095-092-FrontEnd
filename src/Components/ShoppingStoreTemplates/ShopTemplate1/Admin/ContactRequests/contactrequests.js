@@ -133,6 +133,7 @@ const ContactRequest = () => {
                         multiline
                         rows={5}
                         rowsMax={8}
+                        required
                     />
                 </DialogContent>
                 <DialogActions>

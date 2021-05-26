@@ -33,7 +33,6 @@ export default class Front extends Component {
     closeHandler = () => {
         this.setState({ showAdd: false });
         this.setState({ updateblog: false });
-
     }
     AddBlog = () => {
         this.setState({ showAdd: true });
@@ -125,8 +124,8 @@ export default class Front extends Component {
     render() {
 
         let Displayblog = this.state.research.reverse().map((blog, i) => {
-            
-            let len = this.state.image.length-1;
+
+            let len = this.state.image.length - 1;
             return (
                 <div key={i}>
                     <div style={{ color: 'white' }}>.</div>
@@ -134,10 +133,10 @@ export default class Front extends Component {
                         <img className={classes.removeimg} style={{ height: '40px', width: '5%', }} onClick={() => { this.handleSubmit(blog._id) }} src={remove} />
 
                         <div className={classes.researchtext}>
-                            <h3 style={{marginBottom:20}} onClick={() => { this.UpdateBlog(); this.setState({ i: i }) }}>{blog.name}</h3>
+                            <h3 style={{ marginBottom: 20 }} onClick={() => { this.UpdateBlog(); this.setState({ i: i }) }}>{blog.name}</h3>
                             <p onClick={() => { this.UpdateBlog(); this.setState({ i: i }) }}>{blog.text}</p>
                         </div>
-                        <img style={{ width: '30%', height: '300px' }} src={'data:image/jpg;base64,' + this.state.image[len-i]} />
+                        <img style={{ width: '30%', height: '300px' }} src={'data:image/jpg;base64,' + this.state.image[len - i]} />
                     </div>
                 </div>
             )
@@ -147,18 +146,18 @@ export default class Front extends Component {
         return (
             <div className={classes.rootCont}>
                 <h3 style={{ marginTop: '30px' }}>ALL RESEARCH</h3>
-                <Editor fullsize={true} enableBackdropEditor={this.state.updateblog} backdropHandler={this.toggleAddProduct} >
+                <Editor fullsize={true} enableBackdropEditor={this.state.updateblog} backdropHandler={this.closeHandler} >
                     <Updateblog closeHandler={() => { this.setState({ updateblog: false }) }} changeHandler={(newName, name) => this.changeUpdate(newName, name)} data={this.state.research[this.state.i]} />
                 </Editor>
-                <Editor fullsize={true} enableBackdropEditor={this.state.showAdd} backdropHandler={this.toggleAddProduct} >
+                <Editor fullsize={true} enableBackdropEditor={this.state.showAdd} backdropHandler={this.closeHandler} >
                     <Addblog addHandler={() => this.AddBlog()} closeHandler={this.addHandler} />
                 </Editor>
                 <div className={classes.researchlayer}>
 
-                    {Displayblog}
                     <div style={{ display: "flex", justifyContent: "center", marginTop: 30 }}>
                         <img onClick={this.AddBlog} style={{ height: '100px', width: '100px' }} src={imgadd} />
                     </div>
+                    {Displayblog}
 
                     <Footer />
                 </div>

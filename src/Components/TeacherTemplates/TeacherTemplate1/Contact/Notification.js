@@ -50,6 +50,7 @@ export default class Notification extends Component {
         let reply = document.getElementById('reply').value;
         axios.patch('http://localhost:8080/t1td/reply', {
             reply: reply,
+            blogid:id,
             email: email,
             tempId: localStorage.getItem("id")
 

@@ -68,6 +68,7 @@ export default class AddDishEditor extends Component {
                             label="Title"
                             id="name"
                             type="text"
+                            required
                         />
                     </div>
 
@@ -77,6 +78,7 @@ export default class AddDishEditor extends Component {
                             label="Price"
                             id="price"
                             type="number"
+                            required
                         />
                     </div>
 
@@ -86,6 +88,7 @@ export default class AddDishEditor extends Component {
                             label="Colors available"
                             id="colors"
                             type="text"
+                            required
                         />
                     </div>
 
@@ -95,6 +98,7 @@ export default class AddDishEditor extends Component {
                             label="Sizes Available"
                             id="sizes"
                             type="text"
+                            required
                         />
                     </div>
 
@@ -107,12 +111,13 @@ export default class AddDishEditor extends Component {
                             rowsMax={3}
                             id="desc"
                             type="text"
+                            required
                         />
                     </div>
 
                     <div className={classes.formField}>
                         <div style={{ width: "80%", marginTop: "20px" }} className="custom-file">
-                            <input onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
+                            <input required onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
                             <label className="custom-file-label" htmlFor="customFile">Choose Product Image</label>
                         </div>
                     </div>

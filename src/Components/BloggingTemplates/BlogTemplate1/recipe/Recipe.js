@@ -79,7 +79,7 @@ export default class Recipe extends Component {
         return (
             <div className={classes.rootCont} onClick={gotorecipe}>
                 <div className={classes.textheading}>
-                    <p style={{ fontSize: '30px', color: 'rgb(176,0,0)' }}>Recent Recipe</p>
+                    <p style={{ fontSize: '30px', color: 'rgb(176,0,0)' }}>Recent Blogs</p>
                 </div>
                 <div className={classes.innerlayer}>
                     <div className={classes.inner}>

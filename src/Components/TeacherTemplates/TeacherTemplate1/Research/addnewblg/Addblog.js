@@ -52,7 +52,7 @@ export default class Addblog extends Component {
                 <div className={classes.rootCont}>
                     <div className={classes.closeCont}>
                         <h1 style={{ color: "white" }}>!</h1>
-                        <h1 className={classes.editorHead}>Add New Blog</h1>
+                        <h1 className={classes.editorHead}>Add New Research</h1>
                         <p onClick={this.props.closeHandler} className={classes.close}>X</p>
                     </div>
 
@@ -60,8 +60,9 @@ export default class Addblog extends Component {
                         <TextField
                             inputProps={{ style: { fontFamily: "sans-serif" } }}
                             style={{ width: "80%" }}
-                            label="Blog Name"
+                            label="Research Title"
                             id="name"
+                            required
                             type="text"
                         />
                     </div>
@@ -75,6 +76,7 @@ export default class Addblog extends Component {
                             label="Research Description"
                             multiline
                             rows={5}
+                            required
                             rowsMax={8}
                             id="text"
                             type="text"
@@ -84,7 +86,7 @@ export default class Addblog extends Component {
 
                     <div className={classes.formField}>
                         <div style={{ width: "80%", marginTop: "20px" }} className="custom-file">
-                            <input onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
+                            <input required onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
                             <label className="custom-file-label" htmlFor="customFile">Choose Research Image</label>
                         </div>
                     </div>

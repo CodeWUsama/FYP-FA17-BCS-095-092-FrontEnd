@@ -69,7 +69,7 @@ const ProductTemplate = (props) => {
                 <img className={classes.img} src={"data:image/jpeg;base64," + props.img}></img>
             </div>
             <p className={classes.title}>{props.title}</p>
-            <p className={classes.price}>Price: {props.price}$</p>
+            <p className={classes.price}>Price: {props.price} Rs</p>
 
             {props.cart ?
                 <div className={classes.btnCont}>

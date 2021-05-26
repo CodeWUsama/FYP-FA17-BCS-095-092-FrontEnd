@@ -73,6 +73,7 @@ export default class Updateblog extends Component {
                             inputProps={{ style: { fontFamily: "sans-serif" } }}
                             label="Name"
                             id="name"
+                            required
                             style={{ width: "80%" }}
                             type="text" value={this.state.name} onChange={this.handleName }
                         />
@@ -85,6 +86,7 @@ export default class Updateblog extends Component {
                             inputProps={{ style: { fontFamily: "sans-serif", textAlign: "justify" } }}
                             label="Research Description"
                             multiline
+                            required
                             rows={5}
                             rowsMax={8}
                             id="text"

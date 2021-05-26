@@ -102,6 +102,7 @@ export default class AddDishEditor extends Component {
                             label="Dish Name"
                             id="name"
                             type="text"
+                            required
                             value={this.state.name}
                             onChange={(event) => { this.setState({ name: event.target.value }) }}
                         />
@@ -112,6 +113,7 @@ export default class AddDishEditor extends Component {
                             style={{ width: "80%" }}
                             label="Dish Price"
                             id="price"
+                            required
                             type="number"
                             value={this.state.price}
                             onChange={(event) => { this.setState({ price: event.target.value }) }}
@@ -126,6 +128,7 @@ export default class AddDishEditor extends Component {
                             rows={2}
                             rowsMax={3}
                             id="desc"
+                            required
                             type="text"
                             value={this.state.description}
                             onChange={(event) => { this.setState({ description: event.target.value }) }}

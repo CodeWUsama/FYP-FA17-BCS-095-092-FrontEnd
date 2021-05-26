@@ -28,7 +28,7 @@
         width:40%;
     }
 }
-@media(max-width:800px){
+@media(max-width:1250px){
     .inner{
         flex-direction: column;
         width: 50%;

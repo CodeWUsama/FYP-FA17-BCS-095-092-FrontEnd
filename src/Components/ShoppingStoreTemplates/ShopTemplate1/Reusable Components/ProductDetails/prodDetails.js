@@ -8,7 +8,7 @@ const ProductDetail = (props) => {
 
                 <div style={{ width: '70%', display: 'flex', flexDirection: "column" }} >
                     <p className={classes.title}>{props.title}</p>
-                    <p className={classes.price}>Price: 69$</p>
+                    <p className={classes.price}>Price: {props.price} Rs</p>
                     <div className={classes.discCont}>
                         <h4>Description:</h4>
                         <p className={classes.disc}>{props.desc}</p>
@@ -23,9 +23,7 @@ const ProductDetail = (props) => {
                     <img className={classes.img} src={"data:image/jpeg;base64," + props.img}></img>
                 </div>
             </div>
-            <div className={classes.btnCont}>
-                <button onClick={()=>{alert("Only Available in view Mode")}} className={classes.btn}>Add to Cart</button>
-            </div>
+    
         </div>
     );
 }

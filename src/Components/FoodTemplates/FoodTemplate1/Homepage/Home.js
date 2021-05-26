@@ -55,6 +55,7 @@ export default class Home extends Component {
     }
 
     async componentDidMount() {
+        window.scrollTo(0, 0);
         this._isMounted = true;
         await fetch("http://localhost:8080/f1td/getHomeData?id=" + this.props.id, {
             method: "GET",
@@ -744,7 +745,7 @@ export default class Home extends Component {
                     </div>
                 </div>
             </div>
-        );
+        ); 
     }
 
 }

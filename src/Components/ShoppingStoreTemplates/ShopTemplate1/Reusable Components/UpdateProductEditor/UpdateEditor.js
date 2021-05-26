@@ -11,7 +11,7 @@ export default class UpdateProductEditor extends Component {
         description: "",
         price: "",
         colors: "",
-        sizes:""
+        sizes: ""
     }
 
     componentDidMount() {
@@ -20,7 +20,7 @@ export default class UpdateProductEditor extends Component {
             description: this.props.data.description,
             price: this.props.data.price,
             colors: this.props.data.colors,
-            sizes:this.props.data.sizes
+            sizes: this.props.data.sizes
         });
         $(".custom-file-input").on("change", function () {
             var fileName = $(this).val().split("\\").pop();
@@ -64,7 +64,7 @@ export default class UpdateProductEditor extends Component {
     }
 
     handleRemove = () => {
-        
+
         fetch("http://localhost:8080/s1td/removeProduct", {
             method: "POST",
             headers: {
@@ -106,6 +106,7 @@ export default class UpdateProductEditor extends Component {
                             type="text"
                             value={this.state.name}
                             onChange={(event) => { this.setState({ name: event.target.value }) }}
+                            required
                         />
                     </div>
 
@@ -115,7 +116,7 @@ export default class UpdateProductEditor extends Component {
                             label="Price"
                             id="price"
                             type="number"
-                            value={this.state.price}
+                            value={this.state.price} required
                             onChange={(event) => { this.setState({ price: event.target.value }) }}
                         />
                     </div>
@@ -126,7 +127,7 @@ export default class UpdateProductEditor extends Component {
                             label="Colors available"
                             id="colors"
                             type="text"
-                            value={this.state.colors}
+                            value={this.state.colors} required
                             onChange={(event) => { this.setState({ colors: event.target.value }) }}
                         />
                     </div>
@@ -136,7 +137,7 @@ export default class UpdateProductEditor extends Component {
                             style={{ width: "80%" }}
                             label="Sizes Available"
                             id="sizes"
-                            type="text"
+                            type="text" required
                             value={this.state.sizes}
                             onChange={(event) => { this.setState({ sizes: event.target.value }) }}
                         />
@@ -148,7 +149,7 @@ export default class UpdateProductEditor extends Component {
                             label="Description"
                             multiline
                             rows={2}
-                            rowsMax={3}
+                            rowsMax={3} required
                             id="desc"
                             type="text"
                             value={this.state.description}

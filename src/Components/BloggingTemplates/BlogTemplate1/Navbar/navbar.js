@@ -5,7 +5,7 @@ export default class Navbar extends Component {
 
     state = {
         option1: "HOME",
-        option2: "RECIPES",
+        option2: "BLOGS",
         option3: "GALLERY",
         option5: "CONTACT"
     }

@@ -76,6 +76,7 @@ export default class Updateblog extends Component {
                             id="name"
                             style={{ width: "80%", marginBottom:15 }}
                             type="text" value={this.state.name} onChange={this.handleName }
+                            required
                         />
                     </div>
                    
@@ -89,6 +90,7 @@ export default class Updateblog extends Component {
                             rows={2}
                             rowsMax={3}
                             id="text"
+                            required
                             type="text" value={this.state.text} onChange={this.handleText}
                         />
                     </div>

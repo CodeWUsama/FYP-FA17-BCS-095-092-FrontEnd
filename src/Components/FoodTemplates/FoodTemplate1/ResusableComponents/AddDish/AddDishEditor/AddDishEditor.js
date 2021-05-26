@@ -63,6 +63,7 @@ export default class AddDishEditor extends Component {
                             label="Dish Name"
                             id="name"
                             type="text"
+                            required
                         />
                     </div>
 
@@ -72,6 +73,7 @@ export default class AddDishEditor extends Component {
                             label="Dish Price"
                             id="price"
                             type="number"
+                            required
                         />
                     </div>
 
@@ -84,12 +86,13 @@ export default class AddDishEditor extends Component {
                             rowsMax={3}
                             id="desc"
                             type="text"
+                            required
                         />
                     </div>
 
                     <div className={classes.formField}>
                         <div style={{ width: "80%", marginTop: "20px" }} className="custom-file">
-                            <input onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
+                            <input required onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} type="file" className="custom-file-input" id="customFile" />
                             <label className="custom-file-label" htmlFor="customFile">Choose Dish Image</label>
                         </div>
                     </div>

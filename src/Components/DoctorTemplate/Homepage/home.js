@@ -60,7 +60,7 @@ const Home = () => {
     }, []);
 
     async function getData() {
-        let response = await axios.get("http://localhost:8080/d1td/getHomeData?id="+localStorage.getItem("id"));
+        let response = await axios.get("http://localhost:8080/d1td/getHomeData?id=" + localStorage.getItem("id"));
         setintroName(response.data.data.introName);
         setintroF2(response.data.data.introF2);
         setintroF3(response.data.data.introF3);
@@ -82,6 +82,40 @@ const Home = () => {
 
         setfooter(response.data.data.footer);
 
+    }
+
+    let saveChangesHandler = () => {
+        fetch("http://localhost:8080/d1td/updateHomeData", {
+            method: "POST",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token'),
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify({
+                id: localStorage.getItem("id"),
+                name: introName,
+                s1h: s1h,
+                s2h: s2h,
+                s3h: s3h,
+                s1d: s1d,
+                s2d: s2d,
+                s3d: s3d,
+                aboutme: aboutme,
+                introF2: introF2,
+                introF3: introF3,
+                specialities: specialities,
+                phone: phone,
+                email: email,
+                footer: footer
+            })
+        })
+            .then(result => {
+                return result.json();
+            }).then(resultData => {
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     let nameHandler = () => {
@@ -587,66 +621,73 @@ const Home = () => {
 
     return (
         introName && researches && s3d && aboutme && footer ?
-            <div style={{ display: 'flex' }}>
-                <div> {textEditor} </div>
-                <div className={showEditor ? classes.spacer : ''} />
-                <div className={classes.content} style={showEditor ? { width: "65%" } : { width: "100%" }}>
+            <>
+                <div style={{ display: 'flex' }}>
+                    <div> {textEditor} </div>
+                    <div className={showEditor ? classes.spacer : ''} />
+                    <div className={classes.content} style={showEditor ? { width: "65%" } : { width: "100%" }}>
 
-                    <Intro
-                        name={introName}
-                        introF2={introF2}
-                        introF3={introF3}
+                        <Intro
+                            name={introName}
+                            introF2={introF2}
+                            introF3={introF3}
 
-                        nameHandler={nameHandler}
-                        name1Handler={name1Handler}
-                        name2Handler={name2Handler}
+                            nameHandler={nameHandler}
+                            name1Handler={name1Handler}
+                            name2Handler={name2Handler}
 
-                        email={email}
-                        specialities={specialities}
-                        phone={phone}
+                            email={email}
+                            specialities={specialities}
+                            phone={phone}
 
-                        sk1Handler={sk1Handler}
-                        sk2Handler={sk2Handler}
-                        sk3Handler={sk3Handler}
-                    />
-                    <LatestResearches
-                        researches={researches}
-                    />
-                    <Services
-                        s1h={s1h}
-                        s2h={s2h}
-                        s3h={s3h}
+                            sk1Handler={sk1Handler}
+                            sk2Handler={sk2Handler}
+                            sk3Handler={sk3Handler}
+                        />
+                        <LatestResearches
+                            researches={researches}
+                        />
+                        <Services
+                            s1h={s1h}
+                            s2h={s2h}
+                            s3h={s3h}
 
-                        sh1Handler={sh1Handler}
-                        sh2Handler={sh2Handler}
-                        sh3Handler={sh3Handler}
+                            sh1Handler={sh1Handler}
+                            sh2Handler={sh2Handler}
+                            sh3Handler={sh3Handler}
 
-                        s1d={s1d}
-                        s2d={s2d}
-                        s3d={s3d}
+                            s1d={s1d}
+                            s2d={s2d}
+                            s3d={s3d}
 
-                        sd1Handler={sd1Handler}
-                        sd2Handler={sd2Handler}
-                        sd3Handler={sd3Handler}
-                    />
-                    <AboutMe
-                        aboutme={aboutme}
-                        abtHandler={abtHandler}
+                            sd1Handler={sd1Handler}
+                            sd2Handler={sd2Handler}
+                            sd3Handler={sd3Handler}
+                        />
+                        <AboutMe
+                            aboutme={aboutme}
+                            abtHandler={abtHandler}
 
-                    />
-                    <ContactUs />
-                    <Footer 
-                    
-                    footer={footer}
-                    aboutUsHandler={fabtHandler}
-                    addressHandler={contact1Handler}
-                    phoneHandler={contact2Handler}
-                    whatsappHandler={contact3Handler}
-                    emailHandler={contact4Handler}
-                    />
+                        />
+                        <ContactUs />
+                        <Footer
+
+                            footer={footer}
+                            aboutUsHandler={fabtHandler}
+                            addressHandler={contact1Handler}
+                            phoneHandler={contact2Handler}
+                            whatsappHandler={contact3Handler}
+                            emailHandler={contact4Handler}
+                        />
+                        <div style={{ display: "flex", justifyContent: "center" }}>
+                            <button style={{ bottom: 30 }} onClick={saveChangesHandler} className={classes.saveBt} >Save Changes</button>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
+
+            </>
             : null
     );
 }

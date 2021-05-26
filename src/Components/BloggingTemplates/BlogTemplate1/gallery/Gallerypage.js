@@ -123,7 +123,7 @@ export default class Gallery extends Component {
                 <img style={{height:'200px', width:200}} onClick={()=> {this.UpdateBlog() ; this.setState({ i:i }) } } src={'data:image/jpg;base64,' + this.state.image[len-i]} /> 
                 <hr/>
                 <p onClick={()=> {this.UpdateBlog() ; this.setState({ i:i }) } }>{blog.name}</p>
-                <img style={{height:'20px', width:'10%',}} onClick={()=> { this.handleSubmit(blog._id )  } }src={remove}/>   
+                <img style={{height:'20px', width:25, cursor:'pointer'}} onClick={()=> { this.handleSubmit(blog._id )  } }src={remove}/>   
               </div>
             )
           

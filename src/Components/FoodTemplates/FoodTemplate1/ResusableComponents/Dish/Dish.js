@@ -21,7 +21,7 @@ export default class Dish extends Component {
                 <div className={classes.dishTextCont}>
                     <p className={classes.dishText}>{this.props.desc}</p>
                     <div className={classes.buttonCont}>
-                        <button onClick={() => { alert("Only available in view mode") }} className={classes.orderButton}>Order Now</button>
+                        <button  className={classes.orderButton}>Edit Dish</button>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@ export default class Dish extends Component {
         return (
             <div className={classes.rootCont} style={{ flexBasis: this.props.flexBasis }}>
                 
-                <div style={{ width:300}}>
+                <div style={{ width:500}}>
                     <div className={classes.dishHeadCont}>
                         <p className={classes.dishHead}>{this.props.dishName}</p>
                     </div>

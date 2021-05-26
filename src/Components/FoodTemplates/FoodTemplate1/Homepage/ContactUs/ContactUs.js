@@ -64,7 +64,7 @@ export default class ContactUs extends Component {
                     <form onSubmit={this.handleSubmit} className={classes.contactForm}>
                         <p className={classes.formHead}>Contact Us</p>
                         <input required className={classes.formInput} id="name" placeholder="Subject" />
-                        <input required className={classes.formInput} id="email" placeholder="Email" />
+                        <input required className={classes.formInput} id="email" placeholder="Email"  type="email"/>
                         <textarea required className={classes.formInput} id="message" placeholder="Message" />
                         <div style={{ display: "flex", justifyContent: "center" }}>
                             <button className={classes.submitButton} type="submit">Send</button>

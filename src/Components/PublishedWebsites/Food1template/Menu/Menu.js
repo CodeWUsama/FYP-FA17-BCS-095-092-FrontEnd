@@ -25,6 +25,7 @@ export default class menu extends Component {
     _isMounted = false;
 
     async componentDidMount() {
+        window.scrollTo(0, 0);
         this._isMounted = true;
         await fetch("http://localhost:8080/f1td/getHomeData?id=" + localStorage.getItem("id"), {
             method: "GET",

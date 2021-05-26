@@ -55,7 +55,7 @@ export default class Gallery extends Component {
     render(){
       function gotogallery(e) {
         e.preventDefault();
-        window.location = '/gallery';
+        window.location = '/b1/#/gallery';
     }
         let count= 0;
 
