@@ -14,7 +14,7 @@ export default class Footer extends Component {
             <div className={classes.rootCont}>
                 <div className={classes.div1}>
                     <p className={classes.abtHead}>About Us</p>
-                    <p className={classes.abtText}>Digital Studio is an online platform which is specially designed for layman in order to serve them in Pakistan. We provide multiple templates which are easily customizable and user can publish his website on our subdomain in few clicks.</p>
+                    <p className={classes.abtText}>Website Creator is an online platform which is specially designed for layman in order to serve them in Pakistan. We provide multiple templates which are easily customizable and user can publish his website on our subdomain in few clicks.</p>
                     <div className={classes.accCont}>
                         <img alt="icon" className={classes.accIcon} src={Fb} />
                         <img alt="icon" className={classes.accIcon} src={Twitter} />
@@ -25,10 +25,10 @@ export default class Footer extends Component {
                     <p className={classes.abtHead}>Quick Links</p>
                     <div className={classes.linksCont}>
                         <a href="/" className={classes.links}> Home</a>
-                        <a href="/" className={classes.links}> Packages</a>
-                        <a href="/" className={classes.links}> Signup</a>
-                        <a href="/" className={classes.links}> Contact</a>
-                        <a href="/" className={classes.links}> Login</a>
+                        <a href="/packages" className={classes.links}> Packages</a>
+                        <a href="/Signup" className={classes.links}> Signup</a>
+                        <a href="/contact" className={classes.links}> Contact</a>
+                        <a href="/login" className={classes.links}> Login</a>
                     </div>
                 </div>
 

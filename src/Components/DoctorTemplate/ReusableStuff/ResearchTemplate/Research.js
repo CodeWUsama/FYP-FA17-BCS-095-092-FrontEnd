@@ -21,7 +21,6 @@ const Research = (props) => {
     const [details, setdetails] = useState(props.details);
 
     const handleClickOpenUpdater = () => {
-        console.log("catched");
         setOpenUpdater(true);
     };
 
@@ -85,13 +84,15 @@ const Research = (props) => {
 
     return (
         <>
-            <div className={classes.research}>
-                <p className={classes.rHead}>{props.title}</p>
-                <div style={{ display: "flex", flexDirection: "column", height: 350, justifyContent: "space-between" }}>
-                    <p className={classes.rDesc}>{props.description}</p>
-                    <div style={{ display: 'flex', width: "100%", justifyContent: "space-around" }}>
-                        <button onClick={handleClickOpen} className={classes.meetings}>View</button>
-                        <button onClick={handleClickOpenUpdater} className={classes.meetings}>Update</button>
+            <div className={classes.research} style={{ flexBasis: props.flex }} >
+                <div style={{width:500, border:"1px solid white", padding:20}}>
+                    <p className={classes.rHead}>{props.title}</p>
+                    <div style={{ display: "flex", flexDirection: "column", height: 350, justifyContent: "space-between" }}>
+                        <p className={classes.rDesc}>{props.description}</p>
+                        <div style={{ display: 'flex', width: "100%", justifyContent: "space-around" }}>
+                            <button onClick={handleClickOpen} className={classes.meetings}>View</button>
+                            <button onClick={handleClickOpenUpdater} className={classes.meetings}>Update</button>
+                        </div>
                     </div>
                 </div>
             </div>

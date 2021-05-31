@@ -28,7 +28,7 @@ export default class Dish extends Component {
             : null;
         return (
             <div className={classes.rootCont} style={{ flexBasis: this.props.flexBasis }}>
-                
+    
                 <div style={{ width:500}}>
                     <div className={classes.dishHeadCont}>
                         <p className={classes.dishHead}>{this.props.dishName}</p>
@@ -39,7 +39,7 @@ export default class Dish extends Component {
                     </div>
                 </div>
 
-            </div>
+            </div> 
         );
     }
 

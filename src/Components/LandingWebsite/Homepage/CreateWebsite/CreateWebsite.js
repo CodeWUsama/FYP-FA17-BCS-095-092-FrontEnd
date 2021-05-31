@@ -23,7 +23,7 @@ export default class CreateWeb extends Component {
                         <li>Publish your website by choosing the desired subdomain.</li>
                     </ol>
 
-                    <a className={classes.aTag} href="/url" > Start Now </a>
+                    <a className={classes.aTag} href="/login" > Start Now </a>
 
                 </div>
             </div>

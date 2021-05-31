@@ -70,11 +70,7 @@ export default class Footer extends Component {
                     }}
                     > {this.state.footer.text} </p>
 
-                    <div className={classes.accCont}>
-                        <img alt="icon" className={classes.accIcon} src={Fb} />
-                        <img alt="icon" className={classes.accIcon} src={Twitter} />
-                        <img alt="icon" className={classes.accIcon} src={Insta} />
-                    </div>
+                   
                 </div>
 
 

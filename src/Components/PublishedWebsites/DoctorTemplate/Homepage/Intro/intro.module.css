@@ -1,0 +1,167 @@
+.rootCont {
+  background-image: url("./bgd1.webp");
+  height: 80.7vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.headCont {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.imgCont {
+  padding: 20px;
+  border: 3px solid white;
+  border-radius: 48%;
+}
+
+.avatarImg {
+  border-radius: 48%;
+  width: 300px;
+  height: 270px;
+}
+
+.headlineL {
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 70px;
+  text-align: center;
+}
+
+.headlineM {
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  text-align: right;
+}
+
+.headlineS {
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  text-align: right;
+  color: black;
+}
+
+.about {
+  display: flex;
+  width: 80%;
+  height: max-content;
+  justify-content: space-around;
+}
+
+.aboutTextHead {
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.aboutTextDesc {
+  font-size: 26px;
+  color: white;
+  font-family: sans-serif;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.aboutTextCont {
+  width: 33%;
+}
+
+@media (max-width: 1300px) {
+  .headCont {
+    width: 90%;
+  }
+  .about {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .headCont {
+    width: 95%;
+  }
+  .about {
+    width: 95%;
+  }
+  .headlineL {
+    font-size: 50px;
+  }
+  .headlineM {
+    font-size: 30px;
+    text-align: center;
+  }
+  .headlineS {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .aboutTextDesc {
+    font-size: 22px;
+  }
+  .aboutTextHead {
+    font-size: 18px;
+  }
+  .rootCont {
+    height: max-content;
+  }
+}
+
+@media (max-width: 786px) {
+  .headCont {
+    flex-direction: column;
+  }
+  .avatarImg {
+    width: 200px;
+    height: 180px;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .aboutTextHead {
+    text-align: left;
+  }
+  .aboutTextDesc {
+    text-align: left;
+  }
+  .aboutTextCont {
+    width: 98%;
+  }
+}
+
+@media (max-width: 400px) {
+  .avatarImg {
+    width: 150px;
+    height: 130px;
+  }
+  .headlineL {
+    font-size: 35px;
+  }
+  .headlineM {
+    font-size: 25px;
+  }
+  .headlineS {
+    font-size: 15px;
+  }
+}
+
+@media (max-height: 820px) {
+  .rootCont {
+    height: max-content;
+  }
+}

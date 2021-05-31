@@ -95,7 +95,7 @@ export default class menu extends Component {
     triggerChange = () => {
         let val = document.getElementById('select').value;
         this.setState({ columns: val });
-        fetch("http://localhost:8080/f1td/updateFlex", {
+        fetch("http://localhost:8080/f1td/updateFlex", { 
             method: "POST",
             headers: {
                 Authorization: "Bearer " + localStorage.getItem('token'),

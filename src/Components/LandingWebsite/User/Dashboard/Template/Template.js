@@ -233,7 +233,7 @@ export default class Template extends Component {
         else if (this.state.category === "T1") {
             window.location.href = "/TeacherWebsite/";
         }
-        else if (this.state.category === "T1") {
+        else if (this.state.category === "D1") {
             window.location.href = "/DoctorWebsite/";
         }
     }
@@ -258,9 +258,23 @@ export default class Template extends Component {
     }
 
     handlePublish = () => {
-        localStorage.setItem("toPublish", this.props.id);
-        localStorage.setItem("category", this.state.category)
-        window.location.href = "/publish"
+        axios.get("http://localhost:8080/user/totalWebsites", {
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token'),
+            },
+        }).then(result => {
+            console.log(result.data.allow);
+            if (result.data.allow) {
+                localStorage.setItem("toPublish", this.props.id);
+                localStorage.setItem("category", this.state.category)
+                window.location.href = "/publish"
+            }
+            else{
+                alert("Your limit to publish the website is already reached. Please upgrade your plan");
+            }
+        })
+
+
     }
 
     handleStop = () => {

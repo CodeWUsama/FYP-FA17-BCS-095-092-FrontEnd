@@ -27,11 +27,7 @@ export default class Footer extends Component {
                         onClick={this.props.footerEditor}
                     > {this.props.footer.text} </p>
 
-                    <div className={classes.accCont}>
-                        <img alt="icon" className={classes.accIcon} src={Fb} />
-                        <img alt="icon" className={classes.accIcon} src={Twitter} />
-                        <img alt="icon" className={classes.accIcon} src={Insta} />
-                    </div>
+                    
                 </div>
 
 

@@ -112,7 +112,7 @@ export default class Intro extends Component {
                             {this.props.introText.text}
                         </p>
                         <div className={classes.buttonCont}>
-                            <button className={classes.introButton}>Check Our Menu</button>
+                            
                         </div>
                     </div>
                 </div>

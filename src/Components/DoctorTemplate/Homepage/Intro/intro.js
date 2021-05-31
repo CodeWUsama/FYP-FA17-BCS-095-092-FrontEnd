@@ -1,15 +1,64 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from "./intro.module.css";
 import Avatar from "./avatar.png";
+import axios from 'axios';
+import ImageEditor from '../../ReusableStuff/Editors/ImageEditors/ImageEditor';
+import Editor from '../../ReusableStuff/BackdropEditor/Editor';
 
 const Intro = (props) => {
+
+    const [picture, setpicture] = useState();
+    const [imgEditor, setimgEditor] = useState(false);
+
+    useEffect(() => {
+
+        getData();
+
+    }, []);
+
+    async function getData() {
+        let response = await axios.get("http://localhost:8080/d1td/getPicture?id=" + localStorage.getItem("id"));
+        setpicture(response.data.img)
+    }
+
+    let handleImageClick = () => {
+        setimgEditor(!imgEditor);;
+    }
+
+    let submitHandler = (event, img) => {
+        event.preventDefault();
+        const formdata = new FormData();
+        formdata.append("img", img);
+        formdata.append("id", localStorage.getItem("id"));
+        fetch("http://localhost:8080/d1td/updatePicture", {
+            method: "POST",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token'),
+            },
+            body: formdata
+        }).then(res => {
+            if (res.status === 200) {
+                return res.json();
+            }
+        }).then(resData => {
+            if (resData) {
+                setpicture(resData.img);
+                setimgEditor(false);
+            }
+        })
+    }
+
     return (
         <div className={classes.rootCont}>
-
+            <Editor fullsize={true} backdropHandler={handleImageClick} enableBackdropEditor={imgEditor}>
+                <ImageEditor submitHandler={submitHandler} closeHandler={handleImageClick} />
+            </Editor>
             <div className={classes.headCont}>
-                <div className={classes.imgCont}>
-                    <img src={Avatar} className={classes.avatarImg} />
-                </div>
+                {picture ?
+                    <div className={classes.imgCont}>
+                        <img src={"data:image/jpeg;base64," + picture} onClick={() => { setimgEditor(true) }} className={classes.avatarImg} />
+                    </div>
+                    : null}
                 <div>
                     <p className={classes.headlineL}
                         onClick={props.nameHandler}

@@ -68,11 +68,10 @@ export default class Footer extends Component {
                     <div className={classes.div2}>
                         <p className={classes.abtHead}>Quick Links</p>
                         <div className={classes.linksCont}>
-                            <a href="/" className={classes.links}> Home</a>
-                            <a href="/" className={classes.links}> Products</a>
-                            <a href="/" className={classes.links}> Contact</a>
-                            <a href="/" className={classes.links}> Account</a>
-                            <a href="/" className={classes.links}> Login</a>
+                            <a href="/ShoppingWebsite/#/" className={classes.links}> Home</a>
+                            <a href="/ShoppingWebsite/#/products" className={classes.links}> Products</a>
+                            <a href="/ShoppingWebsite/#/contact" className={classes.links}> Contact</a>
+                            <a href="/ShoppingWebsite/#/account" className={classes.links}> Login</a>
                         </div>
                     </div>
 

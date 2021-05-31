@@ -58,7 +58,7 @@ export default class Products extends Component {
                     {products}
                 </ProductsContainer>
                 <div className={classes.btnCont}>
-                    <button className={classes.btn}>View All Products</button>
+                    <button className={classes.btn} onClick={()=>window.location.href="/ShoppingWebsite/#/products"}>View All Products</button>
                 </div>
             </div>
         );

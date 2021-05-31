@@ -12,13 +12,14 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from "@material-ui/core/TextField"
-
+import { FormControl, InputLabel, NativeSelect } from '@material-ui/core';
 
 const Researches = (props) => {
 
     const [researches, setresearches] = useState();
     const [footer, setfooter] = useState();
-    
+    const [flex, setFlex] = useState();
+
     const [open, setOpen] = useState(false);
     const [scroll, setScroll] = useState("paper");
 
@@ -49,10 +50,26 @@ const Researches = (props) => {
         let response = await axios.get("http://localhost:8080/d1td/getHomeData?id=" + localStorage.getItem("id"));
         setresearches(response.data.data.researches);
         setfooter(response.data.data.footer);
+        setFlex(response.data.data.flex);
+    }
+
+    let triggerChange = () => {
+        let val = document.getElementById('select').value;
+        setFlex(val);
+        axios.post("http://localhost:8080/d1td/updateFlex", {
+            id: localStorage.getItem("id"),
+            flex: val
+        }, {
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token')
+            }
+        }).then(result => {
+
+        })
     }
 
     let renderResearches = () => researches.map(research => {
-        return <Research key={research._id} id={research._id} title={research.title} description={research.description} details={research.details} />
+        return <Research flex={flex} key={research._id} id={research._id} title={research.title} description={research.description} details={research.details} />
     });
 
     let addResearch = () => {
@@ -74,7 +91,21 @@ const Researches = (props) => {
 
     return (
         <>
-            <p style={{ fontSize: 50, textAlign: 'center', color: 'white', backgroundColor: "#fc9464", margin: 0, paddingTop: 30 }}>All Researches</p>
+            <div style={{ display: "flex", justifyContent: "space-around", backgroundColor: "#FC9464", alignItems: "center" }}>
+                <p style={{ visibility: "hidden" }}>!</p>
+                <p style={{ fontSize: 50, textAlign: 'center', color: 'white', backgroundColor: "#fc9464", margin: 0, paddingTop: 30 }}>All Researches</p>
+                <FormControl>
+                    <InputLabel style={{ color: "white" }} htmlFor="select">Columns</InputLabel>
+                    {flex ?
+                        <NativeSelect style={{ color: "red" }} defaultValue={flex} id="select" onChange={triggerChange} >
+                            <option value="100%">1</option>
+                            <option value="50%">2</option>
+                            <option value="27%">3</option>
+                        </NativeSelect> :
+                        null
+                    }
+                </FormControl>
+            </div>
             <div className={classes.researchesCont}>
                 <div style={{ width: "31.6%", display: "flex", justifyContent: "center", padding: 20, height: 500 }}>
                     <IconButton onClick={handleClickOpen} color="primary" aria-label="upload picture" component="span" style={{ height: 450 }}>
@@ -125,7 +156,7 @@ const Researches = (props) => {
                 </Dialog>
             </div>
 
-           
+
         </>
     );
 }

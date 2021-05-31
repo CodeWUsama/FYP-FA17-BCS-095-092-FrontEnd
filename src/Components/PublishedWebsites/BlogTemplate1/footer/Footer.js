@@ -34,10 +34,10 @@ export default class Footer extends Component {
                 <div className={classes.div2}>
                     <p className={classes.abtHead}>Site</p>
                     <div className={classes.linksCont}>
-                        <a href="/home" className={classes.links}> Home</a>
-                        <a href="/recipe" className={classes.links}> RECIPES</a>
-                        <a href="/gallery" className={classes.links}> Gallery </a>
-                        <a href="/contact" className={classes.links}> Contact</a>
+                        <a href="/B1P/#/" className={classes.links}> Home</a>
+                        <a href="/B1P/#/recipe" className={classes.links}> Blogs</a>
+                        <a href="/B1P/#/gallery" className={classes.links}> Gallery </a>
+                        <a href="/B1P/#/contact" className={classes.links}> Contact</a>
                     </div>
                 </div>
 

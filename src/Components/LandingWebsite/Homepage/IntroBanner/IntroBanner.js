@@ -7,7 +7,7 @@ export default class IntroBanner extends Component {
             <div className="intro-cont">
 
                 <div className="intro-text">
-                    <h1 className="intro-head">Welcome To Digital Studio</h1>
+                    <h1 className="intro-head">Welcome To Website Creator</h1>
                     <p className="intro-para"> A Single Place to Easily Create, Manage and Publish Your Website</p>
                 </div>
 

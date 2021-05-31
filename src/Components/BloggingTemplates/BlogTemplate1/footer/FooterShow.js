@@ -59,7 +59,7 @@ export default class Footer extends Component {
                 <div className={classes.div1}>
                     <p className={classes.abtHead}>About Us</p>
                     <p
-                        
+
                         style={{
                             fontSize: this.state.footer.fontSize,
                             fontFamily: this.state.footer.fontFamily,
@@ -80,10 +80,10 @@ export default class Footer extends Component {
                 <div className={classes.div2}>
                     <p className={classes.abtHead}>Site</p>
                     <div className={classes.linksCont}>
-                        <a href="/home" className={classes.links}> Home</a>
-                        <a href="/recipe" className={classes.links}> RECIPES</a>
-                        <a href="/gallery" className={classes.links}> Gallery </a>
-                        <a href="/contact" className={classes.links}> Contact</a>
+                        <a href="/B1/#/" className={classes.links}> Home</a>
+                        <a href="/B1/#/recipe" className={classes.links}> Blogs</a>
+                        <a href="/B1/#/gallery" className={classes.links}> Gallery </a>
+                        <a href="/B1/#/contact" className={classes.links}> Contact</a>
                     </div>
                 </div>
 

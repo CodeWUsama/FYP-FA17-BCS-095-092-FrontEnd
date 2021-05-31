@@ -25,6 +25,7 @@ import NavT1P from "./../../PublishedWebsites/TeacherTemplate1/main";
 import NavB1P from "../../PublishedWebsites/BlogTemplate1/Main/main";
 import Publish from '../User/Publish/publish';
 import NavD1 from "./../../DoctorTemplate/main";
+import NavDoc from "./../../PublishedWebsites/DoctorTemplate/main";
 import Admin from "../Admin/admin";
 import Users from "../Admin/Users/users";
 import Websites from '../Admin/Websites/websites';
@@ -74,8 +75,8 @@ export default class NavBar extends Component {
                     </div>
 
                     <div className={classes.logoCont}>
-                        <h2 style={{ marginLeft: 30, color: '#384158' }} className={classes.logoText}>Digital</h2>
-                        <h2 style={{ color: '#14BDEE' }} className={classes.logoText} >Studio</h2>
+                        <h2 style={{ marginLeft: 30, color: '#384158' }} className={classes.logoText}>Website</h2>
+                        <h2 style={{ color: '#14BDEE' }} className={classes.logoText} >Creator</h2>
                     </div>
 
                     <div className={classes.linksCont}>
@@ -83,7 +84,7 @@ export default class NavBar extends Component {
                             <NavItem navText="Home" navHref="/" />
                             <NavItem navText="Packages" navHref="/packages" />
                             <NavItem navText="Contact Us" navHref="/contact" />
-                            <NavItem navText="Create Website" navHref={this.state.status ? localStorage.getItem("ad") ? "/admin" : "/account" : "/login"} />
+                            <NavItem navText="Workspace" navHref={this.state.status ? localStorage.getItem("ad") ? "/admin" : "/account" : "/login"} />
                         </ul>
                     </div>
 
@@ -124,6 +125,7 @@ export default class NavBar extends Component {
                         <Route exact path="/ShoppingWebsite/" component={NavS1P} />
                         <Route exact path="/TeacherWebsite/" component={NavT1P} />
                         <Route exact path="/D1/" component={NavD1} />
+                        <Route exact path="/DoctorWebsite/" component={NavDoc} />
                         <Route exact path="/publish/" component={Publish} />
                         <Route exact path="/account" component={Dashboard} />
                         <Route exact path="/admin/" component={Admin} />

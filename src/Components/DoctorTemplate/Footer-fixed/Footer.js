@@ -40,20 +40,15 @@ export default class Footer extends Component {
                             }}
                             onClick={this.state.aboutUsHandler}
                         >{this.state.footer.aboutUs.text}</p>
-                        <div className={classes.accCont}>
-                            <img alt="icon" className={classes.accIcon} src={Fb} />
-                            <img alt="icon" className={classes.accIcon} src={Twitter} />
-                            <img alt="icon" className={classes.accIcon} src={Insta} />
-                        </div>
+
                     </div>
                     <div className={classes.div2}>
                         <p className={classes.abtHead}>Quick Links</p>
                         <div className={classes.linksCont}>
-                            <a href="/" className={classes.links}> Home</a>
-                            <a href="/" className={classes.links}> Products</a>
-                            <a href="/" className={classes.links}> Contact</a>
-                            <a href="/" className={classes.links}> Account</a>
-                            <a href="/" className={classes.links}> Login</a>
+                            <a href="/D1/#/" className={classes.links}> Home</a>
+                            <a href="/d1/#/researches" className={classes.links}> Research</a>
+                            <a href="/d1/#/chat" className={classes.links}> Contact</a>
+                            <a href="/d1/#/appointment" className={classes.links}> Appointment</a>
                         </div>
                     </div>
 

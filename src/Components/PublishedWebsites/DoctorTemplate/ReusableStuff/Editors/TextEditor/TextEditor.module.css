@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+.rootCont {
+    height: max-content;
+}
+
+.labelText {
+    font: 18px 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    color:#000000c4;
+}
+
+.closeCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.close {
+    font: 15px 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding:0;
+    color: black;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.inputField {
+    height: 30px;
+    padding-left: 5px;
+    width: 100%;
+    border: 0px;
+    border-bottom: 2px solid red;
+    border-radius: 5%;
+}
+
+.inputField:focus {
+    outline: none;
+}
+
+.fontFam:focus {
+    border-bottom: 0px solid;
+    border-color: #F42F2C;
+}
+
+.formField {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.editorHead {
+    font: 30px 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding:0;
+}
+
+.buttonCont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.introButton {
+    height: 42px;
+    width: 183px;
+    background-color: #F42F2C;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border: 0px;
+    margin-bottom: 5%;
+    transition: all 0.6s ease 0s;
+}
+
+.introButton:hover {
+    color: white;
+    background-color: red;
+    transition: all 0.6s ease 0s;
+    cursor: pointer;
+}
+
+.fontFam {
+    height: 30px;
+    padding-left: 5px;
+    width: 100%;
+    border: 0px;
+    border-bottom: 2px solid red;
+    border-radius: 5%;
+}
+
+.optionsCont{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.option{
+    width: 40px;
+    border:1px solid black;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option:hover{
+    cursor: pointer;
+    background-color: #dad6d6;
+}
+
+@media(max-width:1150px) {
+    .formField {    
+        width: 75%;
+    }
+}
+
+@media(max-width:890px) {
+    .formField {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0px;
+    }
+    .labelText {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .editorHead {
+        font-size: 25px;
+    }
+    .close {
+        font-size: 10px;
+    }
+}
+
+@media(max-width:450px) {
+    .labelText {
+        font-size: 12px;
+    }
+    .editorHead {
+        font-size: 20px;
+    }
+}

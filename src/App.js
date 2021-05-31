@@ -7,6 +7,7 @@ import NavT1P from "./Components/PublishedWebsites/TeacherTemplate1/main";
 import NavB1P from "./Components/PublishedWebsites/BlogTemplate1/Main/main";
 import NavS1P from "./Components/PublishedWebsites/ShopTemplate1/Navbar/NavBar";
 import RestaurantNavBar from "./Components/PublishedWebsites/Food1template/NavBar/NavBar";
+import NavD1P from "./Components/PublishedWebsites/DoctorTemplate/main";
 import Unauth from "./Components/LandingWebsite/Unauth/unauth";
 
 class App extends Component {
@@ -64,6 +65,9 @@ class App extends Component {
     }
     else if (this.state.category === "T1") {
       return <NavT1P published={true} />
+    }
+    else if (this.state.category === "D1") {
+      return <NavD1P published={true} />
     }
   }
 

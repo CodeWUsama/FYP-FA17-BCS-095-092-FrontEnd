@@ -15,7 +15,7 @@ const MyNavbar = (props) => {
     return (
         <Router>
             <Navbar sticky="top" expand="lg" style={{ backgroundColor: "#fc9464", paddingLeft: "3%", paddingRight: "3%", top: 80 }}>
-                <Navbar.Brand style={{ color: "white", fontSize: 30, fontFamily: "revert", fontWeight: "bold", }} href="#home">USAMA.</Navbar.Brand>
+                <Navbar.Brand style={{ color: "white", fontSize: 30, fontFamily: "revert", fontWeight: "bold", }} href="#home">WELCOME.</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav className="justify-content-center">
